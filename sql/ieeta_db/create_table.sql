@@ -2,13 +2,13 @@ use p3g8;
 
 create table Location.Cinema(
 	id		int		Primary Key IDENTITY(0,1),
-	name	varchar(50) not null,
-	location varchar(50) not null
+	name	varchar(max) not null,
+	location varchar(max) not null
 );
 -- Manegment Schema
 create table Management.Employee_Type(
 	num		int		Primary Key IDENTITY(0,1),
-	name	varchar(50) not null
+	name	varchar(max) not null
 );
 
 create table Management.Employee_Shift(
@@ -20,7 +20,7 @@ create table Management.Employee_Shift(
 
 create table Management.Employee(
 	id		int		Primary Key IDENTITY(0,1),
-	name	varchar(50) not null,
+	name	varchar(max) not null,
 	eType	int,
 	eShift	int,
 
@@ -55,9 +55,9 @@ create table Management.Room(
 -- Data Schema
 create table Data.Film(
 	imdb	int Primary Key,
-	name	varchar(50) not null,
+	name	varchar(max) not null,
 	timeMin	int	not null, --minutos
-	director varchar(50) not null
+	director varchar(max) not null
 	-- divis�o em partes ?
 );
 
