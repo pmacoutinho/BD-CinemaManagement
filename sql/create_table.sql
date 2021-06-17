@@ -18,7 +18,7 @@ create table Management.Employee_Shift(
 
 ); 
 
-create table Management.Funcionario(
+create table Management.Employee(
 	id		int		Primary Key,
 	name	varchar(50) not null,
 	eType	int,
@@ -27,33 +27,33 @@ create table Management.Funcionario(
 	-- supervisor
 	-- deferrable constraints? R: not supported
 
-	CONSTRAINT FK_sFuncionario_type FOREIGN KEY (eType)
+	CONSTRAINT FK_employee_type FOREIGN KEY (eType)
       REFERENCES Management.Employee_Type(num)
       ON UPDATE CASCADE
 	  ON DELETE Set Null,
 
-	CONSTRAINT FK_sFuncionario_shift FOREIGN KEY (eShift)
+	CONSTRAINT FK_employee_shift FOREIGN KEY (eShift)
       REFERENCES Management.Employee_Shift(id)
       ON UPDATE CASCADE
 	  ON DELETE Set Null
 	
 );
 
-create table Management.Sala(
+create table Management.Room(
 	num		int not null,
 	cinema	int not null,
 	nSeats	int not null,
 
 	Primary Key(num, cinema),
 
-	CONSTRAINT FK_sala_cinema FOREIGN KEY (cinema)
+	CONSTRAINT FK_room_cinema FOREIGN KEY (cinema)
       REFERENCES Management.Cinema(id)
       ON UPDATE CASCADE
-	  -- ON DELETE
+	  ON DELETE Cascade
 );
 
 -- Data Schema
-create table Data.Filme(
+create table Data.Film(
 	imdb	int Primary Key,
 	name	varchar(50) not null,
 	timeMin	int	not null, --minutos
@@ -61,44 +61,44 @@ create table Data.Filme(
 	-- divisão em partes ?
 );
 
-create table Data.Sessao(
+create table Data.Session(
 	id		int Primary Key,
 	cinema	int not null,
 	filmId	int not null,
 	wDay	int not null, -- represents one day of the week
 	dTime	time not null
 	CONSTRAINT FK_session_filmid FOREIGN KEY (filmId)
-      REFERENCES Data.Filme(imdb)
+      REFERENCES Data.Film(imdb)
       ON UPDATE CASCADE,
 	  -- on delete
 
 	CONSTRAINT FK_session_cinema FOREIGN KEY (cinema)
       REFERENCES Management.Cinema(id)
       ON UPDATE CASCADE
-	  -- on delete
+	  On Delete Cascade
 );
 
 
 -- Operations Schema
-create table Operations.Sessao_instance(
-	sessao		int not null,
+create table Operations.Session_instance(
+	session		int not null,
 	sCinema		int not null,
 	sNum		int not null,
 
-	Primary Key (sessao, sCinema, sNum),
+	Primary Key (session, sCinema, sNum),
 
-	CONSTRAINT FK_sessao_inst_sessao FOREIGN KEY (sessao)
-      REFERENCES Data.Sessao(id)
-      ON UPDATE CASCADE,
-	  -- ON DELETE  
+	CONSTRAINT FK_sessao_inst_sessao FOREIGN KEY (session)
+      REFERENCES Data.Session(id)
+      ON UPDATE CASCADE
+	  On Delete Cascade,
 
 	CONSTRAINT FK_sessao_inst_sala FOREIGN KEY (sCinema, sNum)
-      REFERENCES Management.Sala(cinema, num)
+      REFERENCES Management.Room(cinema, num)
       ON UPDATE CASCADE
-	  -- ON DELETE
+	  On Delete Set Null
 );
 
-create table Operations.Registo_Limpeza(
+create table Operations.Cleaning_Record(
 	tm		datetime not null,
 	sCinema	int	not null,
 	sNum	int	not null,
@@ -107,33 +107,33 @@ create table Operations.Registo_Limpeza(
 	Primary Key(sCinema, sNum, tm),
 
 	CONSTRAINT FK_limpeza_sala FOREIGN KEY (sCinema, sNum)
-      REFERENCES Management.Sala(cinema, num)
-      ON UPDATE CASCADE,
-	  -- ON DELETE 
+      REFERENCES Management.Room(cinema, num)
+      ON UPDATE CASCADE
+	  On Delete Cascade,
 
 	CONSTRAINT FK_limpeza_func FOREIGN KEY (func)
-      REFERENCES Management.Funcionario(id)
+      REFERENCES Management.Employee(id)
       ON UPDATE CASCADE
 	  ON DELETE Set Null,
 );
 
 
-create table Operations.Cliente(
+create table Operations.Client(
 	id		int	Primary Key,
 	name	varchar(max) not null,
 	dNasc	date	not null
 );
 
-create table Operations.Reserva(
-	lugar		int	not null,
-	sessao		int not null,
+create table Operations.Reservation(
+	seat		int	not null,
+	session		int not null,
 	sCinema		int not null,
 	sNum		int not null,
 
-	Primary Key(lugar, sessao, sCinema, sNum),
+	Primary Key(seat, session, sCinema, sNum),
 
-	CONSTRAINT FK_reserva_sessao FOREIGN KEY (sessao, sCinema, sNum)
-      REFERENCES Operations.Sessao_instance(sessao, sCinema, sNum)
+	CONSTRAINT FK_reserva_sessao FOREIGN KEY (session, sCinema, sNum)
+      REFERENCES Operations.Session_instance(session, sCinema, sNum)
       ON UPDATE CASCADE
 	  ON DELETE Set Null,
 );
@@ -149,12 +149,12 @@ create table Operations.Bilhete(
 	sNum		int not null,
 
 	CONSTRAINT FK_bilhete_cliente FOREIGN KEY (client)
-      REFERENCES Operations.Cliente(id)
+      REFERENCES Operations.Client(id)
       ON UPDATE CASCADE
 	  ON DELETE Set Null,
 
 	CONSTRAINT FK_bilhete_reserva FOREIGN KEY (lugar, sessao, sCinema, sNum)
-      REFERENCES Operations.reserva(lugar, sessao, sCinema, sNum)
+      REFERENCES Operations.reservation(seat, session, sCinema, sNum)
       ON UPDATE CASCADE
 	  ON DELETE Set Null,
 
