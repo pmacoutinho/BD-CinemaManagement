@@ -20,25 +20,25 @@ namespace CinemaManagment
 
         private void customizeDesign()
         {
-            panelEmpregadosSubmenu.Visible = false;
-            panelSalasSubmenu.Visible = false;
-            panelFilmesSubmenu.Visible = false;
-            panelClientesSubmenu.Visible = false;
+            panelEmployeesSubmenu.Visible = false;
+            panelRoomsSubmenu.Visible = false;
+            panelMoviesSubmenu.Visible = false;
+            panelClientsSubmenu.Visible = false;
         }
 
         private void hideSubMenu()
         {
-            if (panelEmpregadosSubmenu.Visible == true)
-                panelEmpregadosSubmenu.Visible = false;
+            if (panelEmployeesSubmenu.Visible == true)
+                panelEmployeesSubmenu.Visible = false;
 
-            if (panelSalasSubmenu.Visible == true)
-                panelSalasSubmenu.Visible = false;
+            if (panelRoomsSubmenu.Visible == true)
+                panelRoomsSubmenu.Visible = false;
 
-            if (panelFilmesSubmenu.Visible == true)
-                panelFilmesSubmenu.Visible = false;
+            if (panelMoviesSubmenu.Visible == true)
+                panelMoviesSubmenu.Visible = false;
 
-            if (panelClientesSubmenu.Visible == true)
-                panelClientesSubmenu.Visible = false;
+            if (panelClientsSubmenu.Visible == true)
+                panelClientsSubmenu.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -52,38 +52,38 @@ namespace CinemaManagment
                 subMenu.Visible = false;
         }
 
-        #region empregadosMenu
+        #region employeesMenu
         private void buttonEmpregados_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelEmpregadosSubmenu);
+            showSubMenu(panelEmployeesSubmenu);
         }
 
         private void buttonVendedores_Click(object sender, EventArgs e)
         {
             openChildForm(new Form1());
         }
-        #endregion empregadosMenu
+        #endregion employeesMenu
 
-        #region salasMenu
+        #region roomsMenu
         private void buttonSalas_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelSalasSubmenu);
+            showSubMenu(panelRoomsSubmenu);
         }
-        #endregion salasMenu
+        #endregion roomsMenu
 
-        #region filmesMenu
+        #region moviesMenu
         private void buttonFilmes_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelFilmesSubmenu);
+            showSubMenu(panelMoviesSubmenu);
         }
-        #endregion filmesMenu
+        #endregion moviesMenu
 
-        #region clientesMenu
+        #region clientsMenu
         private void buttonClientes_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelClientesSubmenu);
+            showSubMenu(panelClientsSubmenu);
         }
-        #endregion clientesMenu
+        #endregion clientsMenu
 
         private Form activeForm = null;
         private void openChildForm(Form childForm)
