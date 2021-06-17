@@ -32,47 +32,47 @@ namespace CinemaManagment
             this.components = new System.ComponentModel.Container();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.buttonEmpregados = new System.Windows.Forms.Button();
-            this.panelEmpregadosSubmenu = new System.Windows.Forms.Panel();
-            this.buttonVendedores = new System.Windows.Forms.Button();
-            this.buttonLimpezas = new System.Windows.Forms.Button();
-            this.buttonSalas = new System.Windows.Forms.Button();
-            this.panelSalasSubmenu = new System.Windows.Forms.Panel();
+            this.buttonEmployees = new System.Windows.Forms.Button();
+            this.panelEmployeesSubmenu = new System.Windows.Forms.Panel();
+            this.buttonVendors = new System.Windows.Forms.Button();
+            this.buttonCleaners = new System.Windows.Forms.Button();
+            this.buttonRooms = new System.Windows.Forms.Button();
+            this.panelRoomsSubmenu = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.buttonFilmes = new System.Windows.Forms.Button();
-            this.panelFilmesSubmenu = new System.Windows.Forms.Panel();
+            this.buttonMovies = new System.Windows.Forms.Button();
+            this.panelMoviesSubmenu = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.buttonClientes = new System.Windows.Forms.Button();
-            this.panelClientesSubmenu = new System.Windows.Forms.Panel();
+            this.buttonClients = new System.Windows.Forms.Button();
+            this.panelClientsSubmenu = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            this.panelEmpregadosSubmenu.SuspendLayout();
-            this.panelSalasSubmenu.SuspendLayout();
-            this.panelFilmesSubmenu.SuspendLayout();
-            this.panelClientesSubmenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.panelEmployeesSubmenu.SuspendLayout();
+            this.panelRoomsSubmenu.SuspendLayout();
+            this.panelMoviesSubmenu.SuspendLayout();
+            this.panelClientsSubmenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panelSideMenu.Controls.Add(this.panelClientesSubmenu);
-            this.panelSideMenu.Controls.Add(this.buttonClientes);
-            this.panelSideMenu.Controls.Add(this.panelFilmesSubmenu);
-            this.panelSideMenu.Controls.Add(this.buttonFilmes);
-            this.panelSideMenu.Controls.Add(this.panelSalasSubmenu);
-            this.panelSideMenu.Controls.Add(this.buttonSalas);
-            this.panelSideMenu.Controls.Add(this.panelEmpregadosSubmenu);
-            this.panelSideMenu.Controls.Add(this.buttonEmpregados);
+            this.panelSideMenu.Controls.Add(this.panelClientsSubmenu);
+            this.panelSideMenu.Controls.Add(this.buttonClients);
+            this.panelSideMenu.Controls.Add(this.panelMoviesSubmenu);
+            this.panelSideMenu.Controls.Add(this.buttonMovies);
+            this.panelSideMenu.Controls.Add(this.panelRoomsSubmenu);
+            this.panelSideMenu.Controls.Add(this.buttonRooms);
+            this.panelSideMenu.Controls.Add(this.panelEmployeesSubmenu);
+            this.panelSideMenu.Controls.Add(this.buttonEmployees);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
@@ -89,82 +89,82 @@ namespace CinemaManagment
             this.panelLogo.Size = new System.Drawing.Size(229, 100);
             this.panelLogo.TabIndex = 0;
             // 
-            // buttonEmpregados
+            // buttonEmployees
             // 
-            this.buttonEmpregados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonEmpregados.FlatAppearance.BorderSize = 0;
-            this.buttonEmpregados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEmpregados.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonEmpregados.Location = new System.Drawing.Point(0, 100);
-            this.buttonEmpregados.Name = "buttonEmpregados";
-            this.buttonEmpregados.Size = new System.Drawing.Size(229, 45);
-            this.buttonEmpregados.TabIndex = 1;
-            this.buttonEmpregados.Text = "Gerir Empregados";
-            this.buttonEmpregados.UseVisualStyleBackColor = true;
-            this.buttonEmpregados.Click += new System.EventHandler(this.buttonEmpregados_Click);
+            this.buttonEmployees.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonEmployees.FlatAppearance.BorderSize = 0;
+            this.buttonEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEmployees.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonEmployees.Location = new System.Drawing.Point(0, 100);
+            this.buttonEmployees.Name = "buttonEmployees";
+            this.buttonEmployees.Size = new System.Drawing.Size(229, 45);
+            this.buttonEmployees.TabIndex = 1;
+            this.buttonEmployees.Text = "Manage Employees";
+            this.buttonEmployees.UseVisualStyleBackColor = true;
+            this.buttonEmployees.Click += new System.EventHandler(this.buttonEmpregados_Click);
             // 
-            // panelEmpregadosSubmenu
+            // panelEmployeesSubmenu
             // 
-            this.panelEmpregadosSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelEmpregadosSubmenu.Controls.Add(this.buttonLimpezas);
-            this.panelEmpregadosSubmenu.Controls.Add(this.buttonVendedores);
-            this.panelEmpregadosSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelEmpregadosSubmenu.Location = new System.Drawing.Point(0, 145);
-            this.panelEmpregadosSubmenu.Name = "panelEmpregadosSubmenu";
-            this.panelEmpregadosSubmenu.Size = new System.Drawing.Size(229, 86);
-            this.panelEmpregadosSubmenu.TabIndex = 2;
+            this.panelEmployeesSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelEmployeesSubmenu.Controls.Add(this.buttonCleaners);
+            this.panelEmployeesSubmenu.Controls.Add(this.buttonVendors);
+            this.panelEmployeesSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelEmployeesSubmenu.Location = new System.Drawing.Point(0, 145);
+            this.panelEmployeesSubmenu.Name = "panelEmployeesSubmenu";
+            this.panelEmployeesSubmenu.Size = new System.Drawing.Size(229, 86);
+            this.panelEmployeesSubmenu.TabIndex = 2;
             // 
-            // buttonVendedores
+            // buttonVendors
             // 
-            this.buttonVendedores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonVendedores.FlatAppearance.BorderSize = 0;
-            this.buttonVendedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonVendedores.ForeColor = System.Drawing.Color.LightGray;
-            this.buttonVendedores.Location = new System.Drawing.Point(0, 0);
-            this.buttonVendedores.Name = "buttonVendedores";
-            this.buttonVendedores.Size = new System.Drawing.Size(229, 40);
-            this.buttonVendedores.TabIndex = 0;
-            this.buttonVendedores.Text = "Vendedores";
-            this.buttonVendedores.UseVisualStyleBackColor = true;
-            this.buttonVendedores.Click += new System.EventHandler(this.buttonVendedores_Click);
+            this.buttonVendors.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonVendors.FlatAppearance.BorderSize = 0;
+            this.buttonVendors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVendors.ForeColor = System.Drawing.Color.LightGray;
+            this.buttonVendors.Location = new System.Drawing.Point(0, 0);
+            this.buttonVendors.Name = "buttonVendors";
+            this.buttonVendors.Size = new System.Drawing.Size(229, 40);
+            this.buttonVendors.TabIndex = 0;
+            this.buttonVendors.Text = "Vendors";
+            this.buttonVendors.UseVisualStyleBackColor = true;
+            this.buttonVendors.Click += new System.EventHandler(this.buttonVendedores_Click);
             // 
-            // buttonLimpezas
+            // buttonCleaners
             // 
-            this.buttonLimpezas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonLimpezas.FlatAppearance.BorderSize = 0;
-            this.buttonLimpezas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLimpezas.ForeColor = System.Drawing.Color.LightGray;
-            this.buttonLimpezas.Location = new System.Drawing.Point(0, 40);
-            this.buttonLimpezas.Name = "buttonLimpezas";
-            this.buttonLimpezas.Size = new System.Drawing.Size(229, 40);
-            this.buttonLimpezas.TabIndex = 1;
-            this.buttonLimpezas.Text = "Limpezas";
-            this.buttonLimpezas.UseVisualStyleBackColor = true;
+            this.buttonCleaners.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCleaners.FlatAppearance.BorderSize = 0;
+            this.buttonCleaners.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCleaners.ForeColor = System.Drawing.Color.LightGray;
+            this.buttonCleaners.Location = new System.Drawing.Point(0, 40);
+            this.buttonCleaners.Name = "buttonCleaners";
+            this.buttonCleaners.Size = new System.Drawing.Size(229, 40);
+            this.buttonCleaners.TabIndex = 1;
+            this.buttonCleaners.Text = "Cleaners";
+            this.buttonCleaners.UseVisualStyleBackColor = true;
             // 
-            // buttonSalas
+            // buttonRooms
             // 
-            this.buttonSalas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSalas.FlatAppearance.BorderSize = 0;
-            this.buttonSalas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSalas.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonSalas.Location = new System.Drawing.Point(0, 231);
-            this.buttonSalas.Name = "buttonSalas";
-            this.buttonSalas.Size = new System.Drawing.Size(229, 45);
-            this.buttonSalas.TabIndex = 3;
-            this.buttonSalas.Text = "Gerir Salas";
-            this.buttonSalas.UseVisualStyleBackColor = true;
-            this.buttonSalas.Click += new System.EventHandler(this.buttonSalas_Click);
+            this.buttonRooms.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonRooms.FlatAppearance.BorderSize = 0;
+            this.buttonRooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRooms.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonRooms.Location = new System.Drawing.Point(0, 231);
+            this.buttonRooms.Name = "buttonRooms";
+            this.buttonRooms.Size = new System.Drawing.Size(229, 45);
+            this.buttonRooms.TabIndex = 3;
+            this.buttonRooms.Text = "Manage Rooms";
+            this.buttonRooms.UseVisualStyleBackColor = true;
+            this.buttonRooms.Click += new System.EventHandler(this.buttonSalas_Click);
             // 
-            // panelSalasSubmenu
+            // panelRoomsSubmenu
             // 
-            this.panelSalasSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelSalasSubmenu.Controls.Add(this.button2);
-            this.panelSalasSubmenu.Controls.Add(this.button3);
-            this.panelSalasSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSalasSubmenu.Location = new System.Drawing.Point(0, 276);
-            this.panelSalasSubmenu.Name = "panelSalasSubmenu";
-            this.panelSalasSubmenu.Size = new System.Drawing.Size(229, 86);
-            this.panelSalasSubmenu.TabIndex = 4;
+            this.panelRoomsSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelRoomsSubmenu.Controls.Add(this.button2);
+            this.panelRoomsSubmenu.Controls.Add(this.button3);
+            this.panelRoomsSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelRoomsSubmenu.Location = new System.Drawing.Point(0, 276);
+            this.panelRoomsSubmenu.Name = "panelRoomsSubmenu";
+            this.panelRoomsSubmenu.Size = new System.Drawing.Size(229, 86);
+            this.panelRoomsSubmenu.TabIndex = 4;
             // 
             // button2
             // 
@@ -192,30 +192,30 @@ namespace CinemaManagment
             this.button3.Text = "Vendedores";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // buttonFilmes
+            // buttonMovies
             // 
-            this.buttonFilmes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonFilmes.FlatAppearance.BorderSize = 0;
-            this.buttonFilmes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFilmes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonFilmes.Location = new System.Drawing.Point(0, 362);
-            this.buttonFilmes.Name = "buttonFilmes";
-            this.buttonFilmes.Size = new System.Drawing.Size(229, 45);
-            this.buttonFilmes.TabIndex = 5;
-            this.buttonFilmes.Text = "Gerir Biblioteca de Filmes";
-            this.buttonFilmes.UseVisualStyleBackColor = true;
-            this.buttonFilmes.Click += new System.EventHandler(this.buttonFilmes_Click);
+            this.buttonMovies.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMovies.FlatAppearance.BorderSize = 0;
+            this.buttonMovies.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMovies.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonMovies.Location = new System.Drawing.Point(0, 362);
+            this.buttonMovies.Name = "buttonMovies";
+            this.buttonMovies.Size = new System.Drawing.Size(229, 45);
+            this.buttonMovies.TabIndex = 5;
+            this.buttonMovies.Text = "Manage Movies Library";
+            this.buttonMovies.UseVisualStyleBackColor = true;
+            this.buttonMovies.Click += new System.EventHandler(this.buttonFilmes_Click);
             // 
-            // panelFilmesSubmenu
+            // panelMoviesSubmenu
             // 
-            this.panelFilmesSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelFilmesSubmenu.Controls.Add(this.button5);
-            this.panelFilmesSubmenu.Controls.Add(this.button6);
-            this.panelFilmesSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelFilmesSubmenu.Location = new System.Drawing.Point(0, 407);
-            this.panelFilmesSubmenu.Name = "panelFilmesSubmenu";
-            this.panelFilmesSubmenu.Size = new System.Drawing.Size(229, 86);
-            this.panelFilmesSubmenu.TabIndex = 6;
+            this.panelMoviesSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelMoviesSubmenu.Controls.Add(this.button5);
+            this.panelMoviesSubmenu.Controls.Add(this.button6);
+            this.panelMoviesSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMoviesSubmenu.Location = new System.Drawing.Point(0, 407);
+            this.panelMoviesSubmenu.Name = "panelMoviesSubmenu";
+            this.panelMoviesSubmenu.Size = new System.Drawing.Size(229, 86);
+            this.panelMoviesSubmenu.TabIndex = 6;
             // 
             // button5
             // 
@@ -243,30 +243,30 @@ namespace CinemaManagment
             this.button6.Text = "Vendedores";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // buttonClientes
+            // buttonClients
             // 
-            this.buttonClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonClientes.FlatAppearance.BorderSize = 0;
-            this.buttonClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClientes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonClientes.Location = new System.Drawing.Point(0, 493);
-            this.buttonClientes.Name = "buttonClientes";
-            this.buttonClientes.Size = new System.Drawing.Size(229, 45);
-            this.buttonClientes.TabIndex = 7;
-            this.buttonClientes.Text = "Gerir Clientes";
-            this.buttonClientes.UseVisualStyleBackColor = true;
-            this.buttonClientes.Click += new System.EventHandler(this.buttonClientes_Click);
+            this.buttonClients.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonClients.FlatAppearance.BorderSize = 0;
+            this.buttonClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClients.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonClients.Location = new System.Drawing.Point(0, 493);
+            this.buttonClients.Name = "buttonClients";
+            this.buttonClients.Size = new System.Drawing.Size(229, 45);
+            this.buttonClients.TabIndex = 7;
+            this.buttonClients.Text = "Manage Clients";
+            this.buttonClients.UseVisualStyleBackColor = true;
+            this.buttonClients.Click += new System.EventHandler(this.buttonClientes_Click);
             // 
-            // panelClientesSubmenu
+            // panelClientsSubmenu
             // 
-            this.panelClientesSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelClientesSubmenu.Controls.Add(this.button8);
-            this.panelClientesSubmenu.Controls.Add(this.button9);
-            this.panelClientesSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelClientesSubmenu.Location = new System.Drawing.Point(0, 538);
-            this.panelClientesSubmenu.Name = "panelClientesSubmenu";
-            this.panelClientesSubmenu.Size = new System.Drawing.Size(229, 86);
-            this.panelClientesSubmenu.TabIndex = 8;
+            this.panelClientsSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelClientsSubmenu.Controls.Add(this.button8);
+            this.panelClientsSubmenu.Controls.Add(this.button9);
+            this.panelClientsSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelClientsSubmenu.Location = new System.Drawing.Point(0, 538);
+            this.panelClientsSubmenu.Name = "panelClientsSubmenu";
+            this.panelClientsSubmenu.Size = new System.Drawing.Size(229, 86);
+            this.panelClientsSubmenu.TabIndex = 8;
             // 
             // button8
             // 
@@ -329,12 +329,12 @@ namespace CinemaManagment
             this.Text = "Form1";
             this.panelSideMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            this.panelEmpregadosSubmenu.ResumeLayout(false);
-            this.panelSalasSubmenu.ResumeLayout(false);
-            this.panelFilmesSubmenu.ResumeLayout(false);
-            this.panelClientesSubmenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.panelEmployeesSubmenu.ResumeLayout(false);
+            this.panelRoomsSubmenu.ResumeLayout(false);
+            this.panelMoviesSubmenu.ResumeLayout(false);
+            this.panelClientsSubmenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -343,23 +343,23 @@ namespace CinemaManagment
 
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Panel panelSideMenu;
-        private System.Windows.Forms.Panel panelEmpregadosSubmenu;
-        private System.Windows.Forms.Button buttonLimpezas;
-        private System.Windows.Forms.Button buttonVendedores;
-        private System.Windows.Forms.Button buttonEmpregados;
+        private System.Windows.Forms.Panel panelEmployeesSubmenu;
+        private System.Windows.Forms.Button buttonCleaners;
+        private System.Windows.Forms.Button buttonVendors;
+        private System.Windows.Forms.Button buttonEmployees;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Panel panelClientesSubmenu;
+        private System.Windows.Forms.Panel panelClientsSubmenu;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button buttonClientes;
-        private System.Windows.Forms.Panel panelFilmesSubmenu;
+        private System.Windows.Forms.Button buttonClients;
+        private System.Windows.Forms.Panel panelMoviesSubmenu;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button buttonFilmes;
-        private System.Windows.Forms.Panel panelSalasSubmenu;
+        private System.Windows.Forms.Button buttonMovies;
+        private System.Windows.Forms.Panel panelRoomsSubmenu;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button buttonSalas;
+        private System.Windows.Forms.Button buttonRooms;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
