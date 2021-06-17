@@ -1,4 +1,6 @@
 use proj_cinema;
+GO
+CREATE SCHEMA locations;
 go
 create schema operations;
 go
