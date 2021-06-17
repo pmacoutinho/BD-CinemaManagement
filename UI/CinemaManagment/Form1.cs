@@ -26,6 +26,7 @@ namespace CinemaManagment
             panelClientsSubmenu.Visible = false;
         }
 
+        #region hide/show subMenu
         private void hideSubMenu()
         {
             if (panelEmployeesSubmenu.Visible == true)
@@ -51,35 +52,37 @@ namespace CinemaManagment
             else
                 subMenu.Visible = false;
         }
+        #endregion hide/show subMenu
 
         #region employeesMenu
-        private void buttonEmpregados_Click(object sender, EventArgs e)
+        private void buttonEmployees_Click(object sender, EventArgs e)
         {
             showSubMenu(panelEmployeesSubmenu);
         }
 
-        private void buttonVendedores_Click(object sender, EventArgs e)
+        private void buttonVendors_Click(object sender, EventArgs e)
         {
             openChildForm(new Form1());
         }
+
         #endregion employeesMenu
 
         #region roomsMenu
-        private void buttonSalas_Click(object sender, EventArgs e)
+        private void buttonRooms_Click(object sender, EventArgs e)
         {
             showSubMenu(panelRoomsSubmenu);
         }
         #endregion roomsMenu
 
         #region moviesMenu
-        private void buttonFilmes_Click(object sender, EventArgs e)
+        private void buttonMovies_Click(object sender, EventArgs e)
         {
             showSubMenu(panelMoviesSubmenu);
         }
         #endregion moviesMenu
 
         #region clientsMenu
-        private void buttonClientes_Click(object sender, EventArgs e)
+        private void buttonClients_Click(object sender, EventArgs e)
         {
             showSubMenu(panelClientsSubmenu);
         }
