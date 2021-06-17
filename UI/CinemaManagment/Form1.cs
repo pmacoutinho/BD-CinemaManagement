@@ -62,7 +62,7 @@ namespace CinemaManagment
 
         private void buttonVendors_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form1());
+            openChildForm(new Form2());
         }
 
         #endregion employeesMenu
@@ -103,5 +103,6 @@ namespace CinemaManagment
             childForm.BringToFront();
             childForm.Show();
         }
+
     }
 }

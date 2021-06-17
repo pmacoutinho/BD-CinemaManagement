@@ -8,3 +8,4 @@ C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.csproj.CoreCompileInputs.cache
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.exe
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.pdb
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.Form2.resources
