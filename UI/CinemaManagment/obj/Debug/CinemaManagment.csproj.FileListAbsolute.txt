@@ -1,0 +1,10 @@
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\bin\Debug\CinemaManagment.exe.config
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\bin\Debug\CinemaManagment.exe
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\bin\Debug\CinemaManagment.pdb
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.csprojAssemblyReference.cache
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.Form1.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.Properties.Resources.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.csproj.GenerateResource.cache
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.exe
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.pdb
