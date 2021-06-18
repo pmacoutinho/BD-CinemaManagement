@@ -14,6 +14,12 @@ insert into data.Film values (8241000, 'Os Flofos', 84, 'David Silverman');
 insert into data.Film values (9335498, 'Demon Slayer - Kimetsu No Yaiba - O Filme: Comboio Infinito', 117, 'Haruo Sotozaki');
 insert into data.Film values (8385148, 'O Guarda-Costas e a Mulher do Assassino', 116, 'Patrick Hughes');
 
+insert into data.Film values (9599292, 'O Pai', 7, 'Florian Zeller');
+insert into data.Film values (11083552, 'Um Homem Furioso', 119, 'Guy Ritchie');
+insert into data.Film values (1321510, 'Ao Ritmo de Washington Heigths', 143, 'Jon M. Chu');
+insert into data.Film values (8368512, 'O Espião Inglês', 112, 'Dominic Cooke');
+insert into data.Film values (11169050, 'Supernova', 95, 'Harry Macqueen');
+
 
 
 go
@@ -47,6 +53,11 @@ insert into data.Session values (2, 8332922, 6, '19:20');
 insert into data.Session values (2, 8332922, 6, '22:20');
 insert into data.Session values (2, 8332922, 7, '19:20');
 insert into data.Session values (2, 8332922, 7, '22:20');
+go
+-- Peter Rabbit palacio do gelo
+
+
+-- Petter Rabbit forum viseu
 
 
 

@@ -5,6 +5,7 @@ create table Location.Cinema(
 	name	varchar(max) not null,
 	location varchar(max) not null
 );
+
 -- Manegment Schema
 create table Management.Employee_Type(
 	num		int		Primary Key IDENTITY(0,1),
@@ -21,11 +22,17 @@ create table Management.Employee_Shift(
 create table Management.Employee(
 	id		int		Primary Key IDENTITY(0,1),
 	name	varchar(max) not null,
-	eType	int,
+	email   varchar(max),
+	location int not null,
 	eShift	int,
+	eType	int,
 
 	-- supervisor
 	-- deferrable constraints? R: not supported
+    CONSTRAINT FK_employee_location FOREIGN KEY (location)
+      REFERENCES Location.Cinema(id)
+      ON UPDATE CASCADE
+	  ON DELETE CASCADE,
 
 	CONSTRAINT FK_employee_type FOREIGN KEY (eType)
       REFERENCES Management.Employee_Type(num)
@@ -115,7 +122,6 @@ create table Operations.Cleaning_Record(
       REFERENCES Management.Employee(id)
       ON UPDATE CASCADE,
 );
-
 
 create table Operations.Client(
 	id		int	Primary Key IDENTITY(0,1),
