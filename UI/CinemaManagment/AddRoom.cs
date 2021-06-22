@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace CinemaManagment
 {
-    public partial class Form1 : Form
+    public partial class AddRoom : Form
     {
-        public Form1()
+        public AddRoom()
         {
             InitializeComponent();
+            customizeDesign();
+        }
+
+        private void customizeDesign()
+        {
+            ListRoom listRoom = new ListRoom();
+            if (listRoom.buttonClicked == "edit")
+                labelAddRoom.Text = "Edit Room";
+            else
+                labelAddRoom.Text = "Add Room";
         }
     }
 }

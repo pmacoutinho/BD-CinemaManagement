@@ -7,6 +7,13 @@ C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.exe
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.pdb
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.csproj.AssemblyReference.cache
-C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.FormVendorList.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.AddEmployee.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.MainMenu.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.AddClient.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.AddMovie.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.AddRoom.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.ListCleaner.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.ListClient.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.ListMovie.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.ListRoom.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\CinemaManagment\obj\Debug\CinemaManagment.ListVendor.resources

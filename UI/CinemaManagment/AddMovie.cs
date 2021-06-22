@@ -15,6 +15,16 @@ namespace CinemaManagment
         public AddMovie()
         {
             InitializeComponent();
+            customizeDesign();
+        }
+
+        private void customizeDesign()
+        {
+            ListMovie listMovie = new ListMovie();
+            if (listMovie.buttonClicked == "edit")
+                labelAddMovie.Text = "Edit Movie";
+            else
+                labelAddMovie.Text = "Add Movie";
         }
     }
 }

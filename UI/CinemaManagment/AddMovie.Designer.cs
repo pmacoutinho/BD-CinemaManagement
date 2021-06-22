@@ -91,7 +91,7 @@ namespace CinemaManagment
             this.labelDirector.AutoSize = true;
             this.labelDirector.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDirector.ForeColor = System.Drawing.Color.White;
-            this.labelDirector.Location = new System.Drawing.Point(14, 220);
+            this.labelDirector.Location = new System.Drawing.Point(14, 215);
             this.labelDirector.Name = "labelDirector";
             this.labelDirector.Size = new System.Drawing.Size(84, 28);
             this.labelDirector.TabIndex = 12;
@@ -99,15 +99,16 @@ namespace CinemaManagment
             // 
             // textBoxDirector
             // 
-            this.textBoxDirector.Location = new System.Drawing.Point(17, 251);
+            this.textBoxDirector.Location = new System.Drawing.Point(17, 246);
             this.textBoxDirector.Name = "textBoxDirector";
             this.textBoxDirector.Size = new System.Drawing.Size(269, 22);
             this.textBoxDirector.TabIndex = 13;
             // 
             // roundedButtonAdd
             // 
-            this.roundedButtonAdd.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundedButtonAdd.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundedButtonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonAdd.BackColor = System.Drawing.Color.SlateBlue;
+            this.roundedButtonAdd.BackgroundColor = System.Drawing.Color.SlateBlue;
             this.roundedButtonAdd.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.roundedButtonAdd.BorderRadius = 20;
             this.roundedButtonAdd.BorderSize = 0;
@@ -115,9 +116,9 @@ namespace CinemaManagment
             this.roundedButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonAdd.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonAdd.Location = new System.Drawing.Point(524, 442);
+            this.roundedButtonAdd.Location = new System.Drawing.Point(552, 447);
             this.roundedButtonAdd.Name = "roundedButtonAdd";
-            this.roundedButtonAdd.Size = new System.Drawing.Size(98, 40);
+            this.roundedButtonAdd.Size = new System.Drawing.Size(100, 47);
             this.roundedButtonAdd.TabIndex = 18;
             this.roundedButtonAdd.Text = "Add";
             this.roundedButtonAdd.TextColor = System.Drawing.Color.White;
@@ -139,7 +140,7 @@ namespace CinemaManagment
             this.Controls.Add(this.labelAddMovie);
             this.MaximumSize = new System.Drawing.Size(682, 553);
             this.Name = "AddMovie";
-            this.Text = "AddMovie";
+            this.Text = "Add Movie";
             this.ResumeLayout(false);
             this.PerformLayout();
 

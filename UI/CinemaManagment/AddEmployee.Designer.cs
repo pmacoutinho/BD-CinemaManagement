@@ -61,7 +61,7 @@ namespace CinemaManagment
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.ForeColor = System.Drawing.Color.White;
-            this.labelName.Location = new System.Drawing.Point(7, 141);
+            this.labelName.Location = new System.Drawing.Point(12, 141);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(66, 28);
             this.labelName.TabIndex = 5;
@@ -69,17 +69,18 @@ namespace CinemaManagment
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(12, 172);
+            this.textBoxName.Location = new System.Drawing.Point(17, 172);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(269, 22);
             this.textBoxName.TabIndex = 6;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // labelNum
             // 
             this.labelNum.AutoSize = true;
             this.labelNum.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNum.ForeColor = System.Drawing.Color.White;
-            this.labelNum.Location = new System.Drawing.Point(7, 68);
+            this.labelNum.Location = new System.Drawing.Point(12, 68);
             this.labelNum.Name = "labelNum";
             this.labelNum.Size = new System.Drawing.Size(182, 28);
             this.labelNum.TabIndex = 7;
@@ -87,7 +88,7 @@ namespace CinemaManagment
             // 
             // textBoxNum
             // 
-            this.textBoxNum.Location = new System.Drawing.Point(12, 99);
+            this.textBoxNum.Location = new System.Drawing.Point(17, 99);
             this.textBoxNum.Name = "textBoxNum";
             this.textBoxNum.Size = new System.Drawing.Size(269, 22);
             this.textBoxNum.TabIndex = 8;
@@ -97,7 +98,7 @@ namespace CinemaManagment
             this.labelShift.AutoSize = true;
             this.labelShift.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelShift.ForeColor = System.Drawing.Color.White;
-            this.labelShift.Location = new System.Drawing.Point(7, 215);
+            this.labelShift.Location = new System.Drawing.Point(12, 216);
             this.labelShift.Name = "labelShift";
             this.labelShift.Size = new System.Drawing.Size(54, 28);
             this.labelShift.TabIndex = 9;
@@ -106,7 +107,7 @@ namespace CinemaManagment
             // comboBoxShift
             // 
             this.comboBoxShift.FormattingEnabled = true;
-            this.comboBoxShift.Location = new System.Drawing.Point(12, 247);
+            this.comboBoxShift.Location = new System.Drawing.Point(17, 247);
             this.comboBoxShift.Name = "comboBoxShift";
             this.comboBoxShift.Size = new System.Drawing.Size(121, 24);
             this.comboBoxShift.TabIndex = 10;
@@ -116,7 +117,7 @@ namespace CinemaManagment
             this.labelRole.AutoSize = true;
             this.labelRole.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRole.ForeColor = System.Drawing.Color.White;
-            this.labelRole.Location = new System.Drawing.Point(7, 289);
+            this.labelRole.Location = new System.Drawing.Point(12, 289);
             this.labelRole.Name = "labelRole";
             this.labelRole.Size = new System.Drawing.Size(51, 28);
             this.labelRole.TabIndex = 11;
@@ -125,7 +126,7 @@ namespace CinemaManagment
             // comboBoxRole
             // 
             this.comboBoxRole.FormattingEnabled = true;
-            this.comboBoxRole.Location = new System.Drawing.Point(12, 320);
+            this.comboBoxRole.Location = new System.Drawing.Point(17, 320);
             this.comboBoxRole.Name = "comboBoxRole";
             this.comboBoxRole.Size = new System.Drawing.Size(121, 24);
             this.comboBoxRole.TabIndex = 12;
@@ -135,7 +136,7 @@ namespace CinemaManagment
             this.labelSupervisor.AutoSize = true;
             this.labelSupervisor.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSupervisor.ForeColor = System.Drawing.Color.White;
-            this.labelSupervisor.Location = new System.Drawing.Point(7, 365);
+            this.labelSupervisor.Location = new System.Drawing.Point(12, 365);
             this.labelSupervisor.Name = "labelSupervisor";
             this.labelSupervisor.Size = new System.Drawing.Size(109, 28);
             this.labelSupervisor.TabIndex = 13;
@@ -143,7 +144,7 @@ namespace CinemaManagment
             // 
             // textBoxSupervisor
             // 
-            this.textBoxSupervisor.Location = new System.Drawing.Point(12, 396);
+            this.textBoxSupervisor.Location = new System.Drawing.Point(17, 396);
             this.textBoxSupervisor.Name = "textBoxSupervisor";
             this.textBoxSupervisor.Size = new System.Drawing.Size(269, 22);
             this.textBoxSupervisor.TabIndex = 14;
@@ -168,8 +169,9 @@ namespace CinemaManagment
             // 
             // roundedButtonAdd
             // 
-            this.roundedButtonAdd.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundedButtonAdd.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundedButtonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonAdd.BackColor = System.Drawing.Color.SlateBlue;
+            this.roundedButtonAdd.BackgroundColor = System.Drawing.Color.SlateBlue;
             this.roundedButtonAdd.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.roundedButtonAdd.BorderRadius = 20;
             this.roundedButtonAdd.BorderSize = 0;
@@ -177,9 +179,9 @@ namespace CinemaManagment
             this.roundedButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonAdd.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonAdd.Location = new System.Drawing.Point(526, 443);
+            this.roundedButtonAdd.Location = new System.Drawing.Point(552, 447);
             this.roundedButtonAdd.Name = "roundedButtonAdd";
-            this.roundedButtonAdd.Size = new System.Drawing.Size(98, 40);
+            this.roundedButtonAdd.Size = new System.Drawing.Size(100, 47);
             this.roundedButtonAdd.TabIndex = 17;
             this.roundedButtonAdd.Text = "Add";
             this.roundedButtonAdd.TextColor = System.Drawing.Color.White;
@@ -208,7 +210,7 @@ namespace CinemaManagment
             this.Controls.Add(this.labelAddEmployee);
             this.MinimumSize = new System.Drawing.Size(682, 553);
             this.Name = "AddEmployee";
-            this.Text = "AddEmployee";
+            this.Text = "Add Employee";
             this.ResumeLayout(false);
             this.PerformLayout();
 

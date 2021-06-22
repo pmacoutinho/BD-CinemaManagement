@@ -15,6 +15,21 @@ namespace CinemaManagment
         public AddClient()
         {
             InitializeComponent();
+            customizeDesign();
+        }
+
+        private void customizeDesign()
+        {
+            ListClient listClient = new ListClient();
+            if (listClient.buttonClicked == "edit")
+                labelAddClient.Text = "Edit Client";
+            else
+                labelAddClient.Text = "Add Client";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

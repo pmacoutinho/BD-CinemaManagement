@@ -20,6 +20,14 @@ namespace CinemaManagment
 
         private void customizeDesign()
         {
+            ListCleaner listCleaner = new ListCleaner();
+            ListVendor listVendor = new ListVendor();
+
+            if (listCleaner.buttonClicked == "edit" || listVendor.buttonClicked == "edit")
+                labelAddEmployee.Text = "Edit Employee";
+            else
+                labelAddEmployee.Text = "Add Employee";
+
             comboBoxShift.Items.Add("9-12");
             comboBoxShift.Items.Add("12-15");
             comboBoxShift.Items.Add("15-18");
@@ -31,6 +39,11 @@ namespace CinemaManagment
         }
 
         private void roundedButtonAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
         {
 
         }

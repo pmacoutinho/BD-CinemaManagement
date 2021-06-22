@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,9 +22,6 @@ namespace CinemaManagment
         private void customizeDesign()
         {
             panelEmployeesSubmenu.Visible = false;
-            panelRoomsSubmenu.Visible = false;
-            panelMoviesSubmenu.Visible = false;
-            panelClientsSubmenu.Visible = false;
         }
 
         #region hide/show subMenu
@@ -31,15 +29,6 @@ namespace CinemaManagment
         {
             if (panelEmployeesSubmenu.Visible == true)
                 panelEmployeesSubmenu.Visible = false;
-
-            if (panelRoomsSubmenu.Visible == true)
-                panelRoomsSubmenu.Visible = false;
-
-            if (panelMoviesSubmenu.Visible == true)
-                panelMoviesSubmenu.Visible = false;
-
-            if (panelClientsSubmenu.Visible == true)
-                panelClientsSubmenu.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -62,7 +51,12 @@ namespace CinemaManagment
 
         private void buttonVendors_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormVendorList());
+            openChildForm(new ListVendor());
+        }
+
+        private void buttonCleaners_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ListCleaner());
         }
 
         #endregion employeesMenu
@@ -70,25 +64,28 @@ namespace CinemaManagment
         #region roomsMenu
         private void buttonRooms_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelRoomsSubmenu);
+            hideSubMenu();
+            openChildForm(new ListRoom());
         }
         #endregion roomsMenu
 
         #region moviesMenu
         private void buttonMovies_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelMoviesSubmenu);
+            hideSubMenu();
+            openChildForm(new ListMovie());
         }
         #endregion moviesMenu
 
         #region clientsMenu
         private void buttonClients_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelClientsSubmenu);
+            hideSubMenu();
+            openChildForm(new ListClient());
         }
         #endregion clientsMenu
 
-        private Form activeForm = null;
+        public Form activeForm = null;
         public void openChildForm(Form childForm)
         {
             if (activeForm != null)
@@ -103,6 +100,5 @@ namespace CinemaManagment
             childForm.BringToFront();
             childForm.Show();
         }
-
     }
 }
