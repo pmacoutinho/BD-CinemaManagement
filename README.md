@@ -1,6 +1,6 @@
 # BD-CinemaManagment
 
-# UI
+## UI
 UI is mostly done, just needs some small adjustments and code to work with the sql database
 
 ### TODO
