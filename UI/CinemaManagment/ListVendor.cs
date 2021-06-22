@@ -62,7 +62,11 @@ namespace CinemaManagment
                 );
         }
 
-        public String buttonClicked = "";
+        public static String buttonClicked = "";
+        public String getButtonClicked()
+        {
+            return buttonClicked;
+        }
 
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {

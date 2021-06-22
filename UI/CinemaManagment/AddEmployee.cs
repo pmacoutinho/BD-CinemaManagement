@@ -23,7 +23,7 @@ namespace CinemaManagment
             ListCleaner listCleaner = new ListCleaner();
             ListVendor listVendor = new ListVendor();
 
-            if (listCleaner.buttonClicked == "edit" || listVendor.buttonClicked == "edit")
+            if (listCleaner.getButtonClicked() == "edit" || listVendor.getButtonClicked() == "edit")
                 labelAddEmployee.Text = "Edit Employee";
             else
                 labelAddEmployee.Text = "Add Employee";

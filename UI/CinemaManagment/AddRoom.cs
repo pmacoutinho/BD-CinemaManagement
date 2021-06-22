@@ -21,7 +21,7 @@ namespace CinemaManagment
         private void customizeDesign()
         {
             ListRoom listRoom = new ListRoom();
-            if (listRoom.buttonClicked == "edit")
+            if (listRoom.getButtonClicked() == "edit")
                 labelAddRoom.Text = "Edit Room";
             else
                 labelAddRoom.Text = "Add Room";

@@ -33,14 +33,14 @@ namespace CinemaManagment
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewVendors = new System.Windows.Forms.DataGridView();
-            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Shift = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Supervisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelVendorList = new System.Windows.Forms.Label();
             this.roundedButtonDetails = new CustomControls.RJControls.RoundedButton();
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
             this.roundedButtonEdit = new CustomControls.RJControls.RoundedButton();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Shift = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Supervisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVendors)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,34 +94,6 @@ namespace CinemaManagment
             this.dataGridViewVendors.RowTemplate.Height = 40;
             this.dataGridViewVendors.Size = new System.Drawing.Size(658, 465);
             this.dataGridViewVendors.TabIndex = 0;
-            // 
-            // Num
-            // 
-            this.Num.HeaderText = "Num";
-            this.Num.MinimumWidth = 6;
-            this.Num.Name = "Num";
-            this.Num.ReadOnly = true;
-            // 
-            // EmployeeName
-            // 
-            this.EmployeeName.HeaderText = "Name";
-            this.EmployeeName.MinimumWidth = 6;
-            this.EmployeeName.Name = "EmployeeName";
-            this.EmployeeName.ReadOnly = true;
-            // 
-            // Shift
-            // 
-            this.Shift.HeaderText = "Shift";
-            this.Shift.MinimumWidth = 6;
-            this.Shift.Name = "Shift";
-            this.Shift.ReadOnly = true;
-            // 
-            // Supervisor
-            // 
-            this.Supervisor.HeaderText = "Supervisor";
-            this.Supervisor.MinimumWidth = 6;
-            this.Supervisor.Name = "Supervisor";
-            this.Supervisor.ReadOnly = true;
             // 
             // labelVendorList
             // 
@@ -199,6 +171,34 @@ namespace CinemaManagment
             this.roundedButtonEdit.UseVisualStyleBackColor = false;
             this.roundedButtonEdit.Click += new System.EventHandler(this.roundedButtonEdit_Click);
             // 
+            // Num
+            // 
+            this.Num.HeaderText = "Num";
+            this.Num.MinimumWidth = 6;
+            this.Num.Name = "Num";
+            this.Num.ReadOnly = true;
+            // 
+            // EmployeeName
+            // 
+            this.EmployeeName.HeaderText = "Name";
+            this.EmployeeName.MinimumWidth = 6;
+            this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.ReadOnly = true;
+            // 
+            // Shift
+            // 
+            this.Shift.HeaderText = "Shift";
+            this.Shift.MinimumWidth = 6;
+            this.Shift.Name = "Shift";
+            this.Shift.ReadOnly = true;
+            // 
+            // Supervisor
+            // 
+            this.Supervisor.HeaderText = "Supervisor";
+            this.Supervisor.MinimumWidth = 6;
+            this.Supervisor.Name = "Supervisor";
+            this.Supervisor.ReadOnly = true;
+            // 
             // ListVendor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -224,13 +224,13 @@ namespace CinemaManagment
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewVendors;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Num;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Shift;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Supervisor;
         private CustomControls.RJControls.RoundedButton roundedButtonEdit;
         private CustomControls.RJControls.RoundedButton roundedButtonAdd;
         private System.Windows.Forms.Label labelVendorList;
         private CustomControls.RJControls.RoundedButton roundedButtonDetails;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Shift;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Supervisor;
     }
 }

@@ -21,7 +21,7 @@ namespace CinemaManagment
         private void customizeDesign()
         {
             ListMovie listMovie = new ListMovie();
-            if (listMovie.buttonClicked == "edit")
+            if (listMovie.getButtonClicked() == "edit")
                 labelAddMovie.Text = "Edit Movie";
             else
                 labelAddMovie.Text = "Add Movie";

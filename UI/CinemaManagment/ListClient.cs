@@ -24,7 +24,11 @@ namespace CinemaManagment
             dataGridViewClients.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 14);
         }
 
-        public String buttonClicked = "";
+        public static String buttonClicked = "";
+        public String getButtonClicked()
+        {
+            return buttonClicked;
+        }
 
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {

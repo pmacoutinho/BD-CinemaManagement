@@ -30,18 +30,19 @@ namespace CinemaManagment
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.buttonClients = new System.Windows.Forms.Button();
             this.buttonMovies = new System.Windows.Forms.Button();
             this.buttonRooms = new System.Windows.Forms.Button();
             this.panelEmployeesSubmenu = new System.Windows.Forms.Panel();
-            this.buttonCleaners = new System.Windows.Forms.Button();
             this.buttonVendors = new System.Windows.Forms.Button();
             this.buttonEmployees = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelChildForm = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelChildForm = new System.Windows.Forms.Panel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonCleaners = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelEmployeesSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -118,20 +119,6 @@ namespace CinemaManagment
             this.panelEmployeesSubmenu.Size = new System.Drawing.Size(250, 86);
             this.panelEmployeesSubmenu.TabIndex = 2;
             // 
-            // buttonCleaners
-            // 
-            this.buttonCleaners.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonCleaners.FlatAppearance.BorderSize = 0;
-            this.buttonCleaners.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCleaners.ForeColor = System.Drawing.Color.LightGray;
-            this.buttonCleaners.Location = new System.Drawing.Point(0, 40);
-            this.buttonCleaners.Name = "buttonCleaners";
-            this.buttonCleaners.Size = new System.Drawing.Size(250, 40);
-            this.buttonCleaners.TabIndex = 1;
-            this.buttonCleaners.Text = "Cleaners";
-            this.buttonCleaners.UseVisualStyleBackColor = true;
-            this.buttonCleaners.Click += new System.EventHandler(this.buttonCleaners_Click);
-            // 
             // buttonVendors
             // 
             this.buttonVendors.Dock = System.Windows.Forms.DockStyle.Top;
@@ -169,6 +156,17 @@ namespace CinemaManagment
             this.panelLogo.Size = new System.Drawing.Size(250, 100);
             this.panelLogo.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
@@ -178,16 +176,19 @@ namespace CinemaManagment
             this.panelChildForm.Size = new System.Drawing.Size(682, 553);
             this.panelChildForm.TabIndex = 1;
             // 
-            // pictureBox1
+            // buttonCleaners
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::CinemaManagment.Properties.Resources.cinema_manager;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.buttonCleaners.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCleaners.FlatAppearance.BorderSize = 0;
+            this.buttonCleaners.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCleaners.ForeColor = System.Drawing.Color.LightGray;
+            this.buttonCleaners.Location = new System.Drawing.Point(0, 40);
+            this.buttonCleaners.Name = "buttonCleaners";
+            this.buttonCleaners.Size = new System.Drawing.Size(250, 40);
+            this.buttonCleaners.TabIndex = 1;
+            this.buttonCleaners.Text = "Cleaners";
+            this.buttonCleaners.UseVisualStyleBackColor = true;
+            this.buttonCleaners.Click += new System.EventHandler(this.buttonCleaners_Click);
             // 
             // MainMenu
             // 
@@ -216,15 +217,15 @@ namespace CinemaManagment
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Panel panelEmployeesSubmenu;
-        private System.Windows.Forms.Button buttonCleaners;
         private System.Windows.Forms.Button buttonVendors;
         private System.Windows.Forms.Button buttonEmployees;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Button buttonClients;
         private System.Windows.Forms.Button buttonMovies;
         private System.Windows.Forms.Button buttonRooms;
-        public System.Windows.Forms.Panel panelChildForm;
+        private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonCleaners;
     }
 }
 

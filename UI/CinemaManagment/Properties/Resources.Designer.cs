@@ -63,16 +63,6 @@ namespace CinemaManagment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap chair {
-            get {
-                object obj = ResourceManager.GetObject("chair", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap cinema_manager {
             get {
                 object obj = ResourceManager.GetObject("cinema_manager", resourceCulture);
@@ -83,39 +73,9 @@ namespace CinemaManagment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap client {
+        internal static System.Drawing.Bitmap cinema_manager_logo {
             get {
-                object obj = ResourceManager.GetObject("client", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap movie_poster {
-            get {
-                object obj = ResourceManager.GetObject("movie_poster", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap room {
-            get {
-                object obj = ResourceManager.GetObject("room", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap worker {
-            get {
-                object obj = ResourceManager.GetObject("worker", resourceCulture);
+                object obj = ResourceManager.GetObject("cinema_manager_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
