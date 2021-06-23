@@ -64,6 +64,9 @@
     <Compile Include="AddRoom.Designer.cs">
       <DependentUpon>AddRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Client.cs" />
+    <Compile Include="sgbd\Operations.cs" />
+    <Compile Include="sgbd\SGBDConnection.cs" />
     <Compile Include="ListCleaner.cs">
       <SubType>Form</SubType>
     </Compile>

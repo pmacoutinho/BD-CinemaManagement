@@ -30,13 +30,13 @@ namespace CinemaManagment
         private void InitializeComponent()
         {
             this.labelAddClient = new System.Windows.Forms.Label();
-            this.labelMovieId = new System.Windows.Forms.Label();
-            this.textBoxMovieTitle = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.add_client_date_picker = new System.Windows.Forms.MonthCalendar();
             this.labelDateOfBirth = new System.Windows.Forms.Label();
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
+            this.clt_textBoxEmail = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelAddClient
@@ -50,30 +50,12 @@ namespace CinemaManagment
             this.labelAddClient.TabIndex = 6;
             this.labelAddClient.Text = "Add Client";
             // 
-            // labelMovieId
-            // 
-            this.labelMovieId.AutoSize = true;
-            this.labelMovieId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMovieId.ForeColor = System.Drawing.Color.White;
-            this.labelMovieId.Location = new System.Drawing.Point(12, 69);
-            this.labelMovieId.Name = "labelMovieId";
-            this.labelMovieId.Size = new System.Drawing.Size(145, 28);
-            this.labelMovieId.TabIndex = 9;
-            this.labelMovieId.Text = "Client Number";
-            // 
-            // textBoxMovieTitle
-            // 
-            this.textBoxMovieTitle.Location = new System.Drawing.Point(17, 100);
-            this.textBoxMovieTitle.Name = "textBoxMovieTitle";
-            this.textBoxMovieTitle.Size = new System.Drawing.Size(269, 22);
-            this.textBoxMovieTitle.TabIndex = 10;
-            // 
             // labelName
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.ForeColor = System.Drawing.Color.White;
-            this.labelName.Location = new System.Drawing.Point(14, 145);
+            this.labelName.Location = new System.Drawing.Point(14, 79);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(66, 28);
             this.labelName.TabIndex = 11;
@@ -81,16 +63,17 @@ namespace CinemaManagment
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(19, 176);
+            this.textBoxName.Location = new System.Drawing.Point(19, 110);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(269, 22);
             this.textBoxName.TabIndex = 12;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
-            // monthCalendar1
+            // add_client_date_picker
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(19, 257);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 13;
+            this.add_client_date_picker.Location = new System.Drawing.Point(19, 257);
+            this.add_client_date_picker.Name = "add_client_date_picker";
+            this.add_client_date_picker.TabIndex = 13;
             // 
             // labelDateOfBirth
             // 
@@ -123,6 +106,27 @@ namespace CinemaManagment
             this.roundedButtonAdd.Text = "Add";
             this.roundedButtonAdd.TextColor = System.Drawing.Color.White;
             this.roundedButtonAdd.UseVisualStyleBackColor = false;
+            this.roundedButtonAdd.Click += new System.EventHandler(this.roundedButtonAdd_Click);
+            // 
+            // clt_textBoxEmail
+            // 
+            this.clt_textBoxEmail.Location = new System.Drawing.Point(19, 183);
+            this.clt_textBoxEmail.Name = "clt_textBoxEmail";
+            this.clt_textBoxEmail.Size = new System.Drawing.Size(269, 22);
+            this.clt_textBoxEmail.TabIndex = 21;
+            this.clt_textBoxEmail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(14, 152);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 28);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Name";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // AddClient
             // 
@@ -130,16 +134,17 @@ namespace CinemaManagment
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(664, 506);
+            this.Controls.Add(this.clt_textBoxEmail);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.roundedButtonAdd);
             this.Controls.Add(this.labelDateOfBirth);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.add_client_date_picker);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.labelName);
-            this.Controls.Add(this.textBoxMovieTitle);
-            this.Controls.Add(this.labelMovieId);
             this.Controls.Add(this.labelAddClient);
             this.Name = "AddClient";
             this.Text = "Add Client";
+            this.Load += new System.EventHandler(this.AddClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,12 +153,12 @@ namespace CinemaManagment
         #endregion
 
         private System.Windows.Forms.Label labelAddClient;
-        private System.Windows.Forms.Label labelMovieId;
-        private System.Windows.Forms.TextBox textBoxMovieTitle;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar add_client_date_picker;
         private System.Windows.Forms.Label labelDateOfBirth;
         private CustomControls.RJControls.RoundedButton roundedButtonAdd;
+        private System.Windows.Forms.TextBox clt_textBoxEmail;
+        private System.Windows.Forms.Label label1;
     }
 }
