@@ -14,7 +14,7 @@ namespace CinemaManagment.sgbd
      */
     class SGBDCon
     {
-        private static SqlConnection cn;
+        private static SqlConnection cn = getSGBDConnection();
 
 
         private static SqlConnection getSGBDConnection()
@@ -37,6 +37,7 @@ namespace CinemaManagment.sgbd
 
         public static SqlConnection getCN()
         {
+            verifySGBDConnection();
             return cn;
         }
 

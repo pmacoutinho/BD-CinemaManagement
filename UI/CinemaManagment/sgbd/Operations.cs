@@ -42,7 +42,7 @@ namespace CinemaManagment.sgbd
             {
                 cn.Close();
             }
-
+            
             var result = returnParameter.Value;
 
             return (int)result;
@@ -73,6 +73,11 @@ namespace CinemaManagment.sgbd
             cn.Close();
 
             return lst;
+        }
+
+        public static void newTicket(int session, int seller, int client)
+        {
+
         }
     }
 }

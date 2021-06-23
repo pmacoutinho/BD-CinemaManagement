@@ -116,7 +116,7 @@ namespace CinemaManagment.sgbd
                 s.time = DateTime.Parse(reader["time"].ToString());
 
 
-                lst.Add();
+                lst.Add(s);
             }
 
             cn.Close();
