@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace CinemaManagment
 {
-    public partial class ListClient : Form
+    public partial class ListManager : Form
     {
-        public ListClient()
+        public ListManager()
         {
             InitializeComponent();
-            customizeDesign();
-        }
-
-        private void customizeDesign()
-        {
-            dataGridViewClients.EnableHeadersVisualStyles = false;
-            dataGridViewClients.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 14);
         }
 
         public static String buttonClicked = "";
@@ -30,20 +23,21 @@ namespace CinemaManagment
             return buttonClicked;
         }
 
+        ListWorker listWorker = new ListWorker();
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {
+            listWorker.setEmployeeType("manager");
             buttonClicked = "add";
-            AddClient addClient = new AddClient();
-            addClient.Show();
-
-            this.Close();
+            AddEmployee addEmployee = new AddEmployee();
+            addEmployee.Show();
         }
 
         private void roundedButtonEdit_Click(object sender, EventArgs e)
         {
+            listWorker.setEmployeeType("manager");
             buttonClicked = "edit";
-            AddClient addClient = new AddClient();
-            addClient.Show();
+            AddEmployee addEmployee = new AddEmployee();
+            addEmployee.Show();
         }
     }
 }

@@ -20,10 +20,9 @@ namespace CinemaManagment
 
         private void customizeDesign()
         {
-            ListCleaner listCleaner = new ListCleaner();
-            ListVendor listVendor = new ListVendor();
+            ListWorker listWorker = new ListWorker();
 
-            if (listCleaner.getButtonClicked() == "edit" || listVendor.getButtonClicked() == "edit")
+            if (listWorker.getButtonClicked() == "edit")
                 labelAddEmployee.Text = "Edit Employee";
             else
                 labelAddEmployee.Text = "Add Employee";

@@ -57,6 +57,8 @@ namespace CinemaManagment
             var res = Operations.newClient(c);
             Debug.WriteLine(res);
             //Debug.WriteLine(c.birthday.ToString("yyyyMMdd"));
+
+            this.Close();
         }
 
         private void textBoxName_TextChanged(object sender, EventArgs e)

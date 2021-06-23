@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCleaningRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCleaningRecord.designer.cs">
+      <DependentUpon>AddCleaningRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +70,53 @@
     <Compile Include="AddRoom.Designer.cs">
       <DependentUpon>AddRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSession.designer.cs">
+      <DependentUpon>AddSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTicket.designer.cs">
+      <DependentUpon>AddTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Cinema.cs" />
     <Compile Include="Entities\SessionInstance.cs" />
     <Compile Include="Entities\Client.cs" />
     <Compile Include="Entities\Film.cs" />
     <Compile Include="Entities\Ticket.cs" />
+    <Compile Include="ListCleaningRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListCleaningRecord.designer.cs">
+      <DependentUpon>ListCleaningRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListManager.designer.cs">
+      <DependentUpon>ListManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListSession.designer.cs">
+      <DependentUpon>ListSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListTicketHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListTicketHistory.designer.cs">
+      <DependentUpon>ListTicketHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListWorker.designer.cs">
+      <DependentUpon>ListWorker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Public.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,12 +127,6 @@
     <Compile Include="sgbd\Operations.cs" />
     <Compile Include="sgbd\PublicAccess.cs" />
     <Compile Include="sgbd\SGBDConnection.cs" />
-    <Compile Include="ListCleaner.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListCleaner.Designer.cs">
-      <DependentUpon>ListCleaner.cs</DependentUpon>
-    </Compile>
     <Compile Include="ListClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +173,9 @@
     <Compile Include="RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="AddCleaningRecord.resx">
+      <DependentUpon>AddCleaningRecord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,11 +185,29 @@
     <EmbeddedResource Include="AddRoom.resx">
       <DependentUpon>AddRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListCleaner.resx">
-      <DependentUpon>ListCleaner.cs</DependentUpon>
+    <EmbeddedResource Include="AddSession.resx">
+      <DependentUpon>AddSession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTicket.resx">
+      <DependentUpon>AddTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListCleaningRecord.resx">
+      <DependentUpon>ListCleaningRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListClient.resx">
       <DependentUpon>ListClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListManager.resx">
+      <DependentUpon>ListManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListSession.resx">
+      <DependentUpon>ListSession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListTicketHistory.resx">
+      <DependentUpon>ListTicketHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListWorker.resx">
+      <DependentUpon>ListWorker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -165,9 +228,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Public.resx">
-      <DependentUpon>Public.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
