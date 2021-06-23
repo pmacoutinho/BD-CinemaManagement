@@ -75,9 +75,32 @@ namespace CinemaManagment.sgbd
             return lst;
         }
 
-        public static void newTicket(int session, int seller, int client)
+        public static void newTicket(Ticket t)
         {
+            if (!SGBDCon.verifySGBDConnection())
+                return;
+            SqlCommand cmd = new SqlCommand("operations.p_new_ticket", cn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add(new SqlParameter("@SellerId", t.seller));
+            cmd.Parameters.Add(new SqlParameter("@ClientId", t.client));
+            cmd.Parameters.Add(new SqlParameter("@SessionInstanceId", t.session));
+            cmd.Parameters.Add(new SqlParameter("@SeatNumber", t.seatnumber));
+            cmd.Parameters.Add(new SqlParameter("@Price", t.price.ToString()));
 
+            try
+            { 
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to add ticket to the database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }
