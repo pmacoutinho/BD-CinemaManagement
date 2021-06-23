@@ -123,9 +123,9 @@ namespace CinemaManagment
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(14, 152);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 28);
+            this.label1.Size = new System.Drawing.Size(60, 28);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Name";
+            this.label1.Text = "Email";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // AddClient
