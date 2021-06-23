@@ -1,5 +1,6 @@
 ﻿using CinemaManagment.Entities;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -45,6 +46,33 @@ namespace CinemaManagment.sgbd
             var result = returnParameter.Value;
 
             return (int)result;
+        }
+
+        public static List<Client> loadClients()
+        {
+
+            if (!SGBDCon.verifySGBDConnection())
+                return null;
+
+            List<Client> lst = new List<Client>();
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Customers", cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Client c = new Client();
+                c.id = Int32.Parse(reader["ClientId"].ToString());
+                c.name = reader["ClientName"].ToString();
+                c.email = reader["email"].ToString();
+                c.birthday = DateTime.Parse(reader["birthdat"].ToString());
+
+                lst.Add(c);
+            }
+
+            cn.Close();
+
+            return lst;
         }
     }
 }
