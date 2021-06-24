@@ -100,5 +100,30 @@ namespace CinemaManagment
             childForm.BringToFront();
             childForm.Show();
         }
+
+        private void btn_seller_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            int employeeId = -1;
+            using (var form = new ChooseSeller())
+            {
+                var result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    employeeId = form.result;
+                }
+            }
+            openChildForm(new Seller(employeeId));
+        }
+
+        private void panelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -56,7 +56,8 @@ namespace CinemaManagment.sgbd
 
             List<Client> lst = new List<Client>();
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Customers", cn);
+            SqlCommand cmd = new SqlCommand("SELECT * from operations.f_get_clients()", cn);
+
             SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
@@ -65,7 +66,7 @@ namespace CinemaManagment.sgbd
                 c.id = Int32.Parse(reader["ClientId"].ToString());
                 c.name = reader["ClientName"].ToString();
                 c.email = reader["email"].ToString();
-                c.birthday = DateTime.Parse(reader["birthdat"].ToString());
+                c.birthday = DateTime.Parse(reader["birthday"].ToString());
 
                 lst.Add(c);
             }
@@ -73,6 +74,32 @@ namespace CinemaManagment.sgbd
             cn.Close();
 
             return lst;
+        }
+
+        public static Client getClient(int employeeId)
+        {
+
+            if (!SGBDCon.verifySGBDConnection())
+                return null;
+
+
+            SqlCommand cmd = new SqlCommand("SELECT * from operations.f_get_client(@EmployeeId)", cn);
+            cmd.Parameters.Add(new SqlParameter("@EmployeeId", employeeId.ToString()));
+            SqlDataReader reader = cmd.ExecuteReader();
+            Client c = new Client();
+            while (reader.Read())
+            {
+                
+                c.id = Int32.Parse(reader["ClientId"].ToString());
+                c.name = reader["ClientName"].ToString();
+                c.email = reader["email"].ToString();
+                c.birthday = DateTime.Parse(reader["birthday"].ToString());
+
+            }
+
+            cn.Close();
+
+            return c;
         }
 
         public static void newTicket(Ticket t)
