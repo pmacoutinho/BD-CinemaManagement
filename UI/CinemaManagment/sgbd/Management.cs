@@ -67,7 +67,7 @@ namespace CinemaManagment.sgbd
                 Employee e = new Employee();
                 e.id = Int32.Parse(reader["id"].ToString());
                 e.name = reader["name"].ToString();
-                e.name = reader["email"].ToString();
+                e.email = reader["email"].ToString();
                 e.cinema  = Int32.Parse(reader["location"].ToString());
                 e.shift = Int32.Parse(reader["eShift"].ToString());
                 e.type = Int32.Parse(reader["eType"].ToString());
@@ -96,7 +96,7 @@ namespace CinemaManagment.sgbd
                 
                 e.id = Int32.Parse(reader["id"].ToString());
                 e.name = reader["name"].ToString();
-                e.name = reader["email"].ToString();
+                e.email = reader["email"].ToString();
                 e.cinema  = Int32.Parse(reader["location"].ToString());
                 e.shift = Int32.Parse(reader["eShift"].ToString());
                 e.type = Int32.Parse(reader["eType"].ToString());

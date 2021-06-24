@@ -84,7 +84,6 @@ namespace CinemaManagment.sgbd
             String dataParam = date.ToString("yyyyMMdd");
 
             SqlCommand cmd = new SqlCommand("select * from public_access.f_get_open_sessions_cinema(@Date, @CinemaId)", cn);
-            SqlDataReader reader = cmd.ExecuteReader();
 
             List<SessionInstance> lst = new List<SessionInstance>();
 
@@ -93,6 +92,7 @@ namespace CinemaManagment.sgbd
             cmd.Parameters.AddWithValue("@Date", dataParam);
             cmd.Parameters.AddWithValue("@CinemaId", cinemaId.ToString());
 
+            SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
@@ -107,6 +107,53 @@ namespace CinemaManagment.sgbd
                 f.tmpMinutes = Int32.Parse(reader["timeMin"].ToString());
                 s.film = f;
                 
+                s.CinemaId = Int32.Parse(reader["cinema"].ToString());
+                s.sessionId = Int32.Parse(reader["session"].ToString());
+                s.id = Int32.Parse(reader["sessionInst"].ToString());
+                s.startDay = DateTime.Parse(reader["startDay"].ToString());
+                s.noWeeks = Int32.Parse(reader["noWeeks"].ToString());
+                s.roomNumber = Int32.Parse(reader["room"].ToString());
+                s.time = DateTime.Parse(reader["InstanceTime"].ToString());
+
+
+                lst.Add(s);
+            }
+
+            cn.Close();
+
+            return lst;
+        }
+
+        public static List<SessionInstance> getSessionInstancesToday(int cinema)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                return null;
+
+            String dataParam = DateTime.Today.ToString("yyyyMMdd");
+
+            SqlCommand cmd = new SqlCommand("select * from public_access.f_get_open_sessions_cinema(@Date, @CinemaId)", cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            List<SessionInstance> lst = new List<SessionInstance>();
+
+
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@Date", dataParam);
+            cmd.Parameters.AddWithValue("@CinemaId", cinema.ToString());
+
+            while (reader.Read())
+            {
+                SessionInstance s = new SessionInstance();
+
+                Film f = new Film();
+
+
+                f.imdb = Int32.Parse(reader["filmId"].ToString());
+                f.name = reader["name"].ToString();
+                f.director = reader["director"].ToString();
+                f.tmpMinutes = Int32.Parse(reader["timeMin"].ToString());
+                s.film = f;
+
                 s.CinemaId = Int32.Parse(reader["cinema"].ToString());
                 s.sessionId = Int32.Parse(reader["session"].ToString());
                 s.id = Int32.Parse(reader["sessionInst"].ToString());
