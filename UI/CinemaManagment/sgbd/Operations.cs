@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,6 +107,7 @@ namespace CinemaManagment.sgbd
         {
             if (!SGBDCon.verifySGBDConnection())
                 return;
+           
             SqlCommand cmd = new SqlCommand("operations.p_new_ticket", cn)
             {
                 CommandType = CommandType.StoredProcedure
@@ -130,5 +132,37 @@ namespace CinemaManagment.sgbd
             }
         }
 
+        public static Reservation getSeats(int si)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                return null;
+
+            List<int> lst = new List<int>();
+            int nSeats = 0;
+
+            Reservation r = new Reservation();
+
+            SqlCommand cmd = new SqlCommand("SELECT * from operations.f_get_res_session_inst(@SessionInst)", cn);
+            cmd.Parameters.Add(new SqlParameter("@SessionInst", si.ToString()));
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Debug.WriteLine(reader["seat"].ToString());
+                if (!reader["seat"].ToString().Equals(""))
+                {
+                    int seat = Int32.Parse(reader["seat"].ToString());
+                    lst.Add(seat);
+                }
+
+                nSeats = Int32.Parse(reader["nSeats"].ToString());
+            }
+
+            cn.Close();
+
+            r.lst = lst;
+            r.nSeats = nSeats;
+
+            return r;
+        }
     }
 }

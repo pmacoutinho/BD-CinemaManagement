@@ -17,7 +17,7 @@ namespace CinemaManagment.SellerComps
         private Employee e;
         private int selectedClientIdx, selectedSessionIdx;
         List<Client> cList = Operations.loadClients();
-        List<SessionInstance> sList = PublicAccess.getOpenSessionsCinema(DateTime.Today, e.cinema);
+        private List<SessionInstance> sList;
         private List<int> seatList;
         public NewTicket()
         {
@@ -29,6 +29,7 @@ namespace CinemaManagment.SellerComps
         {
             InitializeComponent();
             this.e = Management.getEmployee(empId);
+            sList = PublicAccess.getOpenSessionsCinema(DateTime.Today, e.cinema);
             LOAD();
         }
 
@@ -36,6 +37,7 @@ namespace CinemaManagment.SellerComps
         {
             fillClientList();
             fillSessionList();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -67,6 +69,7 @@ namespace CinemaManagment.SellerComps
             if (lst_box_client.SelectedIndex >= 0)
             {
                 selectedSessionIdx = lstBox_sessions.SelectedIndex;
+                fillSeatList(sList[selectedSessionIdx].id);
             }
         }
 
@@ -92,14 +95,24 @@ namespace CinemaManagment.SellerComps
             foreach (var elem in sList)
             {
                 lstBox_sessions.Items.Add(elem.ToSimpleString());
+
             }
         }
 
-        private void fillSeatList()
+        private void fillSeatList(int sessionId)
         {
             lst_box_seats.Items.Clear();
 
-            foreach (var elem in seatList)
+            Reservation r = Operations.getSeats(sessionId);
+
+            var numberList = Enumerable.Range(1, r.nSeats).ToList();
+
+            foreach (var elem in r.lst)
+            {
+                numberList.Remove(elem);
+            }
+
+            foreach (var elem in numberList)
             {
                 lst_box_seats.Items.Add(elem.ToString());
             }

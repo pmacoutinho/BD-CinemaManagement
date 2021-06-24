@@ -64,6 +64,7 @@
     <Compile Include="AddRoom.Designer.cs">
       <DependentUpon>AddRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Reservation.cs" />
     <Compile Include="SellerComps\ChooseSeller.cs">
       <SubType>Form</SubType>
     </Compile>
