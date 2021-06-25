@@ -164,5 +164,34 @@ namespace CinemaManagment.sgbd
 
             return r;
         }
+
+        public static int newCleaningRecord(CleaningRecord cr)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                return -1;
+            SqlCommand cmd = new SqlCommand("operations.p_new_cleaning_record", cn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add(new SqlParameter("@Cinema", cr.sCinema));
+            cmd.Parameters.Add(new SqlParameter("@RoomNumber", cr.sNum));
+            cmd.Parameters.Add(new SqlParameter("@Employee", cr.func));
+            cmd.Parameters.Add(new SqlParameter("@Time", cr.tm.ToString("yyyyMMdd")));
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to add contact in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+            return (int)cr.sNum;
+        }
     }
 }

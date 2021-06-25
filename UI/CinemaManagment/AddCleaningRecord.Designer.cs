@@ -33,15 +33,19 @@ namespace CinemaManagment
             this.labelRoom = new System.Windows.Forms.Label();
             this.labelCleaner = new System.Windows.Forms.Label();
             this.labelHour = new System.Windows.Forms.Label();
-            this.textBoxHour = new System.Windows.Forms.TextBox();
             this.Date = new System.Windows.Forms.Label();
             this.monthCalendarDate = new System.Windows.Forms.MonthCalendar();
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.numericUpDownRoom = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownCleaner = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownHour = new System.Windows.Forms.NumericUpDown();
+            this.labelColumn = new System.Windows.Forms.Label();
+            this.numericUpDownMinutes = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCleaner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinutes)).BeginInit();
             this.SuspendLayout();
             // 
             // labelAddCleaningRecord
@@ -87,13 +91,6 @@ namespace CinemaManagment
             this.labelHour.Size = new System.Drawing.Size(58, 28);
             this.labelHour.TabIndex = 23;
             this.labelHour.Text = "Hour";
-            // 
-            // textBoxHour
-            // 
-            this.textBoxHour.Location = new System.Drawing.Point(19, 247);
-            this.textBoxHour.Name = "textBoxHour";
-            this.textBoxHour.Size = new System.Drawing.Size(269, 22);
-            this.textBoxHour.TabIndex = 24;
             // 
             // Date
             // 
@@ -147,18 +144,45 @@ namespace CinemaManagment
             this.numericUpDownCleaner.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownCleaner.TabIndex = 29;
             // 
+            // numericUpDownHour
+            // 
+            this.numericUpDownHour.Location = new System.Drawing.Point(19, 247);
+            this.numericUpDownHour.Name = "numericUpDownHour";
+            this.numericUpDownHour.Size = new System.Drawing.Size(51, 22);
+            this.numericUpDownHour.TabIndex = 30;
+            // 
+            // labelColumn
+            // 
+            this.labelColumn.AutoSize = true;
+            this.labelColumn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelColumn.ForeColor = System.Drawing.Color.White;
+            this.labelColumn.Location = new System.Drawing.Point(76, 241);
+            this.labelColumn.Name = "labelColumn";
+            this.labelColumn.Size = new System.Drawing.Size(17, 28);
+            this.labelColumn.TabIndex = 31;
+            this.labelColumn.Text = ":";
+            // 
+            // numericUpDownMinutes
+            // 
+            this.numericUpDownMinutes.Location = new System.Drawing.Point(99, 247);
+            this.numericUpDownMinutes.Name = "numericUpDownMinutes";
+            this.numericUpDownMinutes.Size = new System.Drawing.Size(51, 22);
+            this.numericUpDownMinutes.TabIndex = 32;
+            // 
             // AddCleaningRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(664, 506);
+            this.Controls.Add(this.numericUpDownMinutes);
+            this.Controls.Add(this.labelColumn);
+            this.Controls.Add(this.numericUpDownHour);
             this.Controls.Add(this.numericUpDownCleaner);
             this.Controls.Add(this.numericUpDownRoom);
             this.Controls.Add(this.roundedButtonAdd);
             this.Controls.Add(this.monthCalendarDate);
             this.Controls.Add(this.Date);
-            this.Controls.Add(this.textBoxHour);
             this.Controls.Add(this.labelHour);
             this.Controls.Add(this.labelCleaner);
             this.Controls.Add(this.labelRoom);
@@ -168,6 +192,8 @@ namespace CinemaManagment
             this.Text = "AddCleaningRecord";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCleaner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinutes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,12 +205,14 @@ namespace CinemaManagment
         private System.Windows.Forms.Label labelRoom;
         private System.Windows.Forms.Label labelCleaner;
         private System.Windows.Forms.Label labelHour;
-        private System.Windows.Forms.TextBox textBoxHour;
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.MonthCalendar monthCalendarDate;
         private CustomControls.RJControls.RoundedButton roundedButtonAdd;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.NumericUpDown numericUpDownRoom;
         private System.Windows.Forms.NumericUpDown numericUpDownCleaner;
+        private System.Windows.Forms.NumericUpDown numericUpDownHour;
+        private System.Windows.Forms.Label labelColumn;
+        private System.Windows.Forms.NumericUpDown numericUpDownMinutes;
     }
 }

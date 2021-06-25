@@ -25,13 +25,14 @@ namespace CinemaManagment
 
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {
-            CleaningRecord c = new CleaningRecord();
-            c.tm = monthCalendarDate.SelectionRange.Start.Date;
-            c.sCinema = 1;
-            c.sNum = Convert.ToInt32(numericUpDownCleaner.Value);
-            c.func = Convert.ToInt32(numericUpDownCleaner.Value);
+            CleaningRecord cr = new CleaningRecord();
 
-            //var res = Operations.newCleaningRecord(c);
+            cr.tm = monthCalendarDate.SelectionRange.Start.Date;
+            cr.sCinema = 1;
+            cr.sNum = Convert.ToInt32(numericUpDownCleaner.Value);
+            cr.func = Convert.ToInt32(numericUpDownCleaner.Value);
+
+            var res = Operations.newCleaningRecord(cr);
             //Debug.WriteLine(res);
             //Debug.WriteLine(c.birthday.ToString("yyyyMMdd"));
 
