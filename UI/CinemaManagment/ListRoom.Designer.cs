@@ -35,11 +35,7 @@ namespace CinemaManagment
             this.labelRoomList = new System.Windows.Forms.Label();
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
             this.roundedButtonEdit = new CustomControls.RJControls.RoundedButton();
-            this.roundedButtonDetails = new CustomControls.RJControls.RoundedButton();
             this.dataGridViewRooms = new System.Windows.Forms.DataGridView();
-            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MovieScreening = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRooms)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,26 +95,6 @@ namespace CinemaManagment
             this.roundedButtonEdit.UseVisualStyleBackColor = false;
             this.roundedButtonEdit.Click += new System.EventHandler(this.roundedButtonEdit_Click);
             // 
-            // roundedButtonDetails
-            // 
-            this.roundedButtonDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedButtonDetails.BackColor = System.Drawing.Color.SlateBlue;
-            this.roundedButtonDetails.BackgroundColor = System.Drawing.Color.SlateBlue;
-            this.roundedButtonDetails.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundedButtonDetails.BorderRadius = 20;
-            this.roundedButtonDetails.BorderSize = 0;
-            this.roundedButtonDetails.FlatAppearance.BorderSize = 0;
-            this.roundedButtonDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButtonDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButtonDetails.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonDetails.Location = new System.Drawing.Point(364, 12);
-            this.roundedButtonDetails.Name = "roundedButtonDetails";
-            this.roundedButtonDetails.Size = new System.Drawing.Size(98, 40);
-            this.roundedButtonDetails.TabIndex = 7;
-            this.roundedButtonDetails.Text = "Details";
-            this.roundedButtonDetails.TextColor = System.Drawing.Color.White;
-            this.roundedButtonDetails.UseVisualStyleBackColor = false;
-            // 
             // dataGridViewRooms
             // 
             this.dataGridViewRooms.AllowUserToAddRows = false;
@@ -138,19 +114,15 @@ namespace CinemaManagment
             this.dataGridViewRooms.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewRooms.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(232)))), ((int)(((byte)(208)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SlateBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewRooms.ColumnHeadersHeight = 35;
             this.dataGridViewRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridViewRooms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Num,
-            this.EmployeeName,
-            this.MovieScreening});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,35 +132,16 @@ namespace CinemaManagment
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewRooms.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewRooms.Location = new System.Drawing.Point(12, 76);
+            this.dataGridViewRooms.MultiSelect = false;
             this.dataGridViewRooms.Name = "dataGridViewRooms";
             this.dataGridViewRooms.ReadOnly = true;
             this.dataGridViewRooms.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewRooms.RowHeadersVisible = false;
             this.dataGridViewRooms.RowHeadersWidth = 51;
             this.dataGridViewRooms.RowTemplate.Height = 40;
+            this.dataGridViewRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRooms.Size = new System.Drawing.Size(658, 465);
             this.dataGridViewRooms.TabIndex = 8;
-            // 
-            // Num
-            // 
-            this.Num.HeaderText = "Num";
-            this.Num.MinimumWidth = 6;
-            this.Num.Name = "Num";
-            this.Num.ReadOnly = true;
-            // 
-            // EmployeeName
-            // 
-            this.EmployeeName.HeaderText = "Capacity";
-            this.EmployeeName.MinimumWidth = 6;
-            this.EmployeeName.Name = "EmployeeName";
-            this.EmployeeName.ReadOnly = true;
-            // 
-            // MovieScreening
-            // 
-            this.MovieScreening.HeaderText = "Movie Screening";
-            this.MovieScreening.MinimumWidth = 6;
-            this.MovieScreening.Name = "MovieScreening";
-            this.MovieScreening.ReadOnly = true;
             // 
             // ListRoom
             // 
@@ -197,7 +150,6 @@ namespace CinemaManagment
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(682, 553);
             this.Controls.Add(this.dataGridViewRooms);
-            this.Controls.Add(this.roundedButtonDetails);
             this.Controls.Add(this.roundedButtonEdit);
             this.Controls.Add(this.roundedButtonAdd);
             this.Controls.Add(this.labelRoomList);
@@ -216,10 +168,6 @@ namespace CinemaManagment
         private System.Windows.Forms.Label labelRoomList;
         private CustomControls.RJControls.RoundedButton roundedButtonAdd;
         private CustomControls.RJControls.RoundedButton roundedButtonEdit;
-        private CustomControls.RJControls.RoundedButton roundedButtonDetails;
         private System.Windows.Forms.DataGridView dataGridViewRooms;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Num;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MovieScreening;
     }
 }

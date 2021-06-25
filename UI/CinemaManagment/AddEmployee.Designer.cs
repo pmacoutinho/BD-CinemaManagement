@@ -33,16 +33,16 @@ namespace CinemaManagment
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelNum = new System.Windows.Forms.Label();
-            this.textBoxNum = new System.Windows.Forms.TextBox();
             this.labelShift = new System.Windows.Forms.Label();
-            this.comboBoxShift = new System.Windows.Forms.ComboBox();
             this.labelRole = new System.Windows.Forms.Label();
-            this.comboBoxRole = new System.Windows.Forms.ComboBox();
-            this.labelSupervisor = new System.Windows.Forms.Label();
-            this.textBoxSupervisor = new System.Windows.Forms.TextBox();
-            this.labelSupervisee = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBoxFunction = new System.Windows.Forms.ComboBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.numericUpDownShift = new System.Windows.Forms.NumericUpDown();
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
+            this.numericUpDownNum = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownShift)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNum)).BeginInit();
             this.SuspendLayout();
             // 
             // labelAddEmployee
@@ -86,86 +86,60 @@ namespace CinemaManagment
             this.labelNum.TabIndex = 7;
             this.labelNum.Text = "Employee Number";
             // 
-            // textBoxNum
-            // 
-            this.textBoxNum.Location = new System.Drawing.Point(17, 99);
-            this.textBoxNum.Name = "textBoxNum";
-            this.textBoxNum.Size = new System.Drawing.Size(269, 22);
-            this.textBoxNum.TabIndex = 8;
-            // 
             // labelShift
             // 
             this.labelShift.AutoSize = true;
             this.labelShift.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelShift.ForeColor = System.Drawing.Color.White;
-            this.labelShift.Location = new System.Drawing.Point(12, 216);
+            this.labelShift.Location = new System.Drawing.Point(12, 283);
             this.labelShift.Name = "labelShift";
             this.labelShift.Size = new System.Drawing.Size(54, 28);
             this.labelShift.TabIndex = 9;
             this.labelShift.Text = "Shift";
-            // 
-            // comboBoxShift
-            // 
-            this.comboBoxShift.FormattingEnabled = true;
-            this.comboBoxShift.Location = new System.Drawing.Point(17, 247);
-            this.comboBoxShift.Name = "comboBoxShift";
-            this.comboBoxShift.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxShift.TabIndex = 10;
             // 
             // labelRole
             // 
             this.labelRole.AutoSize = true;
             this.labelRole.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRole.ForeColor = System.Drawing.Color.White;
-            this.labelRole.Location = new System.Drawing.Point(12, 289);
+            this.labelRole.Location = new System.Drawing.Point(12, 356);
             this.labelRole.Name = "labelRole";
-            this.labelRole.Size = new System.Drawing.Size(51, 28);
+            this.labelRole.Size = new System.Drawing.Size(91, 28);
             this.labelRole.TabIndex = 11;
-            this.labelRole.Text = "Role";
+            this.labelRole.Text = "Function";
             // 
-            // comboBoxRole
+            // comboBoxFunction
             // 
-            this.comboBoxRole.FormattingEnabled = true;
-            this.comboBoxRole.Location = new System.Drawing.Point(17, 320);
-            this.comboBoxRole.Name = "comboBoxRole";
-            this.comboBoxRole.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxRole.TabIndex = 12;
+            this.comboBoxFunction.FormattingEnabled = true;
+            this.comboBoxFunction.Location = new System.Drawing.Point(17, 387);
+            this.comboBoxFunction.Name = "comboBoxFunction";
+            this.comboBoxFunction.Size = new System.Drawing.Size(269, 24);
+            this.comboBoxFunction.TabIndex = 12;
             // 
-            // labelSupervisor
+            // textBoxEmail
             // 
-            this.labelSupervisor.AutoSize = true;
-            this.labelSupervisor.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSupervisor.ForeColor = System.Drawing.Color.White;
-            this.labelSupervisor.Location = new System.Drawing.Point(12, 365);
-            this.labelSupervisor.Name = "labelSupervisor";
-            this.labelSupervisor.Size = new System.Drawing.Size(109, 28);
-            this.labelSupervisor.TabIndex = 13;
-            this.labelSupervisor.Text = "Supervisor";
+            this.textBoxEmail.Location = new System.Drawing.Point(17, 243);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(269, 22);
+            this.textBoxEmail.TabIndex = 20;
             // 
-            // textBoxSupervisor
+            // labelEmail
             // 
-            this.textBoxSupervisor.Location = new System.Drawing.Point(17, 396);
-            this.textBoxSupervisor.Name = "textBoxSupervisor";
-            this.textBoxSupervisor.Size = new System.Drawing.Size(269, 22);
-            this.textBoxSupervisor.TabIndex = 14;
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.ForeColor = System.Drawing.Color.White;
+            this.labelEmail.Location = new System.Drawing.Point(12, 212);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(60, 28);
+            this.labelEmail.TabIndex = 19;
+            this.labelEmail.Text = "Email";
             // 
-            // labelSupervisee
+            // numericUpDownShift
             // 
-            this.labelSupervisee.AutoSize = true;
-            this.labelSupervisee.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSupervisee.ForeColor = System.Drawing.Color.White;
-            this.labelSupervisee.Location = new System.Drawing.Point(350, 365);
-            this.labelSupervisee.Name = "labelSupervisee";
-            this.labelSupervisee.Size = new System.Drawing.Size(112, 28);
-            this.labelSupervisee.TabIndex = 15;
-            this.labelSupervisee.Text = "Supervisee";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(355, 396);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 22);
-            this.textBox1.TabIndex = 16;
+            this.numericUpDownShift.Location = new System.Drawing.Point(17, 314);
+            this.numericUpDownShift.Name = "numericUpDownShift";
+            this.numericUpDownShift.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownShift.TabIndex = 21;
             // 
             // roundedButtonAdd
             // 
@@ -188,22 +162,27 @@ namespace CinemaManagment
             this.roundedButtonAdd.UseVisualStyleBackColor = false;
             this.roundedButtonAdd.Click += new System.EventHandler(this.roundedButtonAdd_Click);
             // 
+            // numericUpDownNum
+            // 
+            this.numericUpDownNum.Location = new System.Drawing.Point(17, 99);
+            this.numericUpDownNum.Name = "numericUpDownNum";
+            this.numericUpDownNum.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownNum.TabIndex = 22;
+            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(664, 506);
+            this.Controls.Add(this.numericUpDownNum);
+            this.Controls.Add(this.numericUpDownShift);
+            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.roundedButtonAdd);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.labelSupervisee);
-            this.Controls.Add(this.textBoxSupervisor);
-            this.Controls.Add(this.labelSupervisor);
-            this.Controls.Add(this.comboBoxRole);
+            this.Controls.Add(this.comboBoxFunction);
             this.Controls.Add(this.labelRole);
-            this.Controls.Add(this.comboBoxShift);
             this.Controls.Add(this.labelShift);
-            this.Controls.Add(this.textBoxNum);
             this.Controls.Add(this.labelNum);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.labelName);
@@ -211,6 +190,8 @@ namespace CinemaManagment
             this.MinimumSize = new System.Drawing.Size(682, 553);
             this.Name = "AddEmployee";
             this.Text = "Add Employee";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownShift)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,15 +203,13 @@ namespace CinemaManagment
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label labelNum;
-        private System.Windows.Forms.TextBox textBoxNum;
         private System.Windows.Forms.Label labelShift;
-        private System.Windows.Forms.ComboBox comboBoxShift;
         private System.Windows.Forms.Label labelRole;
-        private System.Windows.Forms.ComboBox comboBoxRole;
-        private System.Windows.Forms.Label labelSupervisor;
-        private System.Windows.Forms.TextBox textBoxSupervisor;
-        private System.Windows.Forms.Label labelSupervisee;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBoxFunction;
         private CustomControls.RJControls.RoundedButton roundedButtonAdd;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.NumericUpDown numericUpDownShift;
+        private System.Windows.Forms.NumericUpDown numericUpDownNum;
     }
 }

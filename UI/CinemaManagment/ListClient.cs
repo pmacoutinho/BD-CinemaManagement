@@ -1,7 +1,10 @@
-﻿using System;
+﻿using CinemaManagment.Entities;
+using CinemaManagment.sgbd;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,16 +15,30 @@ namespace CinemaManagment
 {
     public partial class ListClient : Form
     {
+        private SqlConnection cn = SGBDCon.getCN();
+
         public ListClient()
         {
             InitializeComponent();
             customizeDesign();
+            loadTable();
         }
 
         private void customizeDesign()
         {
             dataGridViewClients.EnableHeadersVisualStyles = false;
             dataGridViewClients.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 14);
+        }
+
+        private void loadTable()
+        {var select = "SELECT name AS 'Name', email AS 'Email', dNasc AS 'Date Of Birth' FROM Operations.Client";
+            var dataAdapter = new SqlDataAdapter(select, cn);
+
+            var commandBuilder = new SqlCommandBuilder(dataAdapter);
+            var ds = new DataSet();
+            dataAdapter.Fill(ds);
+            dataGridViewClients.ReadOnly = true;
+            dataGridViewClients.DataSource = ds.Tables[0];
         }
 
         public static String buttonClicked = "";
@@ -35,6 +52,8 @@ namespace CinemaManagment
             buttonClicked = "add";
             AddClient addClient = new AddClient();
             addClient.Show();
+
+            this.Close();
         }
 
         private void roundedButtonEdit_Click(object sender, EventArgs e)

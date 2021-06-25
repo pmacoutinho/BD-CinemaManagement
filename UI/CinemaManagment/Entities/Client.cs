@@ -12,5 +12,10 @@ namespace CinemaManagment.Entities
         public String name;
         public String email;
         public DateTime birthday;
+
+        public string ToSimpleString()
+        {
+            return "" + id + ":  " + name;
+        }
     }
 }

@@ -33,14 +33,13 @@ namespace CinemaManagment
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewVendors = new System.Windows.Forms.DataGridView();
-            this.labelVendorList = new System.Windows.Forms.Label();
-            this.roundedButtonDetails = new CustomControls.RJControls.RoundedButton();
-            this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
-            this.roundedButtonEdit = new CustomControls.RJControls.RoundedButton();
             this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Shift = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Supervisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelVendorList = new System.Windows.Forms.Label();
+            this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
+            this.roundedButtonEdit = new CustomControls.RJControls.RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVendors)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +94,34 @@ namespace CinemaManagment
             this.dataGridViewVendors.Size = new System.Drawing.Size(658, 465);
             this.dataGridViewVendors.TabIndex = 0;
             // 
+            // Num
+            // 
+            this.Num.HeaderText = "Num";
+            this.Num.MinimumWidth = 6;
+            this.Num.Name = "Num";
+            this.Num.ReadOnly = true;
+            // 
+            // EmployeeName
+            // 
+            this.EmployeeName.HeaderText = "Name";
+            this.EmployeeName.MinimumWidth = 6;
+            this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.ReadOnly = true;
+            // 
+            // Shift
+            // 
+            this.Shift.HeaderText = "Shift";
+            this.Shift.MinimumWidth = 6;
+            this.Shift.Name = "Shift";
+            this.Shift.ReadOnly = true;
+            // 
+            // Supervisor
+            // 
+            this.Supervisor.HeaderText = "Supervisor";
+            this.Supervisor.MinimumWidth = 6;
+            this.Supervisor.Name = "Supervisor";
+            this.Supervisor.ReadOnly = true;
+            // 
             // labelVendorList
             // 
             this.labelVendorList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -108,26 +135,6 @@ namespace CinemaManagment
             this.labelVendorList.Size = new System.Drawing.Size(176, 41);
             this.labelVendorList.TabIndex = 3;
             this.labelVendorList.Text = "Vendor List";
-            // 
-            // roundedButtonDetails
-            // 
-            this.roundedButtonDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedButtonDetails.BackColor = System.Drawing.Color.SlateBlue;
-            this.roundedButtonDetails.BackgroundColor = System.Drawing.Color.SlateBlue;
-            this.roundedButtonDetails.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundedButtonDetails.BorderRadius = 20;
-            this.roundedButtonDetails.BorderSize = 0;
-            this.roundedButtonDetails.FlatAppearance.BorderSize = 0;
-            this.roundedButtonDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButtonDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButtonDetails.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonDetails.Location = new System.Drawing.Point(364, 12);
-            this.roundedButtonDetails.Name = "roundedButtonDetails";
-            this.roundedButtonDetails.Size = new System.Drawing.Size(98, 40);
-            this.roundedButtonDetails.TabIndex = 4;
-            this.roundedButtonDetails.Text = "Details";
-            this.roundedButtonDetails.TextColor = System.Drawing.Color.White;
-            this.roundedButtonDetails.UseVisualStyleBackColor = false;
             // 
             // roundedButtonAdd
             // 
@@ -171,41 +178,12 @@ namespace CinemaManagment
             this.roundedButtonEdit.UseVisualStyleBackColor = false;
             this.roundedButtonEdit.Click += new System.EventHandler(this.roundedButtonEdit_Click);
             // 
-            // Num
-            // 
-            this.Num.HeaderText = "Num";
-            this.Num.MinimumWidth = 6;
-            this.Num.Name = "Num";
-            this.Num.ReadOnly = true;
-            // 
-            // EmployeeName
-            // 
-            this.EmployeeName.HeaderText = "Name";
-            this.EmployeeName.MinimumWidth = 6;
-            this.EmployeeName.Name = "EmployeeName";
-            this.EmployeeName.ReadOnly = true;
-            // 
-            // Shift
-            // 
-            this.Shift.HeaderText = "Shift";
-            this.Shift.MinimumWidth = 6;
-            this.Shift.Name = "Shift";
-            this.Shift.ReadOnly = true;
-            // 
-            // Supervisor
-            // 
-            this.Supervisor.HeaderText = "Supervisor";
-            this.Supervisor.MinimumWidth = 6;
-            this.Supervisor.Name = "Supervisor";
-            this.Supervisor.ReadOnly = true;
-            // 
             // ListVendor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(682, 553);
-            this.Controls.Add(this.roundedButtonDetails);
             this.Controls.Add(this.labelVendorList);
             this.Controls.Add(this.roundedButtonAdd);
             this.Controls.Add(this.roundedButtonEdit);
@@ -227,7 +205,6 @@ namespace CinemaManagment
         private CustomControls.RJControls.RoundedButton roundedButtonEdit;
         private CustomControls.RJControls.RoundedButton roundedButtonAdd;
         private System.Windows.Forms.Label labelVendorList;
-        private CustomControls.RJControls.RoundedButton roundedButtonDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn Num;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Shift;

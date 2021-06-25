@@ -67,7 +67,6 @@ namespace CinemaManagment
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(269, 22);
             this.textBoxName.TabIndex = 12;
-            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // add_client_date_picker
             // 
@@ -85,7 +84,6 @@ namespace CinemaManagment
             this.labelDateOfBirth.Size = new System.Drawing.Size(129, 28);
             this.labelDateOfBirth.TabIndex = 14;
             this.labelDateOfBirth.Text = "Date of Birth";
-            this.labelDateOfBirth.Click += new System.EventHandler(this.label1_Click);
             // 
             // roundedButtonAdd
             // 
@@ -114,7 +112,6 @@ namespace CinemaManagment
             this.clt_textBoxEmail.Name = "clt_textBoxEmail";
             this.clt_textBoxEmail.Size = new System.Drawing.Size(269, 22);
             this.clt_textBoxEmail.TabIndex = 21;
-            this.clt_textBoxEmail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -126,7 +123,6 @@ namespace CinemaManagment
             this.label1.Size = new System.Drawing.Size(60, 28);
             this.label1.TabIndex = 20;
             this.label1.Text = "Email";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // AddClient
             // 
@@ -144,7 +140,6 @@ namespace CinemaManagment
             this.Controls.Add(this.labelAddClient);
             this.Name = "AddClient";
             this.Text = "Add Client";
-            this.Load += new System.EventHandler(this.AddClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

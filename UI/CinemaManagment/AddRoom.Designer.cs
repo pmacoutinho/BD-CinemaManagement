@@ -103,6 +103,7 @@ namespace CinemaManagment
             this.roundedButtonAdd.Text = "Add";
             this.roundedButtonAdd.TextColor = System.Drawing.Color.White;
             this.roundedButtonAdd.UseVisualStyleBackColor = false;
+            this.roundedButtonAdd.Click += new System.EventHandler(this.roundedButtonAdd_Click);
             // 
             // AddRoom
             // 

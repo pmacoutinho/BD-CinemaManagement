@@ -17,6 +17,7 @@ namespace CinemaManagment
     public partial class AddClient : Form
     {
         private SqlConnection cn = SGBDCon.getCN();
+
         public AddClient()
         {
             InitializeComponent();
@@ -32,21 +33,6 @@ namespace CinemaManagment
                 labelAddClient.Text = "Add Client";
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddClient_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxMovieTitle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {
             Client c = new Client();
@@ -57,21 +43,8 @@ namespace CinemaManagment
             var res = Operations.newClient(c);
             Debug.WriteLine(res);
             //Debug.WriteLine(c.birthday.ToString("yyyyMMdd"));
-        }
 
-        private void textBoxName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }
