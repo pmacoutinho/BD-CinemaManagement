@@ -29,6 +29,8 @@ create table Management.Employee(
 
 	-- supervisor
 	-- deferrable constraints? R: not supported
+
+
     CONSTRAINT FK_employee_location FOREIGN KEY (location)
       REFERENCES Location.Cinema(id)
       ON UPDATE CASCADE
@@ -72,8 +74,8 @@ create table Data.Session(
 	id		int Primary Key IDENTITY(0,1),
 	cinema	int not null,
 	filmId	int not null,
-	wDay	int not null, -- represents one day of the week
-	dTime	time not null
+	startDay date not null,
+	noWeeks	int not null
 	CONSTRAINT FK_session_filmid FOREIGN KEY (filmId)
       REFERENCES Data.Film(imdb)
       ON UPDATE CASCADE,
@@ -88,11 +90,10 @@ create table Data.Session(
 
 -- Operations Schema
 create table Operations.Session_instance(
+    id          int Primary Key IDENTITY (0,1),
 	session		int not null,
 	sCinema		int not null,
 	sNum		int not null,
-
-	Primary Key (session, sCinema, sNum),
 
 	CONSTRAINT FK_session_inst_sessao FOREIGN KEY (session)
       REFERENCES Data.Session(id),
@@ -109,7 +110,7 @@ create table Operations.Cleaning_Record(
 	tm		datetime not null,
 	sCinema	int	not null,
 	sNum	int	not null,
-	func	int not null,
+	func	int not null default -1,
 
 	Primary Key(sCinema, sNum, tm),
 
@@ -119,26 +120,23 @@ create table Operations.Cleaning_Record(
 	  On Delete Cascade,
 
 	CONSTRAINT FK_limpeza_func FOREIGN KEY (func)
-      REFERENCES Management.Employee(id)
-      ON UPDATE CASCADE,
+      REFERENCES Management.Employee(id),
 );
 
 create table Operations.Client(
 	id		int	Primary Key IDENTITY(0,1),
 	name	varchar(max) not null,
+	email	varchar(max),
 	dNasc	date	not null
 );
 
 create table Operations.Reservation(
+    id          int PRIMARY KEY identity(0,1),
 	seat		int	not null,
 	session		int not null,
-	sCinema		int not null,
-	sNum		int not null,
 
-	Primary Key(seat, session, sCinema, sNum),
-
-	CONSTRAINT FK_reservation_session FOREIGN KEY (session, sCinema, sNum)
-      REFERENCES Operations.Session_instance(session, sCinema, sNum)
+	CONSTRAINT FK_reservation_session FOREIGN KEY (session)
+      REFERENCES Operations.Session_instance(session)
       ON UPDATE CASCADE
 	  ON DELETE Cascade,
 );
@@ -146,7 +144,11 @@ create table Operations.Reservation(
 create table Operations.Ticket(
 	id			int Primary Key IDENTITY(0,1),
 	price		real not null,
-	client		int	not null,
+	client		int	not null default 0,
+
+    reservation int not null,
+    session_instance int not null,
+    seller  int not null,
 
 	seat		int	not null,
 	session		int not null,
@@ -156,12 +158,35 @@ create table Operations.Ticket(
 	CONSTRAINT FK_ticket_client FOREIGN KEY (client)
       REFERENCES Operations.Client(id)
       ON UPDATE CASCADE
-	  ON DELETE no action,
+	  ON DELETE SET DEFAULT ,
 
 	CONSTRAINT FK_ticket_reservation FOREIGN KEY (seat, session, sCinema, sNum)
       REFERENCES Operations.reservation(seat, session, sCinema, sNum)
       ON UPDATE CASCADE
 	  ON DELETE No action,
 
+
+
 );
 
+create table operations.Ticket
+(
+	id int identity(0, 1) primary key,
+	price real not null,
+	client int default 0 not null,
+	reservation int not null,
+	sellerId int not null,
+
+    constraint FK_ticket_client FOREIGN KEY (client)
+    references operations.Client(id)
+        on update set default,
+
+    constraint FK_ticket_reservation  FOREIGN KEY (reservation)
+    references operations.Reservation(id)
+        on update cascade,
+
+
+    constraint FK_ticket_sellerId FOREIGN KEY (sellerId)
+    references management.Employee(id)
+        on update cascade,
+)

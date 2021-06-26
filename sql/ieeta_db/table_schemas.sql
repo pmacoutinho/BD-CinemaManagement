@@ -8,3 +8,5 @@ create schema management;
 go
 create schema data;
 go
+create schema public_access;
+go

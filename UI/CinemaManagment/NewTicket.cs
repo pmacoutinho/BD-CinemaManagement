@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -105,7 +106,8 @@ namespace CinemaManagment.SellerComps
             if (lst_box_seats.SelectedIndex >= 0)
             {
                 selectedSeat = lst_box_seats.SelectedIndex;
-               
+            Debug.WriteLine(seatList[selectedSeat]);
+
             }
         }
 
@@ -126,6 +128,8 @@ namespace CinemaManagment.SellerComps
             {
                 lst_box_seats.Items.Add(elem.ToString());
             }
+
+            seatList = numberList;
         }
     }
 }
