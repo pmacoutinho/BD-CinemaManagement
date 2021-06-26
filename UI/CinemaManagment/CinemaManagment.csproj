@@ -134,7 +134,7 @@
     <Compile Include="ListWorker.designer.cs">
       <DependentUpon>ListWorker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management.cs" />
+    <Compile Include="sgbd\Management.cs" />
     <Compile Include="NewTicket.cs">
       <SubType>Form</SubType>
     </Compile>

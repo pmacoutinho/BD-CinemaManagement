@@ -16,7 +16,7 @@ namespace CinemaManagment.SellerComps
     public partial class NewTicket : Form
     {
         private Employee e;
-        private int selectedClientIdx, selectedSessionIdx, selectedSeat;
+        private int selectedClientIdx, selectedSessionIdx, selectedSeat = 0;
         List<Client> cList = Operations.loadClients();
         private List<SessionInstance> sList;
         private List<int> seatList;

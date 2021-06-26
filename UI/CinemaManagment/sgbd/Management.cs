@@ -18,7 +18,7 @@ namespace CinemaManagment.sgbd
         {
             if (!SGBDCon.verifySGBDConnection())
                 return -1;
-            SqlCommand cmd = new SqlCommand("operations.p_new_employee", cn)
+            SqlCommand cmd = new SqlCommand("management.p_new_employee", cn)
             {
                 CommandType = CommandType.StoredProcedure
             };
@@ -152,7 +152,34 @@ namespace CinemaManagment.sgbd
             Employee e = new Employee();
             while (reader.Read())
             {
+                e.id = Int32.Parse(reader["id"].ToString());
+                e.name = reader["name"].ToString();
+                e.email = reader["email"].ToString();
+                e.cinema = Int32.Parse(reader["location"].ToString());
+                e.shift = Int32.Parse(reader["eShift"].ToString());
+                e.type = Int32.Parse(reader["eType"].ToString());
+            }
 
+            cn.Close();
+
+            return e;
+        }
+
+        public static List<Employee> loadCleaners()
+        {
+
+            if (!SGBDCon.verifySGBDConnection())
+                return null;
+
+            List<Employee> lst = new List<Employee>();
+
+            SqlCommand cmd = new SqlCommand("SELECT * from management.f_get_cleaners()", cn);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Employee e = new Employee();
                 e.id = Int32.Parse(reader["id"].ToString());
                 e.name = reader["name"].ToString();
                 e.email = reader["email"].ToString();
@@ -160,12 +187,40 @@ namespace CinemaManagment.sgbd
                 e.shift = Int32.Parse(reader["eShift"].ToString());
                 e.type = Int32.Parse(reader["eType"].ToString());
 
-
+                lst.Add(e);
             }
 
             cn.Close();
 
-            return e;
+            return lst;
+        }
+
+        public static int newRoom(Room r)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                return -1;
+            SqlCommand cmd = new SqlCommand("management.p_new_room", cn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add(new SqlParameter("@Num", r.num));
+            cmd.Parameters.Add(new SqlParameter("@Cinema", r.cinema));
+            cmd.Parameters.Add(new SqlParameter("@NSeats", r.nSeats));
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to add contact in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+            return (int)r.num;
         }
     }
 }
