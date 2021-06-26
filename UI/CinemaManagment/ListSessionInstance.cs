@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace CinemaManagment
 {
-    public partial class ListClient : Form
+    public partial class ListSessionInstance : Form
     {
         private SqlConnection cn = SGBDCon.getCN();
 
-        public ListClient()
+        public ListSessionInstance()
         {
             InitializeComponent();
             customizeDesign();
@@ -26,19 +26,24 @@ namespace CinemaManagment
 
         private void customizeDesign()
         {
-            dataGridViewClients.EnableHeadersVisualStyles = false;
-            dataGridViewClients.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 14);
+            dataGridViewSessionInstance.EnableHeadersVisualStyles = false;
+            dataGridViewSessionInstance.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 14);
         }
 
         private void loadTable()
-        {var select = "SELECT name AS 'Name', email AS 'Email', dNasc AS 'Date Of Birth' FROM Operations.Client";
+        {
+            var select = "SELECT Operations.Session_instance.id AS 'ID', Data.Film.name AS 'Film', " +
+                "Operations.Session_instance.time AS 'Start Time', Operations.Session_instance.sNum AS 'Room' " +
+                "FROM Operations.Session_instance " +
+                "JOIN Data.Session ON Operations.Session_instance.session=Data.Session.id " +
+                "JOIN Data.Film ON filmId=imdb ";
             var dataAdapter = new SqlDataAdapter(select, cn);
 
             var commandBuilder = new SqlCommandBuilder(dataAdapter);
             var ds = new DataSet();
             dataAdapter.Fill(ds);
-            dataGridViewClients.ReadOnly = true;
-            dataGridViewClients.DataSource = ds.Tables[0];
+            dataGridViewSessionInstance.ReadOnly = true;
+            dataGridViewSessionInstance.DataSource = ds.Tables[0];
         }
 
         public static String buttonClicked = "";
@@ -50,15 +55,15 @@ namespace CinemaManagment
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {
             buttonClicked = "add";
-            AddClient addClient = new AddClient();
-            addClient.Show();
+            AddSessionInstance addSessionInstance = new AddSessionInstance();
+            addSessionInstance.Show();
         }
 
         private void roundedButtonEdit_Click(object sender, EventArgs e)
         {
             buttonClicked = "edit";
-            AddClient addClient = new AddClient();
-            addClient.Show();
+            AddSessionInstance addSessionInstance = new AddSessionInstance();
+            addSessionInstance.Show();
         }
     }
 }

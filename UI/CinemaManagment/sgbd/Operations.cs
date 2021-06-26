@@ -193,5 +193,33 @@ namespace CinemaManagment.sgbd
 
             return (int)cr.sNum;
         }
+
+        public static int newSessionInstance(SessionInstance si)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                return -1;
+            SqlCommand cmd = new SqlCommand("operations.p_add_session_instance", cn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add(new SqlParameter("@SessionId", si.sessionId));
+            cmd.Parameters.Add(new SqlParameter("@RoomNumber", si.roomNumber));
+            cmd.Parameters.Add(new SqlParameter("@InstTime", si.time.ToString("HH:mm")));
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to add contact in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+            return (int)si.sessionId;
+        }
     }
 }

@@ -47,8 +47,18 @@ namespace CinemaManagment
 
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {
-            AddTicket addTicket = new AddTicket();
-            addTicket.Show();
+            int employeeId = -1;
+            using (var form = new ChooseSeller())
+            {
+                var result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    employeeId = form.result;
+                }
+            }
+
+            Seller seller = new Seller(employeeId);
+            seller.Show();
         }
     }
 }

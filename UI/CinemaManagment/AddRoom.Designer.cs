@@ -31,10 +31,12 @@ namespace CinemaManagment
         {
             this.labelAddRoom = new System.Windows.Forms.Label();
             this.labelRoomNumber = new System.Windows.Forms.Label();
-            this.textBoxMovieTitle = new System.Windows.Forms.TextBox();
             this.labelCapacity = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
+            this.numericUpDownNumber = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownCapacity = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCapacity)).BeginInit();
             this.SuspendLayout();
             // 
             // labelAddRoom
@@ -59,13 +61,6 @@ namespace CinemaManagment
             this.labelRoomNumber.TabIndex = 10;
             this.labelRoomNumber.Text = "Room Number";
             // 
-            // textBoxMovieTitle
-            // 
-            this.textBoxMovieTitle.Location = new System.Drawing.Point(17, 100);
-            this.textBoxMovieTitle.Name = "textBoxMovieTitle";
-            this.textBoxMovieTitle.Size = new System.Drawing.Size(269, 22);
-            this.textBoxMovieTitle.TabIndex = 11;
-            // 
             // labelCapacity
             // 
             this.labelCapacity.AutoSize = true;
@@ -76,13 +71,6 @@ namespace CinemaManagment
             this.labelCapacity.Size = new System.Drawing.Size(87, 28);
             this.labelCapacity.TabIndex = 12;
             this.labelCapacity.Text = "Capacity";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(17, 176);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 22);
-            this.textBox1.TabIndex = 13;
             // 
             // roundedButtonAdd
             // 
@@ -105,20 +93,36 @@ namespace CinemaManagment
             this.roundedButtonAdd.UseVisualStyleBackColor = false;
             this.roundedButtonAdd.Click += new System.EventHandler(this.roundedButtonAdd_Click);
             // 
+            // numericUpDownNumber
+            // 
+            this.numericUpDownNumber.Location = new System.Drawing.Point(19, 100);
+            this.numericUpDownNumber.Name = "numericUpDownNumber";
+            this.numericUpDownNumber.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownNumber.TabIndex = 21;
+            // 
+            // numericUpDownCapacity
+            // 
+            this.numericUpDownCapacity.Location = new System.Drawing.Point(19, 176);
+            this.numericUpDownCapacity.Name = "numericUpDownCapacity";
+            this.numericUpDownCapacity.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownCapacity.TabIndex = 22;
+            // 
             // AddRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(664, 506);
+            this.Controls.Add(this.numericUpDownCapacity);
+            this.Controls.Add(this.numericUpDownNumber);
             this.Controls.Add(this.roundedButtonAdd);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelCapacity);
-            this.Controls.Add(this.textBoxMovieTitle);
             this.Controls.Add(this.labelRoomNumber);
             this.Controls.Add(this.labelAddRoom);
             this.Name = "AddRoom";
             this.Text = "Add Room";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCapacity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,9 +132,9 @@ namespace CinemaManagment
 
         private System.Windows.Forms.Label labelAddRoom;
         private System.Windows.Forms.Label labelRoomNumber;
-        private System.Windows.Forms.TextBox textBoxMovieTitle;
         private System.Windows.Forms.Label labelCapacity;
-        private System.Windows.Forms.TextBox textBox1;
         private CustomControls.RJControls.RoundedButton roundedButtonAdd;
+        private System.Windows.Forms.NumericUpDown numericUpDownNumber;
+        private System.Windows.Forms.NumericUpDown numericUpDownCapacity;
     }
 }

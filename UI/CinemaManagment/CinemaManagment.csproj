@@ -76,11 +76,11 @@
     <Compile Include="AddSession.designer.cs">
       <DependentUpon>AddSession.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddTicket.cs">
+    <Compile Include="AddSessionInstance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddTicket.designer.cs">
-      <DependentUpon>AddTicket.cs</DependentUpon>
+    <Compile Include="AddSessionInstance.Designer.cs">
+      <DependentUpon>AddSessionInstance.cs</DependentUpon>
     </Compile>
     <Compile Include="ChooseSeller.cs">
       <SubType>Form</SubType>
@@ -92,6 +92,8 @@
     <Compile Include="Entities\CleaningRecord.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\Reservation.cs" />
+    <Compile Include="Entities\Room.cs" />
+    <Compile Include="Entities\Session.cs" />
     <Compile Include="Entities\SessionInstance.cs" />
     <Compile Include="Entities\Client.cs" />
     <Compile Include="Entities\Film.cs" />
@@ -113,6 +115,12 @@
     </Compile>
     <Compile Include="ListSession.designer.cs">
       <DependentUpon>ListSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListSessionInstance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListSessionInstance.Designer.cs">
+      <DependentUpon>ListSessionInstance.cs</DependentUpon>
     </Compile>
     <Compile Include="ListTicketHistory.cs">
       <SubType>Form</SubType>
@@ -210,8 +218,8 @@
     <EmbeddedResource Include="AddSession.resx">
       <DependentUpon>AddSession.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddTicket.resx">
-      <DependentUpon>AddTicket.cs</DependentUpon>
+    <EmbeddedResource Include="AddSessionInstance.resx">
+      <DependentUpon>AddSessionInstance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseSeller.resx">
       <DependentUpon>ChooseSeller.cs</DependentUpon>
@@ -227,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListSession.resx">
       <DependentUpon>ListSession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListSessionInstance.resx">
+      <DependentUpon>ListSessionInstance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListTicketHistory.resx">
       <DependentUpon>ListTicketHistory.cs</DependentUpon>

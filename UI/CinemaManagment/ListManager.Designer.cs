@@ -35,7 +35,6 @@ namespace CinemaManagment
             this.labelManagerList = new System.Windows.Forms.Label();
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
             this.roundedButtonEdit = new CustomControls.RJControls.RoundedButton();
-            this.roundedButtonDetails = new CustomControls.RJControls.RoundedButton();
             this.dataGridViewManager = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManager)).BeginInit();
             this.SuspendLayout();
@@ -96,26 +95,6 @@ namespace CinemaManagment
             this.roundedButtonEdit.UseVisualStyleBackColor = false;
             this.roundedButtonEdit.Click += new System.EventHandler(this.roundedButtonEdit_Click);
             // 
-            // roundedButtonDetails
-            // 
-            this.roundedButtonDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedButtonDetails.BackColor = System.Drawing.Color.SlateBlue;
-            this.roundedButtonDetails.BackgroundColor = System.Drawing.Color.SlateBlue;
-            this.roundedButtonDetails.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundedButtonDetails.BorderRadius = 20;
-            this.roundedButtonDetails.BorderSize = 0;
-            this.roundedButtonDetails.FlatAppearance.BorderSize = 0;
-            this.roundedButtonDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButtonDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButtonDetails.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonDetails.Location = new System.Drawing.Point(364, 12);
-            this.roundedButtonDetails.Name = "roundedButtonDetails";
-            this.roundedButtonDetails.Size = new System.Drawing.Size(98, 40);
-            this.roundedButtonDetails.TabIndex = 7;
-            this.roundedButtonDetails.Text = "Details";
-            this.roundedButtonDetails.TextColor = System.Drawing.Color.White;
-            this.roundedButtonDetails.UseVisualStyleBackColor = false;
-            // 
             // dataGridViewManager
             // 
             this.dataGridViewManager.AllowUserToAddRows = false;
@@ -171,7 +150,6 @@ namespace CinemaManagment
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(682, 553);
             this.Controls.Add(this.dataGridViewManager);
-            this.Controls.Add(this.roundedButtonDetails);
             this.Controls.Add(this.roundedButtonEdit);
             this.Controls.Add(this.roundedButtonAdd);
             this.Controls.Add(this.labelManagerList);
@@ -190,7 +168,6 @@ namespace CinemaManagment
         private System.Windows.Forms.Label labelManagerList;
         private CustomControls.RJControls.RoundedButton roundedButtonAdd;
         private CustomControls.RJControls.RoundedButton roundedButtonEdit;
-        private CustomControls.RJControls.RoundedButton roundedButtonDetails;
         private System.Windows.Forms.DataGridView dataGridViewManager;
     }
 }

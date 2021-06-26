@@ -30,15 +30,15 @@ namespace CinemaManagment
         private void InitializeComponent()
         {
             this.labelAddSession = new System.Windows.Forms.Label();
-            this.labelSessionID = new System.Windows.Forms.Label();
-            this.textBoxSessionID = new System.Windows.Forms.TextBox();
-            this.labelWeekday = new System.Windows.Forms.Label();
-            this.comboBoxWeekday = new System.Windows.Forms.ComboBox();
-            this.labelStartTime = new System.Windows.Forms.Label();
-            this.textBoxStartTime = new System.Windows.Forms.TextBox();
-            this.labelMovie = new System.Windows.Forms.Label();
-            this.comboBoxMovie = new System.Windows.Forms.ComboBox();
+            this.labelFilmImdb = new System.Windows.Forms.Label();
+            this.labelNoWeeks = new System.Windows.Forms.Label();
+            this.labelPremiere = new System.Windows.Forms.Label();
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
+            this.numericUpDownFilmdImdb = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownNoWeeks = new System.Windows.Forms.NumericUpDown();
+            this.monthCalendarPremiere = new System.Windows.Forms.MonthCalendar();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFilmdImdb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNoWeeks)).BeginInit();
             this.SuspendLayout();
             // 
             // labelAddSession
@@ -52,79 +52,38 @@ namespace CinemaManagment
             this.labelAddSession.TabIndex = 6;
             this.labelAddSession.Text = "Add Session";
             // 
-            // labelSessionID
+            // labelFilmImdb
             // 
-            this.labelSessionID.AutoSize = true;
-            this.labelSessionID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSessionID.ForeColor = System.Drawing.Color.White;
-            this.labelSessionID.Location = new System.Drawing.Point(12, 68);
-            this.labelSessionID.Name = "labelSessionID";
-            this.labelSessionID.Size = new System.Drawing.Size(107, 28);
-            this.labelSessionID.TabIndex = 9;
-            this.labelSessionID.Text = "Session ID";
+            this.labelFilmImdb.AutoSize = true;
+            this.labelFilmImdb.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFilmImdb.ForeColor = System.Drawing.Color.White;
+            this.labelFilmImdb.Location = new System.Drawing.Point(12, 68);
+            this.labelFilmImdb.Name = "labelFilmImdb";
+            this.labelFilmImdb.Size = new System.Drawing.Size(145, 28);
+            this.labelFilmImdb.TabIndex = 9;
+            this.labelFilmImdb.Text = "Film IMDb Key";
             // 
-            // textBoxSessionID
+            // labelNoWeeks
             // 
-            this.textBoxSessionID.Location = new System.Drawing.Point(17, 99);
-            this.textBoxSessionID.Name = "textBoxSessionID";
-            this.textBoxSessionID.Size = new System.Drawing.Size(269, 22);
-            this.textBoxSessionID.TabIndex = 10;
+            this.labelNoWeeks.AutoSize = true;
+            this.labelNoWeeks.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoWeeks.ForeColor = System.Drawing.Color.White;
+            this.labelNoWeeks.Location = new System.Drawing.Point(12, 141);
+            this.labelNoWeeks.Name = "labelNoWeeks";
+            this.labelNoWeeks.Size = new System.Drawing.Size(201, 28);
+            this.labelNoWeeks.TabIndex = 11;
+            this.labelNoWeeks.Text = "No Weeks Screening";
             // 
-            // labelWeekday
+            // labelPremiere
             // 
-            this.labelWeekday.AutoSize = true;
-            this.labelWeekday.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWeekday.ForeColor = System.Drawing.Color.White;
-            this.labelWeekday.Location = new System.Drawing.Point(12, 141);
-            this.labelWeekday.Name = "labelWeekday";
-            this.labelWeekday.Size = new System.Drawing.Size(95, 28);
-            this.labelWeekday.TabIndex = 11;
-            this.labelWeekday.Text = "Weekday";
-            // 
-            // comboBoxWeekday
-            // 
-            this.comboBoxWeekday.FormattingEnabled = true;
-            this.comboBoxWeekday.Location = new System.Drawing.Point(17, 172);
-            this.comboBoxWeekday.Name = "comboBoxWeekday";
-            this.comboBoxWeekday.Size = new System.Drawing.Size(269, 24);
-            this.comboBoxWeekday.TabIndex = 20;
-            // 
-            // labelStartTime
-            // 
-            this.labelStartTime.AutoSize = true;
-            this.labelStartTime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStartTime.ForeColor = System.Drawing.Color.White;
-            this.labelStartTime.Location = new System.Drawing.Point(12, 216);
-            this.labelStartTime.Name = "labelStartTime";
-            this.labelStartTime.Size = new System.Drawing.Size(105, 28);
-            this.labelStartTime.TabIndex = 21;
-            this.labelStartTime.Text = "Start Time";
-            // 
-            // textBoxStartTime
-            // 
-            this.textBoxStartTime.Location = new System.Drawing.Point(17, 247);
-            this.textBoxStartTime.Name = "textBoxStartTime";
-            this.textBoxStartTime.Size = new System.Drawing.Size(269, 22);
-            this.textBoxStartTime.TabIndex = 22;
-            // 
-            // labelMovie
-            // 
-            this.labelMovie.AutoSize = true;
-            this.labelMovie.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMovie.ForeColor = System.Drawing.Color.White;
-            this.labelMovie.Location = new System.Drawing.Point(12, 289);
-            this.labelMovie.Name = "labelMovie";
-            this.labelMovie.Size = new System.Drawing.Size(68, 28);
-            this.labelMovie.TabIndex = 23;
-            this.labelMovie.Text = "Movie";
-            // 
-            // comboBoxMovie
-            // 
-            this.comboBoxMovie.FormattingEnabled = true;
-            this.comboBoxMovie.Location = new System.Drawing.Point(17, 320);
-            this.comboBoxMovie.Name = "comboBoxMovie";
-            this.comboBoxMovie.Size = new System.Drawing.Size(269, 24);
-            this.comboBoxMovie.TabIndex = 24;
+            this.labelPremiere.AutoSize = true;
+            this.labelPremiere.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPremiere.ForeColor = System.Drawing.Color.White;
+            this.labelPremiere.Location = new System.Drawing.Point(12, 216);
+            this.labelPremiere.Name = "labelPremiere";
+            this.labelPremiere.Size = new System.Drawing.Size(94, 28);
+            this.labelPremiere.TabIndex = 21;
+            this.labelPremiere.Text = "Premiere";
             // 
             // roundedButtonAdd
             // 
@@ -145,6 +104,32 @@ namespace CinemaManagment
             this.roundedButtonAdd.Text = "Add";
             this.roundedButtonAdd.TextColor = System.Drawing.Color.White;
             this.roundedButtonAdd.UseVisualStyleBackColor = false;
+            this.roundedButtonAdd.Click += new System.EventHandler(this.roundedButtonAdd_Click);
+            // 
+            // numericUpDownFilmdImdb
+            // 
+            this.numericUpDownFilmdImdb.Location = new System.Drawing.Point(19, 100);
+            this.numericUpDownFilmdImdb.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.numericUpDownFilmdImdb.Name = "numericUpDownFilmdImdb";
+            this.numericUpDownFilmdImdb.Size = new System.Drawing.Size(154, 22);
+            this.numericUpDownFilmdImdb.TabIndex = 28;
+            // 
+            // numericUpDownNoWeeks
+            // 
+            this.numericUpDownNoWeeks.Location = new System.Drawing.Point(19, 173);
+            this.numericUpDownNoWeeks.Name = "numericUpDownNoWeeks";
+            this.numericUpDownNoWeeks.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownNoWeeks.TabIndex = 29;
+            // 
+            // monthCalendarPremiere
+            // 
+            this.monthCalendarPremiere.Location = new System.Drawing.Point(17, 253);
+            this.monthCalendarPremiere.Name = "monthCalendarPremiere";
+            this.monthCalendarPremiere.TabIndex = 30;
             // 
             // AddSession
             // 
@@ -152,19 +137,19 @@ namespace CinemaManagment
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(664, 506);
+            this.Controls.Add(this.monthCalendarPremiere);
+            this.Controls.Add(this.numericUpDownNoWeeks);
+            this.Controls.Add(this.numericUpDownFilmdImdb);
             this.Controls.Add(this.roundedButtonAdd);
-            this.Controls.Add(this.comboBoxMovie);
-            this.Controls.Add(this.labelMovie);
-            this.Controls.Add(this.textBoxStartTime);
-            this.Controls.Add(this.labelStartTime);
-            this.Controls.Add(this.comboBoxWeekday);
-            this.Controls.Add(this.labelWeekday);
-            this.Controls.Add(this.textBoxSessionID);
-            this.Controls.Add(this.labelSessionID);
+            this.Controls.Add(this.labelPremiere);
+            this.Controls.Add(this.labelNoWeeks);
+            this.Controls.Add(this.labelFilmImdb);
             this.Controls.Add(this.labelAddSession);
             this.MinimumSize = new System.Drawing.Size(682, 553);
             this.Name = "AddSession";
             this.Text = "AddSession";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFilmdImdb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNoWeeks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,14 +158,12 @@ namespace CinemaManagment
         #endregion
 
         private System.Windows.Forms.Label labelAddSession;
-        private System.Windows.Forms.Label labelSessionID;
-        private System.Windows.Forms.TextBox textBoxSessionID;
-        private System.Windows.Forms.Label labelWeekday;
-        private System.Windows.Forms.ComboBox comboBoxWeekday;
-        private System.Windows.Forms.Label labelStartTime;
-        private System.Windows.Forms.TextBox textBoxStartTime;
-        private System.Windows.Forms.Label labelMovie;
-        private System.Windows.Forms.ComboBox comboBoxMovie;
+        private System.Windows.Forms.Label labelFilmImdb;
+        private System.Windows.Forms.Label labelNoWeeks;
+        private System.Windows.Forms.Label labelPremiere;
         private CustomControls.RJControls.RoundedButton roundedButtonAdd;
+        private System.Windows.Forms.NumericUpDown numericUpDownFilmdImdb;
+        private System.Windows.Forms.NumericUpDown numericUpDownNoWeeks;
+        private System.Windows.Forms.MonthCalendar monthCalendarPremiere;
     }
 }

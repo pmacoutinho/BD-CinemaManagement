@@ -44,3 +44,13 @@ create
         from management.f_get_sellers()
         where id = @EmployeeId;
 go
+
+create procedure management.p_new_room
+    @Num int,
+    @Cinema int,
+    @NSeats int
+as
+	begin
+		insert into management.Room values (@Num, @Cinema, @NSeats);
+	end
+go

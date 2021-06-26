@@ -16,7 +16,6 @@ namespace CinemaManagment
 {
     public partial class AddCleaningRecord : Form
     {
-        private SqlConnection cn = SGBDCon.getCN();
 
         public AddCleaningRecord()
         {
@@ -33,8 +32,6 @@ namespace CinemaManagment
             cr.func = Convert.ToInt32(numericUpDownCleaner.Value);
 
             var res = Operations.newCleaningRecord(cr);
-            //Debug.WriteLine(res);
-            //Debug.WriteLine(c.birthday.ToString("yyyyMMdd"));
 
             this.Close();
         }

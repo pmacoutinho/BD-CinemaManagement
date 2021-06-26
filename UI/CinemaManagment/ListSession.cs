@@ -32,19 +32,11 @@ namespace CinemaManagment
 
         private void loadTable()
         {
-            /*var select = "SELECT Operations.Session_instance.id AS 'ID', Data.Film.name AS 'Movie', " +
-                "Management.Room.name AS 'Room', time AS 'Start Time', StartDay AS 'Start Day', " +
-                "noWeeks AS 'No Weeks'" +
-                "FROM Data.Session JOIN Data.Film ON filmId=imdb" +
-                "JOIN Operations.Session_instance ON Data.Session.id=session " +
-                "JOIN Management.Room ON sNum=Management.Room.num";*/
-            var select = "SELECT Operations.Session_instance.id AS 'ID', Data.Film.name AS 'Film', " +
-                "time AS 'Start Time', Management.Room.num AS 'Room'" +
-                "FROM Operations.Session_instance " +
-                "JOIN Data.Session ON Operations.Session_instance.id=Data.Session.id " +
+            var select = "SELECT Data.Session.id AS 'ID', name AS 'Film', " +
+                "startDay AS 'Premiere', noWeeks AS 'No Weeks' " +
+                "FROM Data.Session " +
                 "JOIN Data.Film ON filmId=imdb " +
-                "JOIN Management.Room ON Operations.Session_instance.sNum=Management.Room.num " +
-                "WHERE Management.Room.cinema = 1";
+                "WHERE cinema = 0";
             var dataAdapter = new SqlDataAdapter(select, cn);
 
             var commandBuilder = new SqlCommandBuilder(dataAdapter);

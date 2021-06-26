@@ -44,7 +44,6 @@ namespace CinemaManagment
             if (listBox1.SelectedIndex >= 0)
             {
                 chosenIdx = listBox1.SelectedIndex;
-                
             }
         }
 

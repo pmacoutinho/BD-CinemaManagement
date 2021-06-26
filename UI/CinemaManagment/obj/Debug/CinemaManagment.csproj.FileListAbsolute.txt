@@ -40,9 +40,10 @@ C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\Cin
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.ListTicketHistory.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.ListWorker.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.AddSession.resources
-C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.AddTicket.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.AddFilm.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.ListFilm.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.ChooseSeller.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.SellerComps.NewTicket.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.Seller.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.ListSessionInstance.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.AddSessionInstance.resources

@@ -23,7 +23,7 @@ namespace CinemaManagment
         private void customizeDesign()
         {
             panelEmployeesSubmenu.Visible = false;
-            panelRoomsSubmenu.Visible = false;
+            panelSessionsSubMenu.Visible = false;
         }
         #endregion startUp
 
@@ -33,8 +33,8 @@ namespace CinemaManagment
             if (panelEmployeesSubmenu.Visible == true)
                 panelEmployeesSubmenu.Visible = false;
 
-            if (panelRoomsSubmenu.Visible == true)
-                panelRoomsSubmenu.Visible = false;
+            if (panelSessionsSubMenu.Visible == true)
+                panelSessionsSubMenu.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -58,7 +58,7 @@ namespace CinemaManagment
         #endregion clientsMenu
 
         #region cleaningRecordMenu
-        private void buttonCleaningRecords_Click_1(object sender, EventArgs e)
+        private void buttonCleaningRecords_Click(object sender, EventArgs e)
         {
             openChildForm(new ListCleaningRecord());
         }
@@ -93,22 +93,30 @@ namespace CinemaManagment
         #region roomsMenu
         private void buttonRooms_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelRoomsSubmenu);
-        }
-
-        private void buttonRoomList_Click(object sender, EventArgs e)
-        {
+            hideSubMenu();
             openChildForm(new ListRoom());
+        }
+        #endregion roomsMenu
+
+        #region sessionsMenu
+        private void buttonSessions_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelSessionsSubMenu);
         }
 
         private void buttonSessionList_Click(object sender, EventArgs e)
         {
             openChildForm(new ListSession());
         }
-        #endregion roomsMenu
+
+        private void buttonSessionInstances_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ListSessionInstance());
+        }
+        #endregion sessionsMenu
 
         #region ticketsMenu
-        private void buttonTickets_Click_1(object sender, EventArgs e)
+        private void buttonTickets_Click(object sender, EventArgs e)
         {
             openChildForm(new ListTicketHistory());
         }
@@ -128,23 +136,6 @@ namespace CinemaManagment
             panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-        }
-
-        private void Seller_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-            int employeeId = -1;
-            using (var form = new ChooseSeller())
-            {
-                var result = form.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    employeeId = form.result;
-                }
-            }
-
-            Seller seller = new Seller(employeeId);
-            seller.Show();
         }
     }
 }

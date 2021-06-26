@@ -147,6 +147,11 @@ namespace CinemaManagment
             // numericUpDownHour
             // 
             this.numericUpDownHour.Location = new System.Drawing.Point(19, 247);
+            this.numericUpDownHour.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
             this.numericUpDownHour.Name = "numericUpDownHour";
             this.numericUpDownHour.Size = new System.Drawing.Size(51, 22);
             this.numericUpDownHour.TabIndex = 30;
@@ -165,6 +170,11 @@ namespace CinemaManagment
             // numericUpDownMinutes
             // 
             this.numericUpDownMinutes.Location = new System.Drawing.Point(99, 247);
+            this.numericUpDownMinutes.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
             this.numericUpDownMinutes.Name = "numericUpDownMinutes";
             this.numericUpDownMinutes.Size = new System.Drawing.Size(51, 22);
             this.numericUpDownMinutes.TabIndex = 32;

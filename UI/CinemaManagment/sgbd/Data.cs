@@ -41,6 +41,34 @@ namespace CinemaManagment.sgbd
             return (int) f.imdb;
         }
 
-        
+        public static int newSession(Session s)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                return -1;
+            SqlCommand cmd = new SqlCommand("data.p_new_session", cn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add(new SqlParameter("@Cinema", s.cinema));
+            cmd.Parameters.Add(new SqlParameter("@FilmId", s.filmId));
+            cmd.Parameters.Add(new SqlParameter("@StartDay", s.startDay));
+            cmd.Parameters.Add(new SqlParameter("@NoWeeks", s.noWeeks));
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to add contact in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+            return (int)s.filmId;
+        }
+
     }
 }

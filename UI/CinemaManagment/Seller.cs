@@ -17,6 +17,7 @@ namespace CinemaManagment
     {
         private int employeeId;
         private Employee e;
+
         public Seller(int employeeId)
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace CinemaManagment
             this.e = Management.getEmployee(employeeId);
             label1.Text = e.ToSimpleString();
         }
+
         public Form activeForm = null;
         public void openChildForm(Form childForm)
         {
@@ -40,24 +42,9 @@ namespace CinemaManagment
             childForm.Show();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_seller_Click(object sender, EventArgs e)
         {
             openChildForm(new NewTicket(employeeId));
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelChildForm_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
