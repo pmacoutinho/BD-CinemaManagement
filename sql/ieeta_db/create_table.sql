@@ -169,7 +169,7 @@ create table Operations.Ticket(
 
 );
 
-create table operations.Ticket
+alter table operations.Ticket
 (
 	id int identity(0, 1) primary key,
 	price real not null,
@@ -179,7 +179,8 @@ create table operations.Ticket
 
     constraint FK_ticket_client FOREIGN KEY (client)
     references operations.Client(id)
-        on update set default,
+        on update cascade
+        on delete set default ,
 
     constraint FK_ticket_reservation  FOREIGN KEY (reservation)
     references operations.Reservation(id)

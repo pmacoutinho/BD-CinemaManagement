@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CinemaManagment.Entities
 {
-    class Client
+    public class Client
     {
         public int id = -1;
         public String name;

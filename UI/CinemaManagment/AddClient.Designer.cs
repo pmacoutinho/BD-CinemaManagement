@@ -37,6 +37,7 @@ namespace CinemaManagment
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
             this.clt_textBoxEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_update = new CustomControls.RJControls.RoundedButton();
             this.SuspendLayout();
             // 
             // labelAddClient
@@ -124,12 +125,35 @@ namespace CinemaManagment
             this.label1.TabIndex = 20;
             this.label1.Text = "Email";
             // 
+            // btn_update
+            // 
+            this.btn_update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_update.BackColor = System.Drawing.Color.SlateBlue;
+            this.btn_update.BackgroundColor = System.Drawing.Color.SlateBlue;
+            this.btn_update.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_update.BorderRadius = 20;
+            this.btn_update.BorderSize = 0;
+            this.btn_update.FlatAppearance.BorderSize = 0;
+            this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_update.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update.ForeColor = System.Drawing.Color.White;
+            this.btn_update.Location = new System.Drawing.Point(552, 447);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(100, 47);
+            this.btn_update.TabIndex = 22;
+            this.btn_update.Text = "Update";
+            this.btn_update.TextColor = System.Drawing.Color.White;
+            this.btn_update.UseVisualStyleBackColor = false;
+            this.btn_update.Visible = false;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
             // AddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(664, 506);
+            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.clt_textBoxEmail);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.roundedButtonAdd);
@@ -155,5 +179,6 @@ namespace CinemaManagment
         private CustomControls.RJControls.RoundedButton roundedButtonAdd;
         private System.Windows.Forms.TextBox clt_textBoxEmail;
         private System.Windows.Forms.Label label1;
+        private CustomControls.RJControls.RoundedButton btn_update;
     }
 }

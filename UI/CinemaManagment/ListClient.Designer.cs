@@ -36,6 +36,8 @@ namespace CinemaManagment
             this.dataGridViewClients = new System.Windows.Forms.DataGridView();
             this.roundedButtonEdit = new CustomControls.RJControls.RoundedButton();
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
+            this.roundedButton1 = new CustomControls.RJControls.RoundedButton();
+            this.rbtn_delete = new CustomControls.RJControls.RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClients)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +102,7 @@ namespace CinemaManagment
             this.dataGridViewClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewClients.Size = new System.Drawing.Size(658, 465);
             this.dataGridViewClients.TabIndex = 8;
+            this.dataGridViewClients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClients_CellContentClick);
             // 
             // roundedButtonEdit
             // 
@@ -134,7 +137,7 @@ namespace CinemaManagment
             this.roundedButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonAdd.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonAdd.Location = new System.Drawing.Point(572, 12);
+            this.roundedButtonAdd.Location = new System.Drawing.Point(364, 12);
             this.roundedButtonAdd.Name = "roundedButtonAdd";
             this.roundedButtonAdd.Size = new System.Drawing.Size(98, 40);
             this.roundedButtonAdd.TabIndex = 5;
@@ -143,12 +146,56 @@ namespace CinemaManagment
             this.roundedButtonAdd.UseVisualStyleBackColor = false;
             this.roundedButtonAdd.Click += new System.EventHandler(this.roundedButtonAdd_Click);
             // 
+            // roundedButton1
+            // 
+            this.roundedButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButton1.BackColor = System.Drawing.Color.SlateBlue;
+            this.roundedButton1.BackgroundColor = System.Drawing.Color.SlateBlue;
+            this.roundedButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.roundedButton1.BorderRadius = 20;
+            this.roundedButton1.BorderSize = 0;
+            this.roundedButton1.FlatAppearance.BorderSize = 0;
+            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton1.ForeColor = System.Drawing.Color.White;
+            this.roundedButton1.Location = new System.Drawing.Point(260, 12);
+            this.roundedButton1.Name = "roundedButton1";
+            this.roundedButton1.Size = new System.Drawing.Size(98, 40);
+            this.roundedButton1.TabIndex = 9;
+            this.roundedButton1.Text = "Refresh";
+            this.roundedButton1.TextColor = System.Drawing.Color.White;
+            this.roundedButton1.UseVisualStyleBackColor = false;
+            this.roundedButton1.Click += new System.EventHandler(this.roundedButton1_Click);
+            // 
+            // rbtn_delete
+            // 
+            this.rbtn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtn_delete.BackColor = System.Drawing.Color.SlateBlue;
+            this.rbtn_delete.BackgroundColor = System.Drawing.Color.SlateBlue;
+            this.rbtn_delete.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbtn_delete.BorderRadius = 20;
+            this.rbtn_delete.BorderSize = 0;
+            this.rbtn_delete.FlatAppearance.BorderSize = 0;
+            this.rbtn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbtn_delete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtn_delete.ForeColor = System.Drawing.Color.White;
+            this.rbtn_delete.Location = new System.Drawing.Point(572, 12);
+            this.rbtn_delete.Name = "rbtn_delete";
+            this.rbtn_delete.Size = new System.Drawing.Size(98, 40);
+            this.rbtn_delete.TabIndex = 10;
+            this.rbtn_delete.Text = "Delete";
+            this.rbtn_delete.TextColor = System.Drawing.Color.White;
+            this.rbtn_delete.UseVisualStyleBackColor = false;
+            this.rbtn_delete.Click += new System.EventHandler(this.rbtn_delete_Click);
+            // 
             // ListClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(682, 553);
+            this.Controls.Add(this.rbtn_delete);
+            this.Controls.Add(this.roundedButton1);
             this.Controls.Add(this.dataGridViewClients);
             this.Controls.Add(this.roundedButtonEdit);
             this.Controls.Add(this.roundedButtonAdd);
@@ -169,5 +216,7 @@ namespace CinemaManagment
         private CustomControls.RJControls.RoundedButton roundedButtonAdd;
         private CustomControls.RJControls.RoundedButton roundedButtonEdit;
         private System.Windows.Forms.DataGridView dataGridViewClients;
+        private CustomControls.RJControls.RoundedButton roundedButton1;
+        private CustomControls.RJControls.RoundedButton rbtn_delete;
     }
 }

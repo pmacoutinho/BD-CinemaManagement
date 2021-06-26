@@ -75,6 +75,30 @@ as
     end
 go
 
+CREATE procedure operations.p_update_client
+    @ClientId int,
+    @ClientName varchar(max),
+    @ClientEmail varchar(max),
+    @Birthday   date
+as
+    begin
+        update operations.Client
+        set name=@ClientName, email=@ClientEmail, dNasc = @Birthday
+        where id = @ClientId;
+
+    end
+go
+
+CREATE procedure operations.p_delete_client
+    @ClientId int
+as
+    begin
+        delete from operations.Client
+        where id = @ClientId;
+
+    end
+go
+
 CREATE procedure operations.p_new_reservation
     @SessionId int,
     @SessionTime time,

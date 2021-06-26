@@ -103,6 +103,59 @@ namespace CinemaManagment.sgbd
             return c;
         }
 
+        public static void updateClient(Client c)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                return;
+            SqlCommand cmd = new SqlCommand("operations.p_update_client", cn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add(new SqlParameter("@ClientId", c.id));
+            cmd.Parameters.Add(new SqlParameter("@ClientName", c.name));
+            cmd.Parameters.Add(new SqlParameter("@ClientEmail", c.email));
+            cmd.Parameters.Add(new SqlParameter("@Birthday", c.birthday.ToString("yyyyMMdd")));
+
+
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to update contact in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static void deleteClient(int cId)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                return;
+            SqlCommand cmd = new SqlCommand("operations.p_delete_client", cn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add(new SqlParameter("@ClientId", cId));
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to delete contact in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static void newTicket(Ticket t)
         {
             if (!SGBDCon.verifySGBDConnection())
