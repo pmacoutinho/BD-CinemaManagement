@@ -31,7 +31,7 @@ namespace CinemaManagment
         }
 
         private void loadTable()
-        {var select = "SELECT name AS 'Name', email AS 'Email', dNasc AS 'Date Of Birth' FROM Operations.Client";
+        {var select = "SELECT * FROM Operations.viewClients";
             var dataAdapter = new SqlDataAdapter(select, cn);
 
             var commandBuilder = new SqlCommandBuilder(dataAdapter);

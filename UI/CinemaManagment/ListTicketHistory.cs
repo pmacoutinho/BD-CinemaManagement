@@ -32,10 +32,7 @@ namespace CinemaManagment
 
         private void loadTable()
         {
-            var select = "SELECT Operations.Ticket.id AS 'ID', price AS 'Price', Operations.Client.name AS 'Client'" +
-                "FROM Operations.Ticket " +
-                "JOIN Operations.Client ON Operations.Ticket.client=Operations.Client.id " +
-                "JOIN Operations.Reservation ON Operations.Ticket.reservation=Operations.Reservation.id";
+            var select = "SELECT * FROM Operations.viewTickets";
             var dataAdapter = new SqlDataAdapter(select, cn);
 
             var commandBuilder = new SqlCommandBuilder(dataAdapter);
