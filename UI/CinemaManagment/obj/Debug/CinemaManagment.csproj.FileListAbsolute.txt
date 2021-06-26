@@ -47,3 +47,4 @@ C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\Cin
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.Seller.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.ListSessionInstance.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.AddSessionInstance.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.test.resources

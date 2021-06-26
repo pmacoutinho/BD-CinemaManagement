@@ -32,8 +32,7 @@ namespace CinemaManagment
 
         private void loadTable()
         {
-            var select = "SELECT imdb AS 'IMDb Key', name AS 'Title',  timeMin AS 'Runtime', director AS 'Director' " +
-                "FROM Data.Film";
+            var select = "SELECT * FROM Data.viewFilms";
             var dataAdapter = new SqlDataAdapter(select, cn);
 
             var commandBuilder = new SqlCommandBuilder(dataAdapter);

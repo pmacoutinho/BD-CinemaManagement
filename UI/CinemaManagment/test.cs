@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CinemaManagment.Entities;
+using CinemaManagment.sgbd;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,25 +10,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CinemaManagment.Entities;
-using CinemaManagment.sgbd;
 
 namespace CinemaManagment
 {
-    public partial class ChooseSeller : Form
+
+    public partial class test : Form
     {
+        private SqlConnection cn = SGBDCon.getCN();
+
         public int result { get; set; }
         private int chosenIdx = 0;
         private List<Employee> lst;
 
-        public ChooseSeller()
+        public test()
         {
             InitializeComponent();
-            Load += new EventHandler(this.ChooseSeller_Load);
+            Load += new EventHandler(this.test_Load);
         }
 
 
-        private void ChooseSeller_Load(object sender, System.EventArgs e)
+        private void test_Load(object sender, System.EventArgs e)
         {
             listBox1.Items.Clear();
             lst = Management.loadSellers();
@@ -35,8 +38,6 @@ namespace CinemaManagment
             {
                 listBox1.Items.Add(c.ToSimpleString());
             }
-            
-
         }
 
         //click handlers
@@ -46,13 +47,6 @@ namespace CinemaManagment
             {
                 chosenIdx = listBox1.SelectedIndex;
             }
-        }
-
-        private void roundedButtonEdit_Click(object sender, EventArgs e)
-        {
-            this.result = lst[chosenIdx].id;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
         }
     }
 }

@@ -49,6 +49,7 @@ namespace CinemaManagment
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelSessionsSubMenu.SuspendLayout();
             this.panelEmployeesSubmenu.SuspendLayout();
@@ -61,6 +62,7 @@ namespace CinemaManagment
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelSideMenu.Controls.Add(this.button1);
             this.panelSideMenu.Controls.Add(this.buttonTickets);
             this.panelSideMenu.Controls.Add(this.panelSessionsSubMenu);
             this.panelSideMenu.Controls.Add(this.buttonSessions);
@@ -282,6 +284,20 @@ namespace CinemaManagment
             this.panelChildForm.Size = new System.Drawing.Size(682, 553);
             this.panelChildForm.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Location = new System.Drawing.Point(0, 587);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(229, 45);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -325,6 +341,7 @@ namespace CinemaManagment
         private System.Windows.Forms.Panel panelSessionsSubMenu;
         private System.Windows.Forms.Button buttonSessionInstances;
         private System.Windows.Forms.Button buttonSessionList;
+        private System.Windows.Forms.Button button1;
     }
 }
 
