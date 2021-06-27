@@ -121,5 +121,32 @@ namespace CinemaManagment.sgbd
             return (int)s.filmId;
         }
 
+        public static List<Session> loadSessions(int sessionId)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                return null;
+
+            List<Session> lst = new List<Session>();
+
+            SqlCommand cmd = new SqlCommand("SELECT * from data.f_get_sessions(@CinemaId, @Date)", cn);
+            cmd.Parameters.Add(new SqlParameter("@CinemaId", sessionId.ToString()));
+            cmd.Parameters.Add(new SqlParameter("@Date", DateTime.Now));
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Session s = new Session();
+                s.filmName = reader["Film Name"].ToString();
+                s.startDay = DateTime.Parse(reader["Premiere"].ToString());
+                s.noWeeks = Int32.Parse(reader["No Weeks"].ToString());
+                lst.Add(s);
+            }
+
+            cn.Close();
+
+            return lst;
+        }
+
     }
 }

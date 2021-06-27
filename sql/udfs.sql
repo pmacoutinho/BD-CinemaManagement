@@ -8,6 +8,16 @@ AS
         where imdb=@FilmImdb
 go
 
+create function data.f_get_sessions(@CinemaID int, @Date date)
+returns table
+as
+	return
+		SELECT name AS 'Film Name', startDay AS 'Premiere', noWeeks AS 'No Weeks' 
+		FROM Data.Session 
+		JOIN Data.Film ON filmId = imdb 
+		WHERE Data.Session.cinema=@CinemaID AND ((@Date between startDay and dateadd(week, noWeeks, startDay)) or @Date < Session.startDay)
+go
+
 -- location
 create function location.f_get_cinemas() returns table as
     return select * from Cinema
@@ -75,6 +85,29 @@ create
         select *
         from operations.f_get_clients()
         where ClientId =@Id;
+go
+
+create
+    function operations.f_get_session_instance(@CinemaId int) returns table as
+    return
+        SELECT Operations.Session_instance.id AS 'ID', Data.Film.name AS 'Film', 
+		Operations.Session_instance.time AS 'Start Time', Operations.Session_instance.sNum AS 'Room' 
+		FROM Operations.Session_instance 
+		JOIN Data.Session ON Operations.Session_instance.session=Data.Session.id 
+		JOIN Data.Film ON filmId=imdb 
+		WHERE Operations.Session_instance.sCinema=@CinemaId
+go
+
+create
+    function operations.f_get_tickets(@CinemaId int) returns table as
+    return
+        SELECT Operations.Ticket.id AS 'ID', price AS 'Price', Operations.Client.name AS 'Client', Management.Employee.name AS 'Seller'  
+		FROM Operations.Ticket 
+		JOIN Operations.Client ON Operations.Ticket.client=Operations.Client.id 
+		JOIN Operations.Reservation ON Operations.Ticket.reservation=Operations.Reservation.id 
+		JOIN Data.Session ON Operations.Reservation.session_i=Data.Session.id 
+		JOIN Management.Employee ON Operations.Ticket.sellerId=Management.Employee.id 
+		WHERE Data.Session.cinema=@CinemaId
 go
 
 -- public_access

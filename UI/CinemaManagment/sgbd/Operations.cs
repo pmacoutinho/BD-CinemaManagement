@@ -186,6 +186,33 @@ namespace CinemaManagment.sgbd
             }
         }
 
+        public static List<Ticket> loadTickets(int ticketId)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                return null;
+
+            List<Ticket> lst = new List<Ticket>();
+
+            SqlCommand cmd = new SqlCommand("SELECT * from operations.f_get_tickets(@CinemaId)", cn);
+            cmd.Parameters.Add(new SqlParameter("@CinemaId", ticketId.ToString()));
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Ticket t = new Ticket();
+                t.id = Int32.Parse(reader["ID"].ToString());
+                t.price = Int32.Parse(reader["Price"].ToString());
+                t.clientName = reader["Client"].ToString(); 
+                t.sellerName = reader["Seller"].ToString();
+                lst.Add(t);
+            }
+
+            cn.Close();
+
+            return lst;
+        }
+
         public static Reservation getSeats(int si)
         {
             if (!SGBDCon.verifySGBDConnection())
@@ -329,6 +356,33 @@ namespace CinemaManagment.sgbd
             }
 
             return (int)si.sessionId;
+        }
+
+        public static List<SessionInstance> loadSessionInstances(int sessionInstanceId)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                return null;
+
+            List<SessionInstance> lst = new List<SessionInstance>();
+
+            SqlCommand cmd = new SqlCommand("SELECT * from operations.f_get_session_instance(@CinemaId)", cn);
+            cmd.Parameters.Add(new SqlParameter("@CinemaId", sessionInstanceId.ToString()));
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                SessionInstance si = new SessionInstance();
+                si.id = Int32.Parse(reader["ID"].ToString());
+                si.filmName = reader["Film"].ToString();
+                si.time = DateTime.Parse(reader["Start Time"].ToString());
+                si.roomNumber = Int32.Parse(reader["Room"].ToString());
+                lst.Add(si);
+            }
+
+            cn.Close();
+
+            return lst;
         }
     }
 }

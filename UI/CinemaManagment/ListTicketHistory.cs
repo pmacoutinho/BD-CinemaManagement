@@ -5,11 +5,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CinemaManagment.Common;
 
 namespace CinemaManagment
 {
@@ -32,22 +34,26 @@ namespace CinemaManagment
 
         private void loadTable()
         {
-            Login login = new Login();
-            int cinema = login.getCinema();
+            User u = User.getInstance();
 
-            var select = "SELECT Operations.Ticket.id AS 'ID', price AS 'Price', Operations.Client.name AS 'Client' " +
+           /* var select = "SELECT Operations.Ticket.id AS 'ID', price AS 'Price', Operations.Client.name AS 'Client', " +
+                "Management.Employee.name AS 'Seller' " +
                 "FROM Operations.Ticket " +
                 "JOIN Operations.Client ON Operations.Ticket.client=Operations.Client.id " +
                 "JOIN Operations.Reservation ON Operations.Ticket.reservation=Operations.Reservation.id " +
                 "JOIN Data.Session ON Operations.Reservation.session_i=Data.Session.id " +
-                "WHERE Data.Session.cinema=" + cinema;
+                "JOIN Management.Employee ON Operations.Ticket.sellerId=Management.Employee.id" +
+                "WHERE Data.Session.cinema=" + u.e.cinema;
             var dataAdapter = new SqlDataAdapter(select, cn);
 
             var commandBuilder = new SqlCommandBuilder(dataAdapter);
             var ds = new DataSet();
             dataAdapter.Fill(ds);
             dataGridViewTicket.ReadOnly = true;
-            dataGridViewTicket.DataSource = ds.Tables[0];
+            dataGridViewTicket.DataSource = ds.Tables[0];*/
+
+            dataGridViewTicket.ReadOnly = true;
+            dataGridViewTicket.DataSource = Operations.loadTickets(u.e.cinema);
         }
 
         private void roundedButtonAdd_Click(object sender, EventArgs e)

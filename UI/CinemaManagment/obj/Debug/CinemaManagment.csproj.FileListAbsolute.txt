@@ -66,7 +66,6 @@ C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\git\BD-CinemaManagment\UI
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\git\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.ListWorker.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\git\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.ListFilm.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\git\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.ListRoom.resources
-C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\git\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.ListVendor.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\git\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.AddEmployee.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\git\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.SellerComps.NewTicket.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\git\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.Properties.Resources.resources

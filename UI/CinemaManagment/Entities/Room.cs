@@ -11,11 +11,12 @@ namespace CinemaManagment.Entities
     {
         [DisplayName("Number")]
         public int num {get; set;}
-        
-        [DisplayName("Cinema")]
-        public int cinema {get; set;}
-        
-        [DisplayName("Seats")]
+
+        /* [DisplayName("Cinema")]
+         public int cinema {get; set;}*/
+        public int cinema;
+
+         [DisplayName("Seats")]
         public int nSeats {get; set;}
     }
 }

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CinemaManagment.Common;
 
 namespace CinemaManagment
 {
@@ -32,22 +33,10 @@ namespace CinemaManagment
 
         private void loadTable()
         {
-            Login login = new Login();
-            int cinema = login.getCinema();
+            User u = User.getInstance();
 
-            var select = "SELECT Operations.Session_instance.id AS 'ID', Data.Film.name AS 'Film', " +
-                "Operations.Session_instance.time AS 'Start Time', Operations.Session_instance.sNum AS 'Room' " +
-                "FROM Operations.Session_instance " +
-                "JOIN Data.Session ON Operations.Session_instance.session=Data.Session.id " +
-                "JOIN Data.Film ON filmId=imdb " +
-                "WHERE Operations.Session_instance.sCinema=" + cinema;
-            var dataAdapter = new SqlDataAdapter(select, cn);
-
-            var commandBuilder = new SqlCommandBuilder(dataAdapter);
-            var ds = new DataSet();
-            dataAdapter.Fill(ds);
             dataGridViewSessionInstance.ReadOnly = true;
-            dataGridViewSessionInstance.DataSource = ds.Tables[0];
+            dataGridViewSessionInstance.DataSource = Operations.loadSessionInstances(u.e.cinema);
         }
 
         public static String buttonClicked = "";
