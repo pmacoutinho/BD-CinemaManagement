@@ -174,7 +174,6 @@ namespace CinemaManagment.sgbd
             List<Employee> lst = new List<Employee>();
 
             SqlCommand cmd = new SqlCommand("SELECT * from management.f_get_cleaners()", cn);
-
             SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
@@ -195,10 +194,37 @@ namespace CinemaManagment.sgbd
             return lst;
         }
 
+        public static List<Room> loadRooms(int cinemaId)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                return null;
+
+            List<Room> lst = new List<Room>();
+
+            SqlCommand cmd = new SqlCommand("SELECT * from management.f_get_rooms(@CinemaId)", cn);
+            cmd.Parameters.Add(new SqlParameter("@CinemaId", cinemaId.ToString()));
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Room r = new Room();
+                r.cinema=Int32.Parse(reader["cinema"].ToString());
+                r.num=Int32.Parse(reader["num"].ToString());
+                r.nSeats=Int32.Parse(reader["nSeats"].ToString());
+
+                lst.Add(r);
+            }
+
+            cn.Close();
+
+            return lst;
+        }
+        
         public static int newRoom(Room r)
         {
             if (!SGBDCon.verifySGBDConnection())
-                return -1;
+                throw SGBDCon.getConnectionException();
             SqlCommand cmd = new SqlCommand("management.p_new_room", cn)
             {
                 CommandType = CommandType.StoredProcedure
@@ -213,7 +239,7 @@ namespace CinemaManagment.sgbd
             }
             catch (Exception ex)
             {
-                throw new Exception("Failed to add contact in database. \n ERROR MESSAGE: \n" + ex.Message);
+                throw new Exception("Failed to add room in database. \n ERROR MESSAGE: \n" + ex.Message);
             }
             finally
             {
@@ -221,6 +247,32 @@ namespace CinemaManagment.sgbd
             }
 
             return (int)r.num;
+        }
+
+        public static void deleteRoom(Room r)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                throw SGBDCon.getConnectionException();
+            SqlCommand cmd = new SqlCommand("management.p_delete_room", cn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add(new SqlParameter("@Num", r.num));
+            cmd.Parameters.Add(new SqlParameter("@Cinema", r.cinema));
+            cmd.Parameters.Add(new SqlParameter("@NSeats", r.nSeats));
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to delete room in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }

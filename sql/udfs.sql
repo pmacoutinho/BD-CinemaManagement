@@ -45,6 +45,21 @@ create
         where id = @EmployeeId
 go
 
+create
+    function management.f_get_cleaners() returns table as
+    return
+        select *
+        from management.f_get_employees()
+        where eType = 3
+go
+
+create
+    function management.f_get_rooms(@CinemaId int) returns table as
+    return
+        select *
+        from management.Room
+        where cinema=@CinemaId;
+go
 -- operations
 
 create

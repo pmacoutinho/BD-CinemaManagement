@@ -17,20 +17,41 @@ namespace CinemaManagment
     public partial class AddRoom : Form
     {
         private SqlConnection cn = SGBDCon.getCN();
+        private bool update = false;
+        private Room r;
 
         public AddRoom()
         {
             InitializeComponent();
             customizeDesign();
         }
+        
+        public AddRoom(Room r)
+        {
+            InitializeComponent();
+            this.r = r;
+            update = true;
+            customizeDesign();
+        }
 
         private void customizeDesign()
         {
-            ListRoom listRoom = new ListRoom();
-            if (listRoom.getButtonClicked() == "edit")
+            if (update)
+            {
                 labelAddRoom.Text = "Edit Room";
-            else
+                rBtn_update.Visible = true;
+                roundedButtonAdd.Visible = false;
+
+
+                numericUpDownNumber.Value = r.num;
+                num_cinema.Value = r.cinema;
+                numericUpDownCapacity.Value = r.nSeats;
+            } else
+            {
                 labelAddRoom.Text = "Add Room";
+                rBtn_update.Visible = false;
+                roundedButtonAdd.Visible = true;
+            }
         }
 
         private void roundedButtonAdd_Click(object sender, EventArgs e)
@@ -45,5 +66,24 @@ namespace CinemaManagment
 
             this.Close();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void rBtn_update_Click(object sender, EventArgs e)
+        {
+            Room newRoom = new Room();
+            newRoom.num = Convert.ToInt32(numericUpDownNumber.Value);
+            newRoom.cinema = Convert.ToInt32(num_cinema.Value);
+            newRoom.nSeats = Convert.ToInt32(numericUpDownCapacity.Value);
+            
+            Management.deleteRoom(r);
+            Management.newRoom(newRoom);
+            
+            this.Close();
+        }
+        
     }
 }

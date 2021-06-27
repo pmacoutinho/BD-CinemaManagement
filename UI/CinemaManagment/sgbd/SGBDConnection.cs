@@ -43,6 +43,9 @@ namespace CinemaManagment.sgbd
 
 
         /*******************/
-        
+        public static Exception getConnectionException()
+        {
+            return new Exception("DB is not availabe!");
+        }
     }
 }

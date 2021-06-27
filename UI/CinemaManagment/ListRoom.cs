@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,20 +27,15 @@ namespace CinemaManagment
 
         private void customizeDesign()
         {
+            dataGridViewRooms.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
             dataGridViewRooms.EnableHeadersVisualStyles = false;
             dataGridViewRooms.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 14);
         }
         private void loadTable()
         {
-            var select = "SELECT num AS 'Num', nSeats AS 'Capacity' " +
-                "FROM Management.Room WHERE cinema=1";
-            var dataAdapter = new SqlDataAdapter(select, cn);
-
-            var commandBuilder = new SqlCommandBuilder(dataAdapter);
-            var ds = new DataSet();
-            dataAdapter.Fill(ds);
             dataGridViewRooms.ReadOnly = true;
-            dataGridViewRooms.DataSource = ds.Tables[0];
+            dataGridViewRooms.DataSource = Management.loadRooms(1);
         }
 
         public static String buttonClicked = "";
@@ -57,9 +53,22 @@ namespace CinemaManagment
 
         private void roundedButtonEdit_Click(object sender, EventArgs e)
         {
-            buttonClicked = "edit";
-            AddRoom addRoom = new AddRoom();
+
+            Debug.WriteLine(dataGridViewRooms.SelectedRows[0].DataBoundItem.ToString());
+            Room r = (Room) dataGridViewRooms.SelectedRows[0].DataBoundItem;
+            
+            AddRoom addRoom = new AddRoom(r);
             addRoom.Show();
+        }
+
+        private void rBtn_refresh_Click_1(object sender, EventArgs e)
+        {
+            loadTable();
+        }
+
+        private void rBtn_delete_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -74,6 +74,27 @@ as
     end
 go
 
+create procedure management.p_new_room
+    @Num int,
+    @Cinema int,
+    @NSeats int
+as
+	begin
+		insert into management.Room values (@Num, @Cinema, @NSeats);
+	end
+go
+
+create procedure management.p_delete_room
+    @Num int,
+    @Cinema int,
+    @NSeats int
+as
+	begin
+	    delete from management.Room
+	    where nSeats=@NSeats and num=@Num and cinema=@Cinema;
+
+	end
+go
 -- operations
 create procedure operations.p_new_cleaning_record
     @Cinema int,

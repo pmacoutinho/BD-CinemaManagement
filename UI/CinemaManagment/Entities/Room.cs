@@ -1,15 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CinemaManagment.Entities
 {
-    class Room
+    public class Room
     {
-        public int num;
-        public int cinema;
-        public int nSeats;
+        [DisplayName("Number")]
+        public int num {get; set;}
+        
+        [DisplayName("Cinema")]
+        public int cinema {get; set;}
+        
+        [DisplayName("Seats")]
+        public int nSeats {get; set;}
     }
 }
