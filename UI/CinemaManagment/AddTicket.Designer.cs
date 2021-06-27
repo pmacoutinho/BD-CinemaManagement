@@ -38,6 +38,7 @@
             this.labelSeats = new System.Windows.Forms.Label();
             this.comboBoxSeat = new System.Windows.Forms.ComboBox();
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
+            this.seller_name = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelAddTicket
@@ -149,12 +150,22 @@
             this.roundedButtonAdd.UseVisualStyleBackColor = false;
             this.roundedButtonAdd.Click += new System.EventHandler(this.roundedButtonAdd_Click);
             // 
+            // seller_name
+            // 
+            this.seller_name.BackColor = System.Drawing.SystemColors.Control;
+            this.seller_name.Location = new System.Drawing.Point(17, 99);
+            this.seller_name.Name = "seller_name";
+            this.seller_name.Size = new System.Drawing.Size(232, 24);
+            this.seller_name.TabIndex = 29;
+            this.seller_name.Text = "label1";
+            // 
             // AddTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (21)))), ((int) (((byte) (32)))));
             this.ClientSize = new System.Drawing.Size(664, 506);
+            this.Controls.Add(this.seller_name);
             this.Controls.Add(this.roundedButtonAdd);
             this.Controls.Add(this.comboBoxSeat);
             this.Controls.Add(this.labelSeats);
@@ -171,6 +182,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label seller_name;
 
         #endregion
 

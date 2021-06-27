@@ -44,7 +44,19 @@ namespace CinemaManagment
 
         private void customizeDesign()
         {
-            loadSeller();
+            if (e.type != 0)
+            {
+                comboBoxSeller.Visible = false;
+                seller_name.Visible = true;
+                seller_name.Text = e.name;
+            }
+            else
+            {
+                comboBoxSeller.Visible = true;
+                seller_name.Visible = false;
+                loadSeller();
+            }
+            
             loadClient();
             loadSession();
         }
@@ -122,7 +134,16 @@ namespace CinemaManagment
         {
             Ticket t = new Ticket();
 
-            t.seller = eLst[comboBoxSeller.SelectedIndex].id;
+            if (this.e.type == 0)
+            {
+                t.seller = eLst[comboBoxSeller.SelectedIndex].id;
+            }
+            else
+            {
+                t.seller = this.e.id;
+            }
+            
+            
             
             t.client = cList[comboBoxClient.SelectedIndex].id;
             t.session = sList[comboBoxSession.SelectedIndex].id;
