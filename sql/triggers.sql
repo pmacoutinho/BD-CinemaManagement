@@ -10,3 +10,17 @@ create trigger operations.t_client_assure_client_final
         end
     end
 go
+
+-- ensure fk update cascasde
+create trigger management.t_cleaning_record_fk_func_update
+    on management.Employee
+    for update as
+    begin
+        if update(id)
+        begin
+            update operations.Cleaning_Record
+            set func = inserted.id
+            from operations.Cleaning_Record, inserted, deleted
+            where deleted.id = Cleaning_Record.func;
+        end
+    end
