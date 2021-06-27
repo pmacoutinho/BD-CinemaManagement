@@ -33,7 +33,14 @@ namespace CinemaManagment
 
         private void loadTable()
         {
-            var select = "SELECT * FROM Management.viewManagers";
+            Login login = new Login();
+            int cinema = login.getCinema();
+
+            var select = "SELECT id AS 'ID', Management.Employee_Type.name AS 'Function',  Management.Employee.name AS 'Name', " +
+                "email AS 'Email', eShift AS 'Shift' " +
+                "FROM Management.Employee JOIN Management.Employee_Type ON eType=num " +
+                "WHERE Management.Employee.location=" + cinema + " AND " +
+                "(Management.Employee_Type.name='Manager' OR Management.Employee_Type.name='Deputy Manager') ";
             var dataAdapter = new SqlDataAdapter(select, cn);
 
             var commandBuilder = new SqlCommandBuilder(dataAdapter);

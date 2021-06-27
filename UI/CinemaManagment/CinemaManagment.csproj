@@ -135,6 +135,30 @@
     <Compile Include="ListWorker.designer.cs">
       <DependentUpon>ListWorker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenuCleaner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenuCleaner.designer.cs">
+      <DependentUpon>MainMenuCleaner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenuManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenuManager.designer.cs">
+      <DependentUpon>MainMenuManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenuSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenuSales.designer.cs">
+      <DependentUpon>MainMenuSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="sgbd\Management.cs" />
     <Compile Include="NewTicket.cs">
       <SubType>Form</SubType>
@@ -164,12 +188,6 @@
     <Compile Include="ListClient.Designer.cs">
       <DependentUpon>ListClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="ListFilm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,12 +199,6 @@
     </Compile>
     <Compile Include="ListRoom.Designer.cs">
       <DependentUpon>ListRoom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListVendor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListVendor.Designer.cs">
-      <DependentUpon>ListVendor.cs</DependentUpon>
     </Compile>
     <Compile Include="AddEmployee.cs">
       <SubType>Form</SubType>
@@ -252,8 +264,8 @@
     <EmbeddedResource Include="ListWorker.resx">
       <DependentUpon>ListWorker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListFilm.resx">
       <DependentUpon>ListFilm.cs</DependentUpon>
@@ -261,11 +273,17 @@
     <EmbeddedResource Include="ListRoom.resx">
       <DependentUpon>ListRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListVendor.resx">
-      <DependentUpon>ListVendor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenuCleaner.resx">
+      <DependentUpon>MainMenuCleaner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenuManager.resx">
+      <DependentUpon>MainMenuManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenuSales.resx">
+      <DependentUpon>MainMenuSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewTicket.resx">
       <DependentUpon>NewTicket.cs</DependentUpon>

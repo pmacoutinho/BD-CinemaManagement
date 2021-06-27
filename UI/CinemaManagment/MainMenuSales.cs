@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace CinemaManagment
 {
-    public partial class MainMenu : Form
+    public partial class MainMenuSales : Form
     {
         #region startUp
-        public MainMenu()
+        public MainMenuSales()
         {
             InitializeComponent();
             customizeDesign();
@@ -22,7 +22,6 @@ namespace CinemaManagment
 
         private void customizeDesign()
         {
-            panelEmployeesSubmenu.Visible = false;
             panelSessionsSubMenu.Visible = false;
         }
         #endregion startUp
@@ -30,9 +29,6 @@ namespace CinemaManagment
         #region hide/show subMenu
         private void hideSubMenu()
         {
-            if (panelEmployeesSubmenu.Visible == true)
-                panelEmployeesSubmenu.Visible = false;
-
             if (panelSessionsSubMenu.Visible == true)
                 panelSessionsSubMenu.Visible = false;
         }
@@ -56,31 +52,6 @@ namespace CinemaManagment
             openChildForm(new ListClient());
         }
         #endregion clientsMenu
-
-        #region cleaningRecordMenu
-        private void buttonCleaningRecords_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ListCleaningRecord());
-        }
-        #endregion cleaningRecordMenu
-
-        #region employeesMenu
-        private void buttonEmployees_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelEmployeesSubmenu);
-        }
-
-        private void buttonWorkers_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ListWorker());
-        }
-
-        private void buttonManagers_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ListManager());
-        }
-
-        #endregion employeesMenu
 
         #region moviesMenu
         private void buttonMovies_Click(object sender, EventArgs e)
@@ -122,6 +93,15 @@ namespace CinemaManagment
         }
         #endregion ticketsMenu
 
+        #region logout
+        private void buttonLogOut_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
+        }
+        #endregion logout
+
         public Form activeForm = null;
         public void openChildForm(Form childForm)
         {
@@ -136,11 +116,6 @@ namespace CinemaManagment
             panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            openChildForm(new test());
         }
     }
 }

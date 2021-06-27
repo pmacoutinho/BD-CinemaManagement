@@ -1,7 +1,7 @@
 ﻿
 namespace CinemaManagment
 {
-    partial class MainMenu
+    partial class MainMenuManager
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,10 @@ namespace CinemaManagment
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuManager));
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.buttonLogOut = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonTickets = new System.Windows.Forms.Button();
             this.panelSessionsSubMenu = new System.Windows.Forms.Panel();
             this.buttonSessionInstances = new System.Windows.Forms.Button();
@@ -49,7 +51,6 @@ namespace CinemaManagment
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelSessionsSubMenu.SuspendLayout();
             this.panelEmployeesSubmenu.SuspendLayout();
@@ -62,6 +63,7 @@ namespace CinemaManagment
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelSideMenu.Controls.Add(this.buttonLogOut);
             this.panelSideMenu.Controls.Add(this.button1);
             this.panelSideMenu.Controls.Add(this.buttonTickets);
             this.panelSideMenu.Controls.Add(this.panelSessionsSubMenu);
@@ -78,6 +80,33 @@ namespace CinemaManagment
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 553);
             this.panelSideMenu.TabIndex = 0;
+            // 
+            // buttonLogOut
+            // 
+            this.buttonLogOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonLogOut.FlatAppearance.BorderSize = 0;
+            this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogOut.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonLogOut.Location = new System.Drawing.Point(0, 632);
+            this.buttonLogOut.Name = "buttonLogOut";
+            this.buttonLogOut.Size = new System.Drawing.Size(229, 45);
+            this.buttonLogOut.TabIndex = 21;
+            this.buttonLogOut.Text = "Log Out";
+            this.buttonLogOut.UseVisualStyleBackColor = true;
+            this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Location = new System.Drawing.Point(0, 587);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(229, 45);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Test";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // buttonTickets
             // 
@@ -284,21 +313,7 @@ namespace CinemaManagment
             this.panelChildForm.Size = new System.Drawing.Size(682, 553);
             this.panelChildForm.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(0, 587);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(229, 45);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Test";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // MainMenu
+            // MainMenuManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -309,7 +324,7 @@ namespace CinemaManagment
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(950, 600);
-            this.Name = "MainMenu";
+            this.Name = "MainMenuManager";
             this.Text = "Cinema Manager";
             this.panelSideMenu.ResumeLayout(false);
             this.panelSessionsSubMenu.ResumeLayout(false);
@@ -342,6 +357,7 @@ namespace CinemaManagment
         private System.Windows.Forms.Button buttonSessionInstances;
         private System.Windows.Forms.Button buttonSessionList;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonLogOut;
     }
 }
 

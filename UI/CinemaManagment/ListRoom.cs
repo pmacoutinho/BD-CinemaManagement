@@ -34,8 +34,11 @@ namespace CinemaManagment
         }
         private void loadTable()
         {
+            Login login = new Login();
+            int cinema = login.getCinema();
+
             dataGridViewRooms.ReadOnly = true;
-            dataGridViewRooms.DataSource = Management.loadRooms(1);
+            dataGridViewRooms.DataSource = Management.loadRooms(cinema);
         }
 
         public static String buttonClicked = "";

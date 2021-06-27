@@ -38,8 +38,12 @@ namespace CinemaManagment
 
         private void loadTable()
         {
+            Login login = new Login();
+            int cinema = login.getCinema();
+
             var select = "SELECT tm AS 'Timestamp', sNum AS 'Room Number', name AS 'Cleaner' " +
-                "FROM Operations.Cleaning_Record JOIN Management.Employee ON func=id";
+                "FROM Operations.Cleaning_Record JOIN Management.Employee ON func=id " +
+                "WHERE Management.Employee.location=" + cinema;
             var dataAdapter = new SqlDataAdapter(select, cn);
 
             var commandBuilder = new SqlCommandBuilder(dataAdapter);

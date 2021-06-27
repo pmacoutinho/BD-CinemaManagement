@@ -32,11 +32,13 @@ namespace CinemaManagment
 
         private void loadTable()
         {
-            //var select = "SELECT * FROM Data.viewSessions WHERE Data.Session.cinema = 0";
+            Login login = new Login();
+            var cinema = login.getCinema();
+
             var select = "SELECT Data.Session.id AS 'ID', name AS 'Film', startDay AS 'Premiere', noWeeks AS 'No Weeks' " +
                 "FROM Data.Session " +
                 "JOIN Data.Film ON filmId = imdb " +
-                "WHERE Data.Session.cinema = 0";
+                "WHERE Data.Session.cinema=" + cinema;
             var dataAdapter = new SqlDataAdapter(select, cn);
 
             var commandBuilder = new SqlCommandBuilder(dataAdapter);
