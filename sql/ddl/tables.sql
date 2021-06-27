@@ -116,11 +116,11 @@ create table Operations.Cleaning_Record(
 
 	CONSTRAINT FK_limpeza_sala FOREIGN KEY (sCinema, sNum)
       REFERENCES Management.Room(cinema, num)
-      ON UPDATE CASCADE
-	  On Delete Cascade,
+      ON UPDATE CASCADE,
 
 	CONSTRAINT FK_limpeza_func FOREIGN KEY (func)
-      REFERENCES Management.Employee(id),
+      REFERENCES Management.Employee(id)
+        on delete cascade,
 );
 
 create table Operations.Client(
