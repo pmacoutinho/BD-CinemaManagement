@@ -50,6 +50,81 @@ namespace CinemaManagment.sgbd
             return (int)result;
         }
 
+        public static void updateEMployee(Employee e)
+        {
+            SGBDCon.verify();
+            
+            SqlCommand cmd = new SqlCommand("management.p_update_employee", cn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add(new SqlParameter("@Id", e.id));
+            cmd.Parameters.Add(new SqlParameter("@Name", e.name));
+            cmd.Parameters.Add(new SqlParameter("@Email", e.email));
+            cmd.Parameters.Add(new SqlParameter("@Cinema", e.cinema.ToString()));
+            cmd.Parameters.Add(new SqlParameter("@Shift", e.shift.ToString()));
+            cmd.Parameters.Add(new SqlParameter("@Type", e.type.ToString()));
+            
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to update employee in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static void deleteEmployee(Employee e)
+        {
+            SGBDCon.verify();
+            
+            SqlCommand cmd = new SqlCommand("management.p_delete_employee", cn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add(new SqlParameter("@Id", e.id));
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to update employee in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        private static List<Employee> cmdToList(SqlCommand cmd)
+        {
+            SqlDataReader reader = cmd.ExecuteReader();
+            
+            List<Employee> lst = new List<Employee>();
+
+            while (reader.Read())
+            {
+                Employee e = new Employee();
+                e.id = Int32.Parse(reader["id"].ToString());
+                e.name = reader["name"].ToString();
+                e.email = reader["email"].ToString();
+                e.cinema  = Int32.Parse(reader["location"].ToString());
+                e.shift = Int32.Parse(reader["eShift"].ToString());
+                e.type = Int32.Parse(reader["eType"].ToString());
+
+                lst.Add(e);
+            }
+            cn.Close();
+            return lst;
+        }
+        
         public static List<Employee> loadEmployes()
         {
 
@@ -80,6 +155,27 @@ namespace CinemaManagment.sgbd
             return lst;
         }
 
+        public static List<Employee> loadNonManagers(int cinema)
+        {
+            SGBDCon.verify();
+
+            SqlCommand cmd = new SqlCommand("SELECT * from management.f_get_non_managers(@Cinema)", cn);
+            cmd.Parameters.Add(new SqlParameter("@Cinema", cinema));
+
+            return cmdToList(cmd);
+        }
+        
+        public static List<Employee> loadManagers()
+        {
+            SGBDCon.verify();
+            List<Employee> lst = new List<Employee>();
+
+            SqlCommand cmd = new SqlCommand("SELECT * from management.f_get_managers()", cn);
+            
+            return cmdToList(cmd);
+            
+        }
+        
         public static Employee getEmployee(int employeeId)
         {
 

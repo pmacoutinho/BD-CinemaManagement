@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CinemaManagment.Common;
 
 namespace CinemaManagment
 {
@@ -32,53 +33,33 @@ namespace CinemaManagment
 
         private void loadTable()
         {
-            Login login = new Login();
-            int cinema = login.getCinema();
-
-            var select = "SELECT id AS 'ID', Management.Employee_Type.name AS 'Function',  Management.Employee.name AS 'Name', " +
-               "email AS 'Email', eShift AS 'Shift' " +
-               "FROM Management.Employee JOIN Management.Employee_Type ON eType=num " +
-               "WHERE Management.Employee.location=" + cinema + " AND " +
-               "(Management.Employee_Type.name='Cleaning' OR Management.Employee_Type.name='Sales') ";
-            var dataAdapter = new SqlDataAdapter(select, cn);
-
-            var commandBuilder = new SqlCommandBuilder(dataAdapter);
-            var ds = new DataSet();
-            dataAdapter.Fill(ds);
+            List<Employee> lst = Management.loadNonManagers(User.getInstance().e.cinema);
+            
             dataGridViewWorker.ReadOnly = true;
-            dataGridViewWorker.DataSource = ds.Tables[0];
-        }
-
-        public static String buttonClicked = "";
-        public String getButtonClicked()
-        {
-            return buttonClicked;
-        }
-
-        public static String employeeType = "";
-        public String getEmployeeType()
-        {
-            return employeeType;
-        }
-        public void setEmployeeType(String type)
-        {
-            employeeType = type;
+            dataGridViewWorker.DataSource = lst;
         }
 
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {
-            setEmployeeType("worker");
-            buttonClicked = "add";
-            AddEmployee addEmployee = new AddEmployee();
+            AddEmployee addEmployee = new AddEmployee(User.getInstance().e.cinema);
             addEmployee.Show();
         }
 
         private void roundedButtonEdit_Click(object sender, EventArgs e)
         {
-            setEmployeeType("worker");
-            buttonClicked = "edit";
-            AddEmployee addEmployee = new AddEmployee();
+            AddEmployee addEmployee = new AddEmployee((Employee) dataGridViewWorker.CurrentRow.DataBoundItem);
             addEmployee.Show();
+        }
+
+        private void rBnt_Delete_Click(object sender, EventArgs e)
+        {
+            Employee emp = (Employee) dataGridViewWorker.CurrentRow.DataBoundItem;
+            Management.deleteEmployee(emp);
+        }
+
+        private void rBtn_refresh_Click(object sender, EventArgs e)
+        {
+            loadTable();
         }
     }
 }

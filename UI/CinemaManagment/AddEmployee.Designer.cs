@@ -41,14 +41,14 @@ namespace CinemaManagment
             this.numericUpDownShift = new System.Windows.Forms.NumericUpDown();
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
             this.numericUpDownNum = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownShift)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownShift)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownNum)).BeginInit();
             this.SuspendLayout();
             // 
             // labelAddEmployee
             // 
             this.labelAddEmployee.AutoSize = true;
-            this.labelAddEmployee.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAddEmployee.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelAddEmployee.ForeColor = System.Drawing.Color.White;
             this.labelAddEmployee.Location = new System.Drawing.Point(12, 9);
             this.labelAddEmployee.Name = "labelAddEmployee";
@@ -59,7 +59,7 @@ namespace CinemaManagment
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelName.ForeColor = System.Drawing.Color.White;
             this.labelName.Location = new System.Drawing.Point(12, 141);
             this.labelName.Name = "labelName";
@@ -78,7 +78,7 @@ namespace CinemaManagment
             // labelNum
             // 
             this.labelNum.AutoSize = true;
-            this.labelNum.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNum.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelNum.ForeColor = System.Drawing.Color.White;
             this.labelNum.Location = new System.Drawing.Point(12, 68);
             this.labelNum.Name = "labelNum";
@@ -89,7 +89,7 @@ namespace CinemaManagment
             // labelShift
             // 
             this.labelShift.AutoSize = true;
-            this.labelShift.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShift.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelShift.ForeColor = System.Drawing.Color.White;
             this.labelShift.Location = new System.Drawing.Point(12, 283);
             this.labelShift.Name = "labelShift";
@@ -100,7 +100,7 @@ namespace CinemaManagment
             // labelRole
             // 
             this.labelRole.AutoSize = true;
-            this.labelRole.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRole.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelRole.ForeColor = System.Drawing.Color.White;
             this.labelRole.Location = new System.Drawing.Point(12, 356);
             this.labelRole.Name = "labelRole";
@@ -126,7 +126,7 @@ namespace CinemaManagment
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelEmail.ForeColor = System.Drawing.Color.White;
             this.labelEmail.Location = new System.Drawing.Point(12, 212);
             this.labelEmail.Name = "labelEmail";
@@ -143,7 +143,7 @@ namespace CinemaManagment
             // 
             // roundedButtonAdd
             // 
-            this.roundedButtonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonAdd.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.roundedButtonAdd.BackColor = System.Drawing.Color.SlateBlue;
             this.roundedButtonAdd.BackgroundColor = System.Drawing.Color.SlateBlue;
             this.roundedButtonAdd.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -151,7 +151,7 @@ namespace CinemaManagment
             this.roundedButtonAdd.BorderSize = 0;
             this.roundedButtonAdd.FlatAppearance.BorderSize = 0;
             this.roundedButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButtonAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.roundedButtonAdd.ForeColor = System.Drawing.Color.White;
             this.roundedButtonAdd.Location = new System.Drawing.Point(552, 447);
             this.roundedButtonAdd.Name = "roundedButtonAdd";
@@ -173,7 +173,7 @@ namespace CinemaManagment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (21)))), ((int) (((byte) (32)))));
             this.ClientSize = new System.Drawing.Size(664, 506);
             this.Controls.Add(this.numericUpDownNum);
             this.Controls.Add(this.numericUpDownShift);
@@ -190,11 +190,10 @@ namespace CinemaManagment
             this.MinimumSize = new System.Drawing.Size(682, 553);
             this.Name = "AddEmployee";
             this.Text = "Add Employee";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownShift)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownShift)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

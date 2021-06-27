@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CinemaManagment.Common;
 
 
 namespace CinemaManagment
@@ -33,21 +34,12 @@ namespace CinemaManagment
 
         private void loadTable()
         {
-            Login login = new Login();
-            int cinema = login.getCinema();
+           
 
-            var select = "SELECT id AS 'ID', Management.Employee_Type.name AS 'Function',  Management.Employee.name AS 'Name', " +
-                "email AS 'Email', eShift AS 'Shift' " +
-                "FROM Management.Employee JOIN Management.Employee_Type ON eType=num " +
-                "WHERE Management.Employee.location=" + cinema + " AND " +
-                "(Management.Employee_Type.name='Manager' OR Management.Employee_Type.name='Deputy Manager') ";
-            var dataAdapter = new SqlDataAdapter(select, cn);
-
-            var commandBuilder = new SqlCommandBuilder(dataAdapter);
-            var ds = new DataSet();
-            dataAdapter.Fill(ds);
+            List<Employee> lst = Management.loadManagers();
+            
             dataGridViewManager.ReadOnly = true;
-            dataGridViewManager.DataSource = ds.Tables[0];
+            dataGridViewManager.DataSource = lst;
         }
 
         public static String buttonClicked = "";
@@ -59,18 +51,26 @@ namespace CinemaManagment
         ListWorker listWorker = new ListWorker();
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {
-            listWorker.setEmployeeType("manager");
-            buttonClicked = "add";
-            AddEmployee addEmployee = new AddEmployee();
+            AddEmployee addEmployee = new AddEmployee(User.getInstance().e.id);
             addEmployee.Show();
         }
 
         private void roundedButtonEdit_Click(object sender, EventArgs e)
         {
-            listWorker.setEmployeeType("manager");
-            buttonClicked = "edit";
-            AddEmployee addEmployee = new AddEmployee();
+            
+            AddEmployee addEmployee = new AddEmployee((Employee) dataGridViewManager.CurrentRow.DataBoundItem);
             addEmployee.Show();
+        }
+
+        private void rBtn_refresh_Click(object sender, EventArgs e)
+        {
+            loadTable();
+        }
+
+        private void rBtn_Delete_Click(object sender, EventArgs e)
+        {
+            Employee emp = (Employee) dataGridViewManager.CurrentRow.DataBoundItem;
+            Management.deleteEmployee(emp);
         }
     }
 }

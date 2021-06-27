@@ -8,12 +8,12 @@ namespace CinemaManagment.Entities
 {
     public class Employee
     {
-        public int id;
-        public string name;
-        public string email;
-        public int cinema;
-        public int shift;
-        public int type;
+        public int id { get; set; }
+        public string name { get; set; }
+        public string email{ get; set; }
+        public int cinema{ get; set; }
+        public int shift{ get; set; }
+        public int type{ get; set; }
 
         public string ToSimpleString()
         {
