@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CinemaManagment.Common;
 
 namespace CinemaManagment
 {
@@ -43,9 +44,8 @@ namespace CinemaManagment
                 roundedButtonAdd.Visible = false;
 
 
-                numericUpDownNumber.Value = r.num;
-                num_cinema.Value = r.cinema;
-                numericUpDownCapacity.Value = r.nSeats;
+                numericUpDownNumber.Value = Convert.ToDecimal(r.num);
+                numericUpDownCapacity.Value = Convert.ToDecimal(r.nSeats);
             } else
             {
                 labelAddRoom.Text = "Add Room";
@@ -58,7 +58,7 @@ namespace CinemaManagment
         {
             Room r = new Room();
             r.num = Convert.ToInt32(numericUpDownNumber.Value);
-            r.cinema = 1;
+            r.cinema = User.getInstance().e.cinema;
             r.nSeats = Convert.ToInt32(numericUpDownCapacity.Value);
 
             var res = Management.newRoom(r);
@@ -76,7 +76,7 @@ namespace CinemaManagment
         {
             Room newRoom = new Room();
             newRoom.num = Convert.ToInt32(numericUpDownNumber.Value);
-            newRoom.cinema = Convert.ToInt32(num_cinema.Value);
+            newRoom.cinema = User.getInstance().e.cinema;
             newRoom.nSeats = Convert.ToInt32(numericUpDownCapacity.Value);
             
             Management.deleteRoom(r);

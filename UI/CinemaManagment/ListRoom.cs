@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CinemaManagment.Common;
 
 namespace CinemaManagment
 {
@@ -34,11 +35,10 @@ namespace CinemaManagment
         }
         private void loadTable()
         {
-            Login login = new Login();
-            int cinema = login.getCinema();
+            User u = User.getInstance();
 
             dataGridViewRooms.ReadOnly = true;
-            dataGridViewRooms.DataSource = Management.loadRooms(cinema);
+            dataGridViewRooms.DataSource = Management.loadRooms(u.e.cinema);
         }
 
         public static String buttonClicked = "";
@@ -71,7 +71,9 @@ namespace CinemaManagment
 
         private void rBtn_delete_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            Room r = (Room) dataGridViewRooms.CurrentRow.DataBoundItem;
+            Management.deleteRoom(r);
+            loadTable();
         }
     }
 }

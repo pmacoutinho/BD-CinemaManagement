@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CinemaManagment.Common;
 
 namespace CinemaManagment.sgbd
 {
@@ -218,6 +219,32 @@ namespace CinemaManagment.sgbd
             return r;
         }
 
+        public static List<CleaningRecord> getCleaningRecords()
+        {
+            SGBDCon.verify();
+
+            Employee e = User.getInstance().e;
+
+            SqlCommand cmd =
+                new SqlCommand("SELECT * from operations.f_get_cleaning_records(@CinemaId, @EmployeeId)", cn);
+            cmd.Parameters.Add(new SqlParameter("@CinemaId", e.cinema));
+            cmd.Parameters.Add(new SqlParameter("@EmployeeId", e.id));
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            List<CleaningRecord> crLst = new List<CleaningRecord>();
+            while (reader.Read())
+            {
+                CleaningRecord cr = new CleaningRecord();
+                cr.sCinema = Int32.Parse(reader["sCinema"].ToString());
+                cr.sNum = Int32.Parse(reader["sNum"].ToString());
+                cr.func = Int32.Parse(reader["func"].ToString());
+                cr.tm = DateTime.Parse(reader["tm"].ToString());
+                crLst.Add(cr);
+            }
+
+            return crLst;
+        }
+        
         public static int newCleaningRecord(CleaningRecord cr)
         {
             if (!SGBDCon.verifySGBDConnection())
@@ -245,6 +272,35 @@ namespace CinemaManagment.sgbd
             }
 
             return (int)cr.sNum;
+        }
+        
+        public static void deleteCleaningRecord(CleaningRecord cr)
+        {
+            SGBDCon.verify();
+            
+            SqlCommand cmd = new SqlCommand("operations.p_delete_cleaning_record", cn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add(new SqlParameter("@Cinema", cr.sCinema));
+            cmd.Parameters.Add(new SqlParameter("@RoomNumber", cr.sNum));
+            cmd.Parameters.Add(new SqlParameter("@Employee", cr.func));
+            cmd.Parameters.Add(new SqlParameter("@Time", cr.tm.ToString("yyyyMMdd")));
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to delete Clening Record in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+            
         }
 
         public static int newSessionInstance(SessionInstance si)

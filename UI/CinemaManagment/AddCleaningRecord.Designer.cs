@@ -42,16 +42,16 @@ namespace CinemaManagment
             this.numericUpDownHour = new System.Windows.Forms.NumericUpDown();
             this.labelColumn = new System.Windows.Forms.Label();
             this.numericUpDownMinutes = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRoom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCleaner)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinutes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownCleaner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownHour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownMinutes)).BeginInit();
             this.SuspendLayout();
             // 
             // labelAddCleaningRecord
             // 
             this.labelAddCleaningRecord.AutoSize = true;
-            this.labelAddCleaningRecord.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAddCleaningRecord.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelAddCleaningRecord.ForeColor = System.Drawing.Color.White;
             this.labelAddCleaningRecord.Location = new System.Drawing.Point(12, 9);
             this.labelAddCleaningRecord.Name = "labelAddCleaningRecord";
@@ -62,9 +62,9 @@ namespace CinemaManagment
             // labelRoom
             // 
             this.labelRoom.AutoSize = true;
-            this.labelRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelRoom.ForeColor = System.Drawing.Color.White;
-            this.labelRoom.Location = new System.Drawing.Point(12, 68);
+            this.labelRoom.Location = new System.Drawing.Point(17, 68);
             this.labelRoom.Name = "labelRoom";
             this.labelRoom.Size = new System.Drawing.Size(65, 28);
             this.labelRoom.TabIndex = 9;
@@ -73,9 +73,9 @@ namespace CinemaManagment
             // labelCleaner
             // 
             this.labelCleaner.AutoSize = true;
-            this.labelCleaner.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCleaner.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelCleaner.ForeColor = System.Drawing.Color.White;
-            this.labelCleaner.Location = new System.Drawing.Point(12, 141);
+            this.labelCleaner.Location = new System.Drawing.Point(17, 141);
             this.labelCleaner.Name = "labelCleaner";
             this.labelCleaner.Size = new System.Drawing.Size(80, 28);
             this.labelCleaner.TabIndex = 21;
@@ -84,9 +84,9 @@ namespace CinemaManagment
             // labelHour
             // 
             this.labelHour.AutoSize = true;
-            this.labelHour.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHour.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelHour.ForeColor = System.Drawing.Color.White;
-            this.labelHour.Location = new System.Drawing.Point(12, 216);
+            this.labelHour.Location = new System.Drawing.Point(17, 216);
             this.labelHour.Name = "labelHour";
             this.labelHour.Size = new System.Drawing.Size(58, 28);
             this.labelHour.TabIndex = 23;
@@ -95,7 +95,7 @@ namespace CinemaManagment
             // Date
             // 
             this.Date.AutoSize = true;
-            this.Date.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Date.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.Date.ForeColor = System.Drawing.Color.White;
             this.Date.Location = new System.Drawing.Point(327, 68);
             this.Date.Name = "Date";
@@ -111,7 +111,7 @@ namespace CinemaManagment
             // 
             // roundedButtonAdd
             // 
-            this.roundedButtonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonAdd.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.roundedButtonAdd.BackColor = System.Drawing.Color.SlateBlue;
             this.roundedButtonAdd.BackgroundColor = System.Drawing.Color.SlateBlue;
             this.roundedButtonAdd.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -119,7 +119,7 @@ namespace CinemaManagment
             this.roundedButtonAdd.BorderSize = 0;
             this.roundedButtonAdd.FlatAppearance.BorderSize = 0;
             this.roundedButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButtonAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.roundedButtonAdd.ForeColor = System.Drawing.Color.White;
             this.roundedButtonAdd.Location = new System.Drawing.Point(552, 447);
             this.roundedButtonAdd.Name = "roundedButtonAdd";
@@ -132,26 +132,22 @@ namespace CinemaManagment
             // 
             // numericUpDownRoom
             // 
-            this.numericUpDownRoom.Location = new System.Drawing.Point(19, 99);
+            this.numericUpDownRoom.Location = new System.Drawing.Point(24, 99);
             this.numericUpDownRoom.Name = "numericUpDownRoom";
             this.numericUpDownRoom.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownRoom.TabIndex = 28;
             // 
             // numericUpDownCleaner
             // 
-            this.numericUpDownCleaner.Location = new System.Drawing.Point(19, 172);
+            this.numericUpDownCleaner.Location = new System.Drawing.Point(24, 172);
             this.numericUpDownCleaner.Name = "numericUpDownCleaner";
             this.numericUpDownCleaner.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownCleaner.TabIndex = 29;
             // 
             // numericUpDownHour
             // 
-            this.numericUpDownHour.Location = new System.Drawing.Point(19, 247);
-            this.numericUpDownHour.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
+            this.numericUpDownHour.Location = new System.Drawing.Point(24, 247);
+            this.numericUpDownHour.Maximum = new decimal(new int[] {23, 0, 0, 0});
             this.numericUpDownHour.Name = "numericUpDownHour";
             this.numericUpDownHour.Size = new System.Drawing.Size(51, 22);
             this.numericUpDownHour.TabIndex = 30;
@@ -159,9 +155,9 @@ namespace CinemaManagment
             // labelColumn
             // 
             this.labelColumn.AutoSize = true;
-            this.labelColumn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelColumn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelColumn.ForeColor = System.Drawing.Color.White;
-            this.labelColumn.Location = new System.Drawing.Point(76, 241);
+            this.labelColumn.Location = new System.Drawing.Point(81, 241);
             this.labelColumn.Name = "labelColumn";
             this.labelColumn.Size = new System.Drawing.Size(17, 28);
             this.labelColumn.TabIndex = 31;
@@ -169,12 +165,8 @@ namespace CinemaManagment
             // 
             // numericUpDownMinutes
             // 
-            this.numericUpDownMinutes.Location = new System.Drawing.Point(99, 247);
-            this.numericUpDownMinutes.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
+            this.numericUpDownMinutes.Location = new System.Drawing.Point(104, 247);
+            this.numericUpDownMinutes.Maximum = new decimal(new int[] {59, 0, 0, 0});
             this.numericUpDownMinutes.Name = "numericUpDownMinutes";
             this.numericUpDownMinutes.Size = new System.Drawing.Size(51, 22);
             this.numericUpDownMinutes.TabIndex = 32;
@@ -183,7 +175,7 @@ namespace CinemaManagment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (21)))), ((int) (((byte) (32)))));
             this.ClientSize = new System.Drawing.Size(664, 506);
             this.Controls.Add(this.numericUpDownMinutes);
             this.Controls.Add(this.labelColumn);
@@ -200,13 +192,12 @@ namespace CinemaManagment
             this.MaximumSize = new System.Drawing.Size(682, 553);
             this.Name = "AddCleaningRecord";
             this.Text = "AddCleaningRecord";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRoom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCleaner)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinutes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownCleaner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownHour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownMinutes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

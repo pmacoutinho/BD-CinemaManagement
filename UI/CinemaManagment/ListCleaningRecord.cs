@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CinemaManagment.Common;
 
 namespace CinemaManagment
 {
@@ -38,19 +39,26 @@ namespace CinemaManagment
 
         private void loadTable()
         {
-            Login login = new Login();
-            int cinema = login.getCinema();
+            try
+            {
+                var crLst = Operations.getCleaningRecords();
 
-            var select = "SELECT tm AS 'Timestamp', sNum AS 'Room Number', name AS 'Cleaner' " +
-                "FROM Operations.Cleaning_Record JOIN Management.Employee ON func=id " +
-                "WHERE Management.Employee.location=" + cinema;
-            var dataAdapter = new SqlDataAdapter(select, cn);
+                dataGridViewCleaningRecords.ReadOnly = true;
+                dataGridViewCleaningRecords.DataSource = crLst;
 
-            var commandBuilder = new SqlCommandBuilder(dataAdapter);
-            var ds = new DataSet();
-            dataAdapter.Fill(ds);
-            dataGridViewCleaningRecords.ReadOnly = true;
-            dataGridViewCleaningRecords.DataSource = ds.Tables[0];
+
+            }
+            catch (Exception exception)
+            {
+                Common.ExceptionDialog.ExDialog(exception);
+                Console.WriteLine(exception);
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            
         }
     }
 }

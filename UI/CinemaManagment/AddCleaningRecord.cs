@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CinemaManagment.Common;
 
 namespace CinemaManagment
 {
@@ -24,6 +25,7 @@ namespace CinemaManagment
 
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {
+            Employee emp = User.getInstance().e;
             CleaningRecord cr = new CleaningRecord();
 
             /*var year = monthCalendarDate.SelectionStart.Year;
@@ -34,9 +36,9 @@ namespace CinemaManagment
             cr.tm = dt;*/
 
             cr.tm = monthCalendarDate.SelectionRange.Start.Date;
-            cr.sCinema = 1;
-            cr.sNum = Convert.ToInt32(numericUpDownCleaner.Value);
-            cr.func = Convert.ToInt32(numericUpDownCleaner.Value);
+            cr.sCinema = emp.cinema;
+            cr.sNum = Convert.ToInt32(numericUpDownRoom.Value);
+            cr.func = emp.id;
 
             var res = Operations.newCleaningRecord(cr);
 
