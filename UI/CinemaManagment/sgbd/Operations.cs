@@ -246,16 +246,28 @@ namespace CinemaManagment.sgbd
             return r;
         }
 
-        public static List<CleaningRecord> getCleaningRecords()
+        public static List<CleaningRecord> getCleaningRecords(bool allRecords)
         {
             SGBDCon.verify();
 
             Employee e = User.getInstance().e;
+            
 
-            SqlCommand cmd =
-                new SqlCommand("SELECT * from operations.f_get_cleaning_records(@CinemaId, @EmployeeId)", cn);
+            SqlCommand cmd;
+
+            if (allRecords)
+            {
+                cmd = new SqlCommand("SELECT * from operations.f_get_cleaning_records_cinema(@CinemaId)", cn);
+            }
+            else
+            {
+                cmd = new SqlCommand("SELECT * from operations.f_get_cleaning_records(@CinemaId, @EmployeeId)", cn);
+                cmd.Parameters.Add(new SqlParameter("@EmployeeId", e.id));
+            }
+                
+                
             cmd.Parameters.Add(new SqlParameter("@CinemaId", e.cinema));
-            cmd.Parameters.Add(new SqlParameter("@EmployeeId", e.id));
+            
             SqlDataReader reader = cmd.ExecuteReader();
 
             List<CleaningRecord> crLst = new List<CleaningRecord>();
