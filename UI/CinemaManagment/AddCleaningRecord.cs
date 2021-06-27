@@ -18,16 +18,30 @@ namespace CinemaManagment
     public partial class AddCleaningRecord : Form
     {
         private SqlConnection cn = SGBDCon.getCN();
+        private Employee e;
+        private List<Room> rLst;
+        private List<Employee> cLst;
 
         public AddCleaningRecord()
         {
             InitializeComponent();
+            this.e = User.getInstance().e;
             customizeDesign();
         }
 
-        
         private void customizeDesign()
         {
+            if (e.type == 0)
+            {
+                labelCleaner.Visible = true;
+                comboBoxCleaner.Visible = true;
+            }
+            else
+            {
+                labelCleaner.Visible = false;
+                comboBoxCleaner.Visible = false;
+            }
+            
             loadRooms();
             loadCleaners();
         }
@@ -37,7 +51,7 @@ namespace CinemaManagment
         {
             comboBoxRoom.Items.Clear();
 
-            List<Room> lst = new List<Room>();
+            rLst = new List<Room>();
             User u = User.getInstance();
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM Management.Room " +
@@ -52,12 +66,12 @@ namespace CinemaManagment
                 r.cinema = Int32.Parse(reader["cinema"].ToString());
                 r.nSeats = Int32.Parse(reader["nSeats"].ToString());
 
-                lst.Add(r);
+                rLst.Add(r);
             }
 
             cn.Close();
 
-            foreach (var r in lst)
+            foreach (var r in rLst)
             {
                 comboBoxRoom.Items.Add(r.num);
             }
@@ -68,7 +82,7 @@ namespace CinemaManagment
             cn.Open();
             comboBoxCleaner.Items.Clear();
 
-            List<Employee> lst = new List<Employee>();
+            cLst = new List<Employee>();
             User u = User.getInstance();
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM Management.Employee " +
@@ -86,21 +100,21 @@ namespace CinemaManagment
                 e.shift = Int32.Parse(reader["eShift"].ToString());
                 e.type = Int32.Parse(reader["eType"].ToString());
 
-                lst.Add(e);
+                cLst.Add(e);
             }
 
             cn.Close();
 
-            foreach (var r in lst)
+            foreach (var r in cLst)
             {
                 comboBoxCleaner.Items.Add(r.id);
             }
         }
         #endregion loadValues
 
+        
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {
-            Employee emp = User.getInstance().e;
             CleaningRecord cr = new CleaningRecord();
 
             /*var year = monthCalendarDate.SelectionStart.Year;
@@ -111,9 +125,17 @@ namespace CinemaManagment
             cr.tm = dt;*/
 
             cr.tm = monthCalendarDate.SelectionRange.Start.Date;
-            cr.sCinema = emp.cinema;
-            cr.sNum = Convert.ToInt32(comboBoxRoom.SelectedItem);
-            cr.func = Convert.ToInt32(comboBoxCleaner.SelectedItem);
+            cr.sCinema = this.e.cinema;
+            cr.sNum = rLst[comboBoxRoom.SelectedIndex].num;
+
+            if (this.e.type == 0)
+            {
+                cr.func = Convert.ToInt32(comboBoxCleaner.SelectedIndex);
+            }
+            else
+            {
+                cr.func = this.e.id;
+            }
 
             var res = Operations.newCleaningRecord(cr);
 
