@@ -71,7 +71,7 @@ namespace CinemaManagment
         {
             Session s = new Session();
 
-            s.cinema = 0;
+            s.cinema = User.getInstance().e.cinema;
             s.filmId = Convert.ToInt32(comboBoxImdb.SelectedItem);
             s.startDay = monthCalendarPremiere.SelectionRange.Start.Date; ;
             s.noWeeks = Convert.ToInt32(numericUpDownNoWeeks.Value);
