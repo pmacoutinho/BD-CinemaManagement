@@ -1,4 +1,5 @@
 -- data
+
 create function data.f_get_film(@FilmImdb int)
 returns table
 AS
@@ -7,13 +8,24 @@ AS
         from data.Film
         where imdb=@FilmImdb
 go
+create function data.f_get_sessions(@CinemaID int, @Date date)
+returns table
+as
+	return
+		SELECT name AS 'Film Name', startDay AS 'Premiere', noWeeks AS 'No Weeks'
+		FROM Data.Session
+		JOIN Data.Film ON filmId = imdb
+		WHERE Data.Session.cinema=@CinemaID AND ((@Date between startDay and dateadd(week, noWeeks, startDay)) or @Date < Session.startDay)
+go
 
--- location
+-- locations
+
 create function location.f_get_cinemas() returns table as
     return select * from Cinema
 go
 
 -- management
+
 create
     function management.f_get_employees() returns table as
     return
@@ -45,8 +57,40 @@ create
         where id = @EmployeeId
 go
 
+create
+    function management.f_get_cleaners() returns table as
+    return
+        select *
+        from management.f_get_employees()
+        where eType = 3
+go
+create
+    function management.f_get_managers() returns table as
+    return
+        select *
+        from management.Employee
+        where eType = 0
+go
+CREATE
+    function management.f_get_non_managers(@Cinema int) returns table as
+    return
+        select *
+        from management.Employee
+        where eType != 0 and location = @Cinema
+go
+
+create
+    function management.f_get_rooms(@CinemaId int) returns table as
+    return
+        select *
+        from management.Room
+        where cinema=@CinemaId
+go
+
+
 -- operations
 
+--returns all clients
 create
     function operations.f_get_clients() returns table as
     return
@@ -54,6 +98,7 @@ create
         from operations.Client
 go
 
+-- returns a single client
 create
     function operations.f_get_client(@Id int) returns table as
     return
@@ -62,7 +107,57 @@ create
         where ClientId =@Id;
 go
 
+-- returns all cleaning records for a given cinema
+create function operations.f_get_cleaning_records_cinema(@CinemaId int) RETURNS TABLE AS
+    return select *
+            from operations.Cleaning_Record
+            where sCinema=@CinemaId
+go
+
+-- returns all cleaning records for a given cinema and a given employee
+create function operations.f_get_cleaning_records(@CinemaId int, @EmployeeId int) RETURNS TABLE AS
+    return select *
+            from operations.Cleaning_Record
+            where sCinema=@CinemaId and func=@EmployeeId
+go
+
+-- returns all reservations for a given session instance
+CREATE function operations.f_get_res_session_inst(@SessionInst int) returns table as
+    return select si.id, nSeats,seat
+            from operations.Session_instance as si
+            join management.Room on cinema=si.sCinema and num = si.sNum
+            left outer join  Reservation R2 on si.id = R2.session_i
+            where si.id =@SessionInst
+go
+
+--returns all sessions for a given cinema
+create
+    function operations.f_get_session_instance(@CinemaId int) returns table as
+    return
+        SELECT Operations.Session_instance.id AS 'ID', Data.Film.name AS 'Film',
+		Operations.Session_instance.time AS 'Start Time', Operations.Session_instance.sNum AS 'Room'
+		FROM Operations.Session_instance
+		JOIN Data.Session ON Operations.Session_instance.session=Data.Session.id
+		JOIN Data.Film ON filmId=imdb
+		WHERE Operations.Session_instance.sCinema=@CinemaId
+go
+
+-- returns tickets sold in a cinema
+create
+    function operations.f_get_tickets(@CinemaId int) returns table as
+    return
+        SELECT Operations.Ticket.id AS 'ID', price AS 'Price', Operations.Client.name AS 'Client', Management.Employee.name AS 'Seller'
+		FROM Operations.Ticket
+		JOIN Operations.Client ON Operations.Ticket.client=Operations.Client.id
+		JOIN Operations.Reservation ON Operations.Ticket.reservation=Operations.Reservation.id
+		JOIN Data.Session ON Operations.Reservation.session_i=Data.Session.id
+		JOIN Management.Employee ON Operations.Ticket.sellerId=Management.Employee.id
+		WHERE Data.Session.cinema=@CinemaId
+go
+
+
 -- public_access
+
 create function public_access.f_get_film_sessions(@FilmImdb int)
 returns table
     as
