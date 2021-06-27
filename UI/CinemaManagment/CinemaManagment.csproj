@@ -88,6 +88,7 @@
     <Compile Include="ChooseSeller.designer.cs">
       <DependentUpon>ChooseSeller.cs</DependentUpon>
     </Compile>
+    <Compile Include="Common\ExceptionDialog.cs" />
     <Compile Include="Entities\Cinema.cs" />
     <Compile Include="Entities\CleaningRecord.cs" />
     <Compile Include="Entities\Employee.cs" />

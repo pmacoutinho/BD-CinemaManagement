@@ -15,7 +15,7 @@ namespace CinemaManagment.sgbd
         public static int newFilm(Film f)
         {
             if (!SGBDCon.verifySGBDConnection())
-                return -1;
+                throw new Exception("DB no available");
             SqlCommand cmd = new SqlCommand("data.p_new_film", cn)
             {
                 CommandType = CommandType.StoredProcedure
@@ -39,6 +39,57 @@ namespace CinemaManagment.sgbd
             }
 
             return (int) f.imdb;
+        }
+
+        public static void updateFilm(Film f)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                throw new Exception("DB no available");
+            SqlCommand cmd = new SqlCommand("data.p_update_film", cn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add(new SqlParameter("@FilmId",f.imdb));
+            cmd.Parameters.Add(new SqlParameter("@FilmName", f.name));
+            cmd.Parameters.Add(new SqlParameter("@DirectorName", f.director));
+            cmd.Parameters.Add(new SqlParameter("@Time", f.tmpMinutes));
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to update film in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static void deleteFilm(int filmId)
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                throw new Exception("DB no available");
+            SqlCommand cmd = new SqlCommand("data.p_delete_film", cn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.Add(new SqlParameter("@FilmId",filmId.ToString()));
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to delete film in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
 
         public static int newSession(Session s)

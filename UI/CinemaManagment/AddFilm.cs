@@ -16,31 +16,83 @@ namespace CinemaManagment
 {
     public partial class AddFilm : Form
     {
+        private Film f;
+        private bool update = false;
+        
         public AddFilm()
         {
             InitializeComponent();
+            customizeDesign();
+            this.f = new Film();
+        }
+        
+        public AddFilm(Film f)
+        {
+            InitializeComponent();
+            
+            this.f = f;
+            update = true;
             customizeDesign();
         }
 
         private void customizeDesign()
         {
-            ListFilm listMovie = new ListFilm();
-            if (listMovie.getButtonClicked() == "edit")
+            if (update)
+            {
                 labelAddFilm.Text = "Edit Movie";
+                rBtn_update.Visible = true;
+                roundedButtonAdd.Visible = false;
+                
+                // fill information
+                textBoxImdb.Text = f.imdb.ToString();
+                textBoxTitle.Text = f.name;
+                textBoxDirector.Text = f.director;
+                textBoxRuntime.Text = f.tmpMinutes.ToString();
+            }
             else
+            {
                 labelAddFilm.Text = "Add Movie";
+                rBtn_update.Visible = false;
+                roundedButtonAdd.Visible = true;
+
+            }
         }
 
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {
-            Film c = new Film();
-            c.imdb = int.Parse(textBoxImdb.Text);
-            c.name = textBoxTitle.Text;
-            c.director = textBoxDirector.Text;
-            c.tmpMinutes = int.Parse(textBoxRuntime.Text);
-            var res = Data.newFilm(c);
-            Debug.WriteLine(res);
+            
+            f.imdb = int.Parse(textBoxImdb.Text);
+            f.name = textBoxTitle.Text;
+            f.director = textBoxDirector.Text;
+            f.tmpMinutes = int.Parse(textBoxRuntime.Text);
+            try
+            {
+                var res = Data.newFilm(f);
+            }
+            catch (Exception exception)
+            {
+                Common.ExceptionDialog.ExDialog(exception);
+            }
+            
+            //Debug.WriteLine(res);
+            this.Close();
+        }
 
+        private void rBtn_update_Click(object sender, EventArgs e)
+        {
+            f.imdb = int.Parse(textBoxImdb.Text);
+            f.name = textBoxTitle.Text;
+            f.director = textBoxDirector.Text;
+            f.tmpMinutes = int.Parse(textBoxRuntime.Text);
+
+            try
+            {
+                Data.updateFilm(f);
+            }
+            catch (Exception exception)
+            {
+                Common.ExceptionDialog.ExDialog(exception);
+            }
             this.Close();
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CinemaManagment.Entities
 {
-    class Film
+    public class Film
     {
         public int imdb;
         public String name;

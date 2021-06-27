@@ -11,6 +11,31 @@ AS
     end
 go
 
+alter procedure data.p_update_film
+    @FilmId int,
+    @FilmName varchar(max),
+    @Time   int,
+    @DirectorName varchar(max)
+
+as
+    begin
+        update data.Film
+        set name=@FilmName,director=@DirectorName,timeMin = @Time
+        where imdb = @FilmId;
+
+    end
+go
+
+CREATE procedure data.p_delete_film
+    @FilmId int
+as
+    begin
+        delete from data.Film
+        where imdb = @FilmId;
+
+    end
+go
+
 CREATE procedure data.p_new_session
     @CinemaId int,
     @FilmId int,
