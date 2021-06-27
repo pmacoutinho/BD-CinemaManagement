@@ -35,7 +35,7 @@ namespace CinemaManagment.Entities
 
         public string ToSimpleString()
         {
-            return "" + film.name + " : " + time.ToString("hh:mm") + " : " + roomNumber;
+            return "" + filmName + " : " + time.ToString("hh:mm") + " : " + roomNumber;
         }
     }
 }

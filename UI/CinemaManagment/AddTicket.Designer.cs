@@ -43,7 +43,7 @@
             // labelAddTicket
             // 
             this.labelAddTicket.AutoSize = true;
-            this.labelAddTicket.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAddTicket.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelAddTicket.ForeColor = System.Drawing.Color.White;
             this.labelAddTicket.Location = new System.Drawing.Point(12, 9);
             this.labelAddTicket.Name = "labelAddTicket";
@@ -54,7 +54,7 @@
             // labelSeller
             // 
             this.labelSeller.AutoSize = true;
-            this.labelSeller.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSeller.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelSeller.ForeColor = System.Drawing.Color.White;
             this.labelSeller.Location = new System.Drawing.Point(12, 68);
             this.labelSeller.Name = "labelSeller";
@@ -73,7 +73,7 @@
             // labelClient
             // 
             this.labelClient.AutoSize = true;
-            this.labelClient.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClient.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelClient.ForeColor = System.Drawing.Color.White;
             this.labelClient.Location = new System.Drawing.Point(12, 141);
             this.labelClient.Name = "labelClient";
@@ -92,7 +92,7 @@
             // labelSessionInstance
             // 
             this.labelSessionInstance.AutoSize = true;
-            this.labelSessionInstance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSessionInstance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelSessionInstance.ForeColor = System.Drawing.Color.White;
             this.labelSessionInstance.Location = new System.Drawing.Point(12, 216);
             this.labelSessionInstance.Name = "labelSessionInstance";
@@ -107,11 +107,12 @@
             this.comboBoxSession.Name = "comboBoxSession";
             this.comboBoxSession.Size = new System.Drawing.Size(229, 24);
             this.comboBoxSession.TabIndex = 15;
+            this.comboBoxSession.SelectedIndexChanged += new System.EventHandler(this.comboBoxSession_SelectedIndexChanged);
             // 
             // labelSeats
             // 
             this.labelSeats.AutoSize = true;
-            this.labelSeats.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSeats.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelSeats.ForeColor = System.Drawing.Color.White;
             this.labelSeats.Location = new System.Drawing.Point(12, 293);
             this.labelSeats.Name = "labelSeats";
@@ -129,7 +130,7 @@
             // 
             // roundedButtonAdd
             // 
-            this.roundedButtonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonAdd.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.roundedButtonAdd.BackColor = System.Drawing.Color.SlateBlue;
             this.roundedButtonAdd.BackgroundColor = System.Drawing.Color.SlateBlue;
             this.roundedButtonAdd.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -137,7 +138,7 @@
             this.roundedButtonAdd.BorderSize = 0;
             this.roundedButtonAdd.FlatAppearance.BorderSize = 0;
             this.roundedButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButtonAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.roundedButtonAdd.ForeColor = System.Drawing.Color.White;
             this.roundedButtonAdd.Location = new System.Drawing.Point(552, 447);
             this.roundedButtonAdd.Name = "roundedButtonAdd";
@@ -146,12 +147,13 @@
             this.roundedButtonAdd.Text = "Add";
             this.roundedButtonAdd.TextColor = System.Drawing.Color.White;
             this.roundedButtonAdd.UseVisualStyleBackColor = false;
+            this.roundedButtonAdd.Click += new System.EventHandler(this.roundedButtonAdd_Click);
             // 
             // AddTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (21)))), ((int) (((byte) (32)))));
             this.ClientSize = new System.Drawing.Size(664, 506);
             this.Controls.Add(this.roundedButtonAdd);
             this.Controls.Add(this.comboBoxSeat);
@@ -168,7 +170,6 @@
             this.Text = "AddTicket";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

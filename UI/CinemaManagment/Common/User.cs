@@ -20,6 +20,9 @@ namespace CinemaManagment.Common
             return instance;
         }
         
-        
+        public static Employee getEmployee()
+        {
+            return getInstance().e;
+        }
     }
 }

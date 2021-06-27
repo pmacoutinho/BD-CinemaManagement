@@ -121,7 +121,7 @@ namespace CinemaManagment.sgbd
             return (int)s.filmId;
         }
 
-        public static List<Session> loadSessions(int sessionId)
+        public static List<Session> loadSessions(int cinemaId)
         {
             if (!SGBDCon.verifySGBDConnection())
                 return null;
@@ -129,7 +129,7 @@ namespace CinemaManagment.sgbd
             List<Session> lst = new List<Session>();
 
             SqlCommand cmd = new SqlCommand("SELECT * from data.f_get_sessions(@CinemaId, @Date)", cn);
-            cmd.Parameters.Add(new SqlParameter("@CinemaId", sessionId.ToString()));
+            cmd.Parameters.Add(new SqlParameter("@CinemaId", cinemaId.ToString()));
             cmd.Parameters.Add(new SqlParameter("@Date", DateTime.Now));
 
             SqlDataReader reader = cmd.ExecuteReader();
