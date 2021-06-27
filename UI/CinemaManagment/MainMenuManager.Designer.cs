@@ -55,14 +55,14 @@ namespace CinemaManagment
             this.panelSessionsSubMenu.SuspendLayout();
             this.panelEmployeesSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
             // 
             this.panelSideMenu.AutoScroll = true;
-            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (7)))), ((int) (((byte) (17)))));
             this.panelSideMenu.Controls.Add(this.buttonLogOut);
             this.panelSideMenu.Controls.Add(this.button1);
             this.panelSideMenu.Controls.Add(this.buttonTickets);
@@ -107,6 +107,7 @@ namespace CinemaManagment
             this.button1.TabIndex = 20;
             this.button1.Text = "Test";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonTickets
@@ -125,7 +126,7 @@ namespace CinemaManagment
             // 
             // panelSessionsSubMenu
             // 
-            this.panelSessionsSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelSessionsSubMenu.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (35)))), ((int) (((byte) (32)))), ((int) (((byte) (39)))));
             this.panelSessionsSubMenu.Controls.Add(this.buttonSessionInstances);
             this.panelSessionsSubMenu.Controls.Add(this.buttonSessionList);
             this.panelSessionsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -206,7 +207,7 @@ namespace CinemaManagment
             // 
             // panelEmployeesSubmenu
             // 
-            this.panelEmployeesSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelEmployeesSubmenu.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (35)))), ((int) (((byte) (32)))), ((int) (((byte) (39)))));
             this.panelEmployeesSubmenu.Controls.Add(this.buttonManagers);
             this.panelEmployeesSubmenu.Controls.Add(this.buttonWorkers);
             this.panelEmployeesSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -297,7 +298,7 @@ namespace CinemaManagment
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(229, 100);
@@ -307,7 +308,7 @@ namespace CinemaManagment
             // 
             // panelChildForm
             // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (21)))), ((int) (((byte) (32)))));
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 0);
             this.panelChildForm.Name = "panelChildForm";
@@ -322,7 +323,7 @@ namespace CinemaManagment
             this.ClientSize = new System.Drawing.Size(932, 553);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelSideMenu);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "MainMenuManager";
@@ -331,10 +332,9 @@ namespace CinemaManagment
             this.panelSessionsSubMenu.ResumeLayout(false);
             this.panelEmployeesSubmenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
