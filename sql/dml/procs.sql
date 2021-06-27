@@ -58,6 +58,28 @@ as
 go
 
 -- location
+create procedure location.p_new_cinema
+    @CinemaName varchar(max),
+    @CinemaLocation varchar(max)
+as
+    begin
+        declare @NewId int;
+        insert into location.Cinema
+        values (@CinemaName, @CinemaLocation);
+        SELECT @NewId = SCOPE_IDENTITY();
+
+        return @NewId;
+    end
+go
+
+create procedure location.p_delete_cinema
+    @CinemaId int
+    as
+    begin
+        delete from location.Cinema
+        where id=@CinemaId;
+    end
+go
 -- management
 create procedure management.p_new_employee
     @Name varchar(max),

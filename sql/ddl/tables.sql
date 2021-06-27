@@ -147,21 +147,20 @@ create table Operations.Ticket(
 	client		int	not null default 0,
 
     reservation int not null,
-    session_instance int not null,
-    seller  int not null,
-
-	seat		int	not null,
-	session		int not null,
-	sCinema		int not null,
-	sNum		int not null,
+    sellerId  int not null,
 
 	CONSTRAINT FK_ticket_client FOREIGN KEY (client)
       REFERENCES Operations.Client(id)
       ON UPDATE CASCADE
 	  ON DELETE SET DEFAULT ,
 
-	CONSTRAINT FK_ticket_reservation FOREIGN KEY (seat, session, sCinema, sNum)
-      REFERENCES Operations.reservation(seat, session, sCinema, sNum)
+	CONSTRAINT FK_ticket_reservation FOREIGN KEY (reservation)
+      REFERENCES Operations.reservation(id)
+      ON UPDATE CASCADE
+	  ON DELETE No action,
+
+	CONSTRAINT FK_ticket_reservation FOREIGN KEY (sellerId)
+      REFERENCES Management.Employee(id)
       ON UPDATE CASCADE
 	  ON DELETE No action,
 
