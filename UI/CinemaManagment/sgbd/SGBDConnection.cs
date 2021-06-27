@@ -25,11 +25,19 @@ namespace CinemaManagment.sgbd
 
         public static bool verifySGBDConnection()
         {
-            if (cn == null)
-                cn = getSGBDConnection();
+            try
+            {
+                if (cn == null)
+                    cn = getSGBDConnection();
 
-            if (cn.State != System.Data.ConnectionState.Open)
-                cn.Open();
+                if (cn.State != System.Data.ConnectionState.Open)
+                    cn.Open();
+            }
+            catch (Exception e)
+            {
+                Common.ExceptionDialog.ExDialog(e);
+            }
+            
 
             return cn.State == ConnectionState.Open;
         }
@@ -46,6 +54,12 @@ namespace CinemaManagment.sgbd
         public static Exception getConnectionException()
         {
             return new Exception("DB is not availabe!");
+        }
+        
+        public static void verify()
+        {
+            if (!SGBDCon.verifySGBDConnection())
+                throw SGBDCon.getConnectionException();
         }
     }
 }
