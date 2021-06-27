@@ -117,14 +117,13 @@ namespace CinemaManagment
         {
             CleaningRecord cr = new CleaningRecord();
 
-            /*var year = monthCalendarDate.SelectionStart.Year;
+            var year = monthCalendarDate.SelectionStart.Year;
             var month = monthCalendarDate.SelectionStart.Month;
             var day = monthCalendarDate.SelectionStart.Day;
             var dt = new DateTime(year, month, day,
                 Convert.ToInt32(numericUpDownHour.Value), Convert.ToInt32(numericUpDownMinutes.Value), 0);
-            cr.tm = dt;*/
+            cr.tm = dt;
 
-            cr.tm = monthCalendarDate.SelectionRange.Start.Date;
             cr.sCinema = this.e.cinema;
             cr.sNum = rLst[comboBoxRoom.SelectedIndex].num;
 

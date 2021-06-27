@@ -295,7 +295,7 @@ namespace CinemaManagment.sgbd
             cmd.Parameters.Add(new SqlParameter("@Cinema", cr.sCinema));
             cmd.Parameters.Add(new SqlParameter("@RoomNumber", cr.sNum));
             cmd.Parameters.Add(new SqlParameter("@Employee", cr.func));
-            cmd.Parameters.Add(new SqlParameter("@Time", cr.tm.ToString("yyyyMMdd")));
+            cmd.Parameters.Add(new SqlParameter("@Time", cr.tm.ToString("yyyyMMdd HH:mm")));
 
             try
             {
