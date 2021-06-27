@@ -44,10 +44,10 @@ namespace CinemaManagment
                 roundedButtonAdd.Visible = false;
                 
                 // fill information
-                textBoxImdb.Text = f.imdb.ToString();
+                numericUpDownImdb.Text = f.imdb.ToString();
                 textBoxTitle.Text = f.name;
                 textBoxDirector.Text = f.director;
-                textBoxRuntime.Text = f.tmpMinutes.ToString();
+                numericUpDownRuntime.Text = f.tmpMinutes.ToString();
             }
             else
             {
@@ -61,10 +61,10 @@ namespace CinemaManagment
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {
             
-            f.imdb = int.Parse(textBoxImdb.Text);
+            f.imdb = int.Parse(numericUpDownImdb.Text);
             f.name = textBoxTitle.Text;
             f.director = textBoxDirector.Text;
-            f.tmpMinutes = int.Parse(textBoxRuntime.Text);
+            f.tmpMinutes = int.Parse(numericUpDownRuntime.Text);
             try
             {
                 var res = Data.newFilm(f);
@@ -80,10 +80,10 @@ namespace CinemaManagment
 
         private void rBtn_update_Click(object sender, EventArgs e)
         {
-            f.imdb = int.Parse(textBoxImdb.Text);
+            f.imdb = int.Parse(numericUpDownImdb.Text);
             f.name = textBoxTitle.Text;
             f.director = textBoxDirector.Text;
-            f.tmpMinutes = int.Parse(textBoxRuntime.Text);
+            f.tmpMinutes = int.Parse(numericUpDownRuntime.Text);
 
             try
             {

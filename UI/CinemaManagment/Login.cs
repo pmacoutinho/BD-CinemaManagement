@@ -21,35 +21,6 @@ namespace CinemaManagment
         public Login()
         {
             InitializeComponent();
-            customizeDesign();
-        }
-
-        private void customizeDesign()
-        {
-            comboBoxCinema.Items.Clear();
-
-            List<Cinema> lst = new List<Cinema>();
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Location.Cinema", cn);
-
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                Cinema c = new Cinema();
-                c.id = Int32.Parse(reader["id"].ToString());
-                c.name = reader["name"].ToString();
-                c.location = reader["location"].ToString();
-
-                lst.Add(c);
-            }
-
-            cn.Close();
-
-            foreach (var c in lst)
-            {
-                comboBoxCinema.Items.Add(c.name);
-            }
         }
 
         public static int employeeId = -1;

@@ -45,8 +45,6 @@ namespace CinemaManagment
 
                 dataGridViewCleaningRecords.ReadOnly = true;
                 dataGridViewCleaningRecords.DataSource = crLst;
-
-
             }
             catch (Exception exception)
             {

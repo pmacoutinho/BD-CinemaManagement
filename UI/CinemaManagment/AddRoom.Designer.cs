@@ -36,14 +36,14 @@ namespace CinemaManagment
             this.numericUpDownNumber = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownCapacity = new System.Windows.Forms.NumericUpDown();
             this.rBtn_update = new CustomControls.RJControls.RoundedButton();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownNumber)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownCapacity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCapacity)).BeginInit();
             this.SuspendLayout();
             // 
             // labelAddRoom
             // 
             this.labelAddRoom.AutoSize = true;
-            this.labelAddRoom.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.labelAddRoom.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAddRoom.ForeColor = System.Drawing.Color.White;
             this.labelAddRoom.Location = new System.Drawing.Point(12, 9);
             this.labelAddRoom.Name = "labelAddRoom";
@@ -54,9 +54,9 @@ namespace CinemaManagment
             // labelRoomNumber
             // 
             this.labelRoomNumber.AutoSize = true;
-            this.labelRoomNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.labelRoomNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRoomNumber.ForeColor = System.Drawing.Color.White;
-            this.labelRoomNumber.Location = new System.Drawing.Point(12, 132);
+            this.labelRoomNumber.Location = new System.Drawing.Point(12, 64);
             this.labelRoomNumber.Name = "labelRoomNumber";
             this.labelRoomNumber.Size = new System.Drawing.Size(146, 28);
             this.labelRoomNumber.TabIndex = 10;
@@ -65,9 +65,9 @@ namespace CinemaManagment
             // labelCapacity
             // 
             this.labelCapacity.AutoSize = true;
-            this.labelCapacity.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.labelCapacity.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCapacity.ForeColor = System.Drawing.Color.White;
-            this.labelCapacity.Location = new System.Drawing.Point(12, 208);
+            this.labelCapacity.Location = new System.Drawing.Point(12, 137);
             this.labelCapacity.Name = "labelCapacity";
             this.labelCapacity.Size = new System.Drawing.Size(87, 28);
             this.labelCapacity.TabIndex = 12;
@@ -75,7 +75,7 @@ namespace CinemaManagment
             // 
             // roundedButtonAdd
             // 
-            this.roundedButtonAdd.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.roundedButtonAdd.BackColor = System.Drawing.Color.SlateBlue;
             this.roundedButtonAdd.BackgroundColor = System.Drawing.Color.SlateBlue;
             this.roundedButtonAdd.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -83,7 +83,7 @@ namespace CinemaManagment
             this.roundedButtonAdd.BorderSize = 0;
             this.roundedButtonAdd.FlatAppearance.BorderSize = 0;
             this.roundedButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButtonAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.roundedButtonAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonAdd.ForeColor = System.Drawing.Color.White;
             this.roundedButtonAdd.Location = new System.Drawing.Point(552, 447);
             this.roundedButtonAdd.Name = "roundedButtonAdd";
@@ -96,23 +96,31 @@ namespace CinemaManagment
             // 
             // numericUpDownNumber
             // 
-            this.numericUpDownNumber.Location = new System.Drawing.Point(19, 163);
-            this.numericUpDownNumber.Maximum = new decimal(new int[] {1000, 0, 0, 0});
+            this.numericUpDownNumber.Location = new System.Drawing.Point(17, 95);
+            this.numericUpDownNumber.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDownNumber.Name = "numericUpDownNumber";
             this.numericUpDownNumber.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownNumber.TabIndex = 21;
             // 
             // numericUpDownCapacity
             // 
-            this.numericUpDownCapacity.Location = new System.Drawing.Point(19, 239);
-            this.numericUpDownCapacity.Maximum = new decimal(new int[] {1000, 0, 0, 0});
+            this.numericUpDownCapacity.Location = new System.Drawing.Point(17, 168);
+            this.numericUpDownCapacity.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
             this.numericUpDownCapacity.Name = "numericUpDownCapacity";
             this.numericUpDownCapacity.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownCapacity.TabIndex = 22;
             // 
             // rBtn_update
             // 
-            this.rBtn_update.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rBtn_update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rBtn_update.BackColor = System.Drawing.Color.SlateBlue;
             this.rBtn_update.BackgroundColor = System.Drawing.Color.SlateBlue;
             this.rBtn_update.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -120,7 +128,7 @@ namespace CinemaManagment
             this.rBtn_update.BorderSize = 0;
             this.rBtn_update.FlatAppearance.BorderSize = 0;
             this.rBtn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rBtn_update.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.rBtn_update.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rBtn_update.ForeColor = System.Drawing.Color.White;
             this.rBtn_update.Location = new System.Drawing.Point(552, 447);
             this.rBtn_update.Name = "rBtn_update";
@@ -136,7 +144,7 @@ namespace CinemaManagment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (21)))), ((int) (((byte) (32)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(664, 506);
             this.Controls.Add(this.rBtn_update);
             this.Controls.Add(this.numericUpDownCapacity);
@@ -147,10 +155,11 @@ namespace CinemaManagment
             this.Controls.Add(this.labelAddRoom);
             this.Name = "AddRoom";
             this.Text = "Add Room";
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownNumber)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownCapacity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCapacity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private CustomControls.RJControls.RoundedButton rBtn_update;

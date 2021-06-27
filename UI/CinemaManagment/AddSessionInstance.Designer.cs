@@ -31,16 +31,14 @@ namespace CinemaManagment
         {
             this.labelAddSessionInstance = new System.Windows.Forms.Label();
             this.labelSessionID = new System.Windows.Forms.Label();
-            this.numericUpDownSessionId = new System.Windows.Forms.NumericUpDown();
             this.labelStartTime = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDownRoom = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownHour = new System.Windows.Forms.NumericUpDown();
             this.labelColumn = new System.Windows.Forms.Label();
             this.numericUpDownMinutes = new System.Windows.Forms.NumericUpDown();
+            this.comboBoxSessionId = new System.Windows.Forms.ComboBox();
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSessionId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRoom)).BeginInit();
+            this.comboBoxRoom = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinutes)).BeginInit();
             this.SuspendLayout();
@@ -67,13 +65,6 @@ namespace CinemaManagment
             this.labelSessionID.TabIndex = 30;
             this.labelSessionID.Text = "Session ID";
             // 
-            // numericUpDownSessionId
-            // 
-            this.numericUpDownSessionId.Location = new System.Drawing.Point(17, 99);
-            this.numericUpDownSessionId.Name = "numericUpDownSessionId";
-            this.numericUpDownSessionId.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDownSessionId.TabIndex = 31;
-            // 
             // labelStartTime
             // 
             this.labelStartTime.AutoSize = true;
@@ -95,13 +86,6 @@ namespace CinemaManagment
             this.label1.Size = new System.Drawing.Size(65, 28);
             this.label1.TabIndex = 34;
             this.label1.Text = "Room";
-            // 
-            // numericUpDownRoom
-            // 
-            this.numericUpDownRoom.Location = new System.Drawing.Point(17, 247);
-            this.numericUpDownRoom.Name = "numericUpDownRoom";
-            this.numericUpDownRoom.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDownRoom.TabIndex = 35;
             // 
             // numericUpDownHour
             // 
@@ -138,6 +122,14 @@ namespace CinemaManagment
             this.numericUpDownMinutes.Size = new System.Drawing.Size(51, 22);
             this.numericUpDownMinutes.TabIndex = 38;
             // 
+            // comboBoxSessionId
+            // 
+            this.comboBoxSessionId.FormattingEnabled = true;
+            this.comboBoxSessionId.Location = new System.Drawing.Point(17, 99);
+            this.comboBoxSessionId.Name = "comboBoxSessionId";
+            this.comboBoxSessionId.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxSessionId.TabIndex = 39;
+            // 
             // roundedButtonAdd
             // 
             this.roundedButtonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -159,27 +151,33 @@ namespace CinemaManagment
             this.roundedButtonAdd.UseVisualStyleBackColor = false;
             this.roundedButtonAdd.Click += new System.EventHandler(this.roundedButtonAdd_Click);
             // 
+            // comboBoxRoom
+            // 
+            this.comboBoxRoom.FormattingEnabled = true;
+            this.comboBoxRoom.Location = new System.Drawing.Point(17, 247);
+            this.comboBoxRoom.Name = "comboBoxRoom";
+            this.comboBoxRoom.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxRoom.TabIndex = 40;
+            // 
             // AddSessionInstance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(664, 506);
+            this.Controls.Add(this.comboBoxRoom);
+            this.Controls.Add(this.comboBoxSessionId);
             this.Controls.Add(this.numericUpDownMinutes);
             this.Controls.Add(this.labelColumn);
             this.Controls.Add(this.numericUpDownHour);
-            this.Controls.Add(this.numericUpDownRoom);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelStartTime);
-            this.Controls.Add(this.numericUpDownSessionId);
             this.Controls.Add(this.labelSessionID);
             this.Controls.Add(this.labelAddSessionInstance);
             this.Controls.Add(this.roundedButtonAdd);
             this.MinimumSize = new System.Drawing.Size(682, 553);
             this.Name = "AddSessionInstance";
             this.Text = "AddSessionInstance";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSessionId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinutes)).EndInit();
             this.ResumeLayout(false);
@@ -192,12 +190,12 @@ namespace CinemaManagment
         private CustomControls.RJControls.RoundedButton roundedButtonAdd;
         private System.Windows.Forms.Label labelAddSessionInstance;
         private System.Windows.Forms.Label labelSessionID;
-        private System.Windows.Forms.NumericUpDown numericUpDownSessionId;
         private System.Windows.Forms.Label labelStartTime;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDownRoom;
         private System.Windows.Forms.NumericUpDown numericUpDownHour;
         private System.Windows.Forms.Label labelColumn;
         private System.Windows.Forms.NumericUpDown numericUpDownMinutes;
+        private System.Windows.Forms.ComboBox comboBoxSessionId;
+        private System.Windows.Forms.ComboBox comboBoxRoom;
     }
 }

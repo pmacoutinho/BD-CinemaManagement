@@ -17,11 +17,86 @@ namespace CinemaManagment
 {
     public partial class AddCleaningRecord : Form
     {
+        private SqlConnection cn = SGBDCon.getCN();
 
         public AddCleaningRecord()
         {
             InitializeComponent();
+            customizeDesign();
         }
+
+        
+        private void customizeDesign()
+        {
+            loadRooms();
+            loadCleaners();
+        }
+
+        #region loadValues
+        private void loadRooms()
+        {
+            comboBoxRoom.Items.Clear();
+
+            List<Room> lst = new List<Room>();
+            User u = User.getInstance();
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Management.Room " +
+                                            "WHERE cinema=" + u.e.cinema, cn);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Room r = new Room();
+                r.num = Int32.Parse(reader["num"].ToString());
+                r.cinema = Int32.Parse(reader["cinema"].ToString());
+                r.nSeats = Int32.Parse(reader["nSeats"].ToString());
+
+                lst.Add(r);
+            }
+
+            cn.Close();
+
+            foreach (var r in lst)
+            {
+                comboBoxRoom.Items.Add(r.num);
+            }
+        }
+
+        private void loadCleaners()
+        {
+            cn.Open();
+            comboBoxCleaner.Items.Clear();
+
+            List<Employee> lst = new List<Employee>();
+            User u = User.getInstance();
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Management.Employee " +
+                                            "WHERE location=" + u.e.cinema + " AND eType=3", cn);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Employee e = new Employee();
+                e.id = Int32.Parse(reader["id"].ToString());
+                e.name = reader["name"].ToString();
+                e.email = reader["email"].ToString();
+                e.cinema = Int32.Parse(reader["location"].ToString());
+                e.shift = Int32.Parse(reader["eShift"].ToString());
+                e.type = Int32.Parse(reader["eType"].ToString());
+
+                lst.Add(e);
+            }
+
+            cn.Close();
+
+            foreach (var r in lst)
+            {
+                comboBoxCleaner.Items.Add(r.id);
+            }
+        }
+        #endregion loadValues
 
         private void roundedButtonAdd_Click(object sender, EventArgs e)
         {
@@ -37,8 +112,8 @@ namespace CinemaManagment
 
             cr.tm = monthCalendarDate.SelectionRange.Start.Date;
             cr.sCinema = emp.cinema;
-            cr.sNum = Convert.ToInt32(numericUpDownRoom.Value);
-            cr.func = emp.id;
+            cr.sNum = Convert.ToInt32(comboBoxRoom.SelectedItem);
+            cr.func = Convert.ToInt32(comboBoxCleaner.SelectedItem);
 
             var res = Operations.newCleaningRecord(cr);
 

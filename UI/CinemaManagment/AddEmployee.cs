@@ -22,7 +22,7 @@ namespace CinemaManagment
         private int cinema;
         public AddEmployee(int cinema)
         {
-            cinema = cinema;
+            this.cinema = cinema;
             InitializeComponent();
             customizeDesign();
         }
@@ -38,6 +38,12 @@ namespace CinemaManagment
 
         private void customizeDesign()
         {
+            comboBoxShift.Items.Add("0");
+            comboBoxShift.Items.Add("1");
+            comboBoxShift.Items.Add("2");
+            comboBoxShift.Items.Add("3");
+            comboBoxShift.Items.Add("4");
+
             comboBoxFunction.Items.Add("Manager");
             comboBoxFunction.Items.Add("Deputy Manager");
             comboBoxFunction.Items.Add("Sales");
@@ -51,7 +57,7 @@ namespace CinemaManagment
                 //fill in details
                 textBoxName.Text = e.name;
                 textBoxEmail.Text = e.email;
-                numericUpDownShift.Value = e.shift;
+                comboBoxShift.Text = e.shift.ToString();
                 comboBoxFunction.SelectedIndex = e.type;
             }
             else
@@ -60,15 +66,6 @@ namespace CinemaManagment
                 roundedButtonAdd.Text = "Add";
 
             }
-            
-
-            /*comboBoxShift.Items.Add("9-12");
-            comboBoxShift.Items.Add("12-15");
-            comboBoxShift.Items.Add("15-18");
-            comboBoxShift.Items.Add("18-21");
-            comboBoxShift.Items.Add("21-00");*/
-
-            
         }
 
         private void roundedButtonAdd_Click(object sender, EventArgs e)
@@ -110,7 +107,7 @@ namespace CinemaManagment
             em.name = textBoxName.Text;
             em.email = textBoxEmail.Text;
             em.cinema = (update) ? e.cinema : this.cinema;
-            em.shift = Convert.ToInt32(numericUpDownShift.Value);
+            em.shift = Convert.ToInt32(comboBoxShift.SelectedItem);
 
             if (comboBoxFunction.Text == "Cleaner")
                 em.type = 3;

@@ -34,10 +34,9 @@ namespace CinemaManagment
             this.labelNoWeeks = new System.Windows.Forms.Label();
             this.labelPremiere = new System.Windows.Forms.Label();
             this.roundedButtonAdd = new CustomControls.RJControls.RoundedButton();
-            this.numericUpDownFilmdImdb = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownNoWeeks = new System.Windows.Forms.NumericUpDown();
             this.monthCalendarPremiere = new System.Windows.Forms.MonthCalendar();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFilmdImdb)).BeginInit();
+            this.comboBoxImdb = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNoWeeks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,18 +105,6 @@ namespace CinemaManagment
             this.roundedButtonAdd.UseVisualStyleBackColor = false;
             this.roundedButtonAdd.Click += new System.EventHandler(this.roundedButtonAdd_Click);
             // 
-            // numericUpDownFilmdImdb
-            // 
-            this.numericUpDownFilmdImdb.Location = new System.Drawing.Point(19, 100);
-            this.numericUpDownFilmdImdb.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.numericUpDownFilmdImdb.Name = "numericUpDownFilmdImdb";
-            this.numericUpDownFilmdImdb.Size = new System.Drawing.Size(154, 22);
-            this.numericUpDownFilmdImdb.TabIndex = 28;
-            // 
             // numericUpDownNoWeeks
             // 
             this.numericUpDownNoWeeks.Location = new System.Drawing.Point(19, 173);
@@ -131,15 +118,23 @@ namespace CinemaManagment
             this.monthCalendarPremiere.Name = "monthCalendarPremiere";
             this.monthCalendarPremiere.TabIndex = 30;
             // 
+            // comboBoxImdb
+            // 
+            this.comboBoxImdb.FormattingEnabled = true;
+            this.comboBoxImdb.Location = new System.Drawing.Point(17, 99);
+            this.comboBoxImdb.Name = "comboBoxImdb";
+            this.comboBoxImdb.Size = new System.Drawing.Size(267, 24);
+            this.comboBoxImdb.TabIndex = 31;
+            // 
             // AddSession
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(664, 506);
+            this.Controls.Add(this.comboBoxImdb);
             this.Controls.Add(this.monthCalendarPremiere);
             this.Controls.Add(this.numericUpDownNoWeeks);
-            this.Controls.Add(this.numericUpDownFilmdImdb);
             this.Controls.Add(this.roundedButtonAdd);
             this.Controls.Add(this.labelPremiere);
             this.Controls.Add(this.labelNoWeeks);
@@ -148,7 +143,6 @@ namespace CinemaManagment
             this.MinimumSize = new System.Drawing.Size(682, 553);
             this.Name = "AddSession";
             this.Text = "AddSession";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFilmdImdb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNoWeeks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,8 +156,8 @@ namespace CinemaManagment
         private System.Windows.Forms.Label labelNoWeeks;
         private System.Windows.Forms.Label labelPremiere;
         private CustomControls.RJControls.RoundedButton roundedButtonAdd;
-        private System.Windows.Forms.NumericUpDown numericUpDownFilmdImdb;
         private System.Windows.Forms.NumericUpDown numericUpDownNoWeeks;
         private System.Windows.Forms.MonthCalendar monthCalendarPremiere;
+        private System.Windows.Forms.ComboBox comboBoxImdb;
     }
 }

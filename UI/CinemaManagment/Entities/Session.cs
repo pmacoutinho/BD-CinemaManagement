@@ -9,6 +9,7 @@ namespace CinemaManagment.Entities
 {
     class Session
     {
+        public int id; //necessary to load session list in 'add session instance'
         public int cinema;
         public int filmId;
 
