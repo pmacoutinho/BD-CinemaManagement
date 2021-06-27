@@ -83,3 +83,4 @@ C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\Cin
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.MainMenuCleaner.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.MainMenuManager.resources
 C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.MainMenuSales.resources
+C:\Users\pedro\Desktop\Uni\3_Ano\2_Semestre\BD\Projeto\BD-CinemaManagment\UI\CinemaManagment\obj\Debug\CinemaManagment.AddTicket.resources

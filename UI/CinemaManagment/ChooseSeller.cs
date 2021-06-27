@@ -35,8 +35,6 @@ namespace CinemaManagment
             {
                 listBox1.Items.Add(c.ToSimpleString());
             }
-            
-
         }
 
         //click handlers

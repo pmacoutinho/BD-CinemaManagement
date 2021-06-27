@@ -82,6 +82,12 @@
     <Compile Include="AddSessionInstance.Designer.cs">
       <DependentUpon>AddSessionInstance.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTicket.Designer.cs">
+      <DependentUpon>AddTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChooseSeller.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddSessionInstance.resx">
       <DependentUpon>AddSessionInstance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTicket.resx">
+      <DependentUpon>AddTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseSeller.resx">
       <DependentUpon>ChooseSeller.cs</DependentUpon>
